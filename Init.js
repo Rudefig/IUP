@@ -1,0 +1,145 @@
+const IUP = {};
+
+function onError(msg) {
+  console.trace("Async Error:", msg);
+}
+
+/*
+
+ █
+ ▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ Import_Module_Data ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+ ▓ Retrieve module index, import module data, and load onto global IUP variable.
+ ▓                                                                                   */
+async function Import_Module_Data() {
+  const IUP = {};
+  //   if (Object.keys(IUP).length > 0) return IUP;
+
+  const SystemPath = browser.runtime.getURL("/System/Encapsulation/System.js"),
+    SystemIndex = await import(SystemPath).then((dat) => dat.Index.System),
+    ModulePath = browser.runtime.getURL("/System/Encapsulation/Module.js"),
+    ModuleIndex = await import(ModulePath).then((dat) => dat.Index.Module);
+
+  // ❖ Initialize Systems
+  for (const Sys in SystemIndex) {
+    if (SystemIndex[Sys] === true) {
+      const SysPath = browser.runtime.getURL(`/System/${Sys}/${Sys}.js`);
+      await import(SysPath).then((result) => {
+        let Key = result.Metadata.Keyname;
+        IUP[Key] = { ...result };
+      }, onError);
+    } else {
+      IUP[Sys] = { Metadata: SystemIndex[Sys], ...SystemIndex[Sys] };
+    }
+  }
+
+  // ❖ Initialize Modules
+  for (const Sys in ModuleIndex) {
+    for (const Mod in ModuleIndex[Sys]) {
+      let dat = ModuleIndex[Sys][Mod];
+      if (dat === true) {
+        if (dat && dat === true) dat = Mod + ".js";
+        const ModPath = browser.runtime.getURL(`/System/${Sys}/${dat}`);
+        await import(ModPath).then((result) => {
+          IUP[Mod] = { ...IUP[Mod], ...result };
+          IUP[Mod].Metadata = { ...IUP[Mod].Metadata, ...dat };
+          // Combine subtypes then types so all can be accessed from IUP[Mod]
+          IUP[Mod].Action = {
+            ...IUP[Mod].Action,
+            ...IUP[Mod].Execute,
+            ...IUP[Mod].Initialize,
+            ...IUP[Mod].Reset,
+            ...IUP[Mod].Transmit,
+          };
+          IUP[Mod].Process = {
+            ...IUP[Mod].Process,
+            ...IUP[Mod].Convert,
+            ...IUP[Mod].Validate,
+            ...IUP[Mod].Calculate,
+          };
+          IUP[Mod].Query = {
+            ...IUP[Mod].Query,
+            ...IUP[Mod].Generate,
+          };
+          IUP[Mod].Order = {
+            ...IUP[Mod].Order,
+            ...IUP[Mod].Action,
+            ...IUP[Mod].Process,
+            ...IUP[Mod].Query,
+          };
+          IUP[Mod].O = IUP[Mod].Order;
+        }, onError);
+      }
+    }
+  }
+  // console.log("IUP Context Registry 1", IUP.Context.Registry);
+  for (const Mod in IUP) {
+    IUP[Mod].O = IUP[Mod].Order;
+    if (IUP[Mod].Context) {
+      if (Array.isArray(IUP[Mod].Context))
+        IUP.Context.Registry.push(...IUP[Mod].Context);
+      else IUP.Context.Registry.push(IUP[Mod].Context);
+    }
+  }
+
+  // ❖ Initialize Utilities
+  for (const Util of IUP.Utility.Metadata.Child) {
+    IUP[Util] = {
+      Metadata: {
+        Title: Util + " Utility",
+        Desc: IUP.Utility.Index.Utility[Util],
+        Parent: "Utility",
+      },
+    };
+  }
+  window.IUP = IUP;
+  // console.log("<IUP> Import_Module_Data() Modules imported:", IUP);
+  return IUP;
+}
+/*
+
+ █
+ ▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ Import_Module_Settings ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+ ▓ Retrieve settings from storage and load onto global IUP variable.
+ ▓                                                                                   */
+async function Import_Module_Settings(IUP) {
+  const result = await browser.storage.local.get(null);
+  for (const Mod in result) {
+    IUP[Mod].Setting = result[Mod];
+  }
+  console.log("<IUP> Settings imported", IUP);
+  return IUP;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ Initialize Platform ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓     Build the settings DB and save to storage. Call to reset the extension.
+▓                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+▓  ◇ Build global settings from defaults.
+▓  ◇ Build utility meta settings from defaults.
+▓  ◇ Save settings & default sections to local storage.
+▓                                                                                   */
+// export async function Initialize_Platform() {
+//   await Import_Module_Data().then((val) => {
+//     IUP.Config.Action.Reset_Config(null, val);
+//     // console.log("<IUP> Settings reset");
+//   }, onError);
+//   await Import_Module_Settings();
+//   console.log("<IUP> Installation complete", IUP);
+// }
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽  ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓     
+▓                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+▓  ◇ 
+▓                                                                                   */
+// (async () => {
+//   var IUP = await Import_Module_Data();
+//   IUP = await Import_Module_Settings(IUP);
+//   console.log("IUP initialized in page context", IUP);
+//   window.IUP = IUP;
+// })();

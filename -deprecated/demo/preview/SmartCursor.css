@@ -1,0 +1,194 @@
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ GLOBAL ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+#body {
+  text-align: center;
+}
+.cursor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 60px 84px;
+  width: fit-content;
+  margin: auto;
+  background: var(--iup-color-bg);
+}
+
+h5 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0;
+  padding: 0;
+
+  font: var(--iup-font-cond);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none;
+}
+h5::after {
+  content: ":";
+}
+.cell {
+  background: var(--iup-color-bg);
+}
+.cell-content {
+  position: relative;
+  display: flex;
+  place-items: center;
+  width: 248px;
+  height: 140px;
+  border: 1px var(--iup-color-fg) solid;
+
+  font-family: "Gotham";
+  font-size: 13px;
+}
+.cell-content .fas {
+  font-size: 9px;
+}
+.cell-content > div {
+  margin: auto;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ INDIVIDUAL CELLS ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+#img-donate {
+  width: 116px;
+}
+
+#img-download {
+  width: 140px;
+}
+
+#img-game {
+  width: 124px;
+}
+
+#img-gitRepo {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/*
+█ ❖ MAP                                                                   */
+#wrap-map:hover {
+  color: #4285f4;
+}
+#wrap-map {
+  display: flex;
+  align-items: center;
+  border: 1px #aaa solid;
+  padding: 4px;
+  font-family: "Roboto";
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  line-height: 18px;
+}
+#wrap-map img {
+  margin-right: 8px;
+}
+#wrap-map span {
+  display: block;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.54);
+  line-height: normal;
+}
+#wrap-map:hover span {
+  color: rgba(66, 133, 244, 0.74);
+}
+/*
+█ ❖ PDF                                                                   */
+#wrap-pdf {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: #a11b1d;
+  font-weight: 600;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+#wrap-pdf:hover {
+  background: #c73439;
+}
+#wrap-pdf img {
+  width: 25px;
+  height: 25px;
+  margin: 0 4px;
+}
+#wrap-pdf span {
+  margin: 0 4px;
+}
+/*
+█ ❖ TORRENT                                                                   */
+#wrap-torrent a {
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  padding: 5px 8px;
+  background: linear-gradient(to bottom, #c1ad6a 0%, #a28e4b 100%);
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+  color: #fff;
+}
+#wrap-torrent i {
+  margin-right: 5px;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ DELETE ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+img {
+  margin: 0 auto;
+  display: block;
+}
+
+.image-link {
+  display: flex;
+  height: 100%;
+  margin-right: 10px;
+  border: 1px solid #141414;
+  border-radius: 2px;
+  padding: 8px;
+  box-sizing: border-box;
+
+  background-color: #454545;
+  background-image: -webkit-linear-gradient(top, #3e3e3e, #333);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06),
+    1px 1px 0 rgba(255, 255, 255, 0.03), -1px -1px 0 rgba(0, 0, 0, 0.02),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.05);
+
+  color: #aaa;
+  font-family: "Roboto", arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  outline: 0;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+}
+.image-link span {
+  height: 14px;
+}
+.image-link svg {
+  width: 14px;
+  height: 14px;
+  padding-right: 3px;
+  line-height: 14px;
+  fill: #aaa;
+}
+
+#bottom {
+  visibility: hidden;
+}

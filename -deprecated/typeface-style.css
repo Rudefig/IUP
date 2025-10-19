@@ -1,0 +1,463 @@
+/*                        _‗______🙖⟆∽🎕∼⟅🙐________‗_
+ⸯ‗‗‗‗‗༼╯̿ ̿ ̿ ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾⏜⏝⏜⏝⏜⏝⏜⏝⏜⏝⏜⏝⏜‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾̿ ╰༽‗‗‗‗‗‗
+▓⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ Iɴᴛᴇʀɴᴇᴛ Uᴛɪʟɪᴛɪᴇꜱ Pʟᴀᴛɪɴᴜᴍ ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇▓
+▓⸾░          ̿ ̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿ ̿ ⸯ            ⸯ▓
+▓⸾░
+▓⸾░                             ❖  MENU STYLE  ❖
+▓⸾░                  Core CSS file for the UI 🙵 Main Menu.
+▓⸾░
+▓██⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓⸾░﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓⸾░                               ❖ INDEX ❖
+▓⸾░  ❖ MENU WRAPPER:
+▓⸾░	   ◇ #MM-Iframe
+▓⸾░	   ◇ #MM-Background
+▓⸾░	   ◇ #MM-SpaceBuffer
+▓⸾░	   ◇ #MM-BoxWrap
+▓⸾░	   ◇ #MM-Items
+▓⸾░  ❖ HEADER 🙵 SECTIONS:
+▓⸾░	   ◇ .LogoBox
+▓⸾░	     ⬥ .LogoBox__line-1
+▓⸾░	     ⬥ .LogoBox__line-2
+▓⸾░  ❖ MENU ITEMS:
+▓⸾░	   ◇ .MM-sect-title
+▓⸾░	   ◇ .MM-sect-wrap
+▓⸾░	   ◇ .MM-item
+▓⸾░	     ⬥ .item-disabled
+▓⸾░	     ⬥ .item-hidden
+▓⸾░	     ⬥ .item-marked
+▓⸾░	   ◇ .MM-submenu
+▓⸾░
+▓██⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓⸾░﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓⸾░                            ❖ DOM STRUCTURE ❖
+▓⸾░	 Ⅰ. #MM-Body.
+▓⸾░	    Ⅱ. #MM-Iframe.
+▓⸾░	       Ⅲ. <body>.
+▓⸾░	          Ⅳ. #MM-SpaceBuffer.
+▓⸾░	          Ⅳ. #MM-BoxWrap.
+▓⸾░	             Ⅴ. .LogoBox.
+▓⸾░	                Ⅵ. .LogoBox__line-1.
+▓⸾░	                Ⅵ. .LogoBox__line-2.
+▓⸾░	             Ⅴ. #MM-Items.
+▓⸾░	    Ⅱ. #MM-Background.
+▓⸾░
+▓══─────────────══─────────────══🙦⟅ ∽ 🎕 ∼ ⟆🙤══─────────────══─────────────══▓
+ ﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊⏜⏝⏜⏝⏜⏝⏜﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊
+*/
+@import url("chrome-extension://__MSG_@@extension_id__/utility/UILib_Dropmenu.css");
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█  🙢  LOGO BOX 〜 DEFAULTS  🙠  █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓ ❖ NOTES ❖
+▓   ◇ CSS var {--logo#-size} sets a single value for font size, line height, and box height.
+▓
+▓ ❖ DOM STRUCTURE ❖
+▓  1️⃣ .LogoBox (Internet Utilities 🙠 PLATINUM 🙢)
+▓     2️⃣ .LogoBox__line-1 (INTERNET UTILITIES)
+▓     2️⃣ .LogoBox__line-2 (🙠 PLATINUM 🙢)
+▓        3️⃣ span (🙠/🙢)
+▓        3️⃣ div (PLATINUM)
+▓                                                                                */
+
+/*
+█ ❖ LINE Ⅰ.
+▓ "Internet Utilities"                                                          */
+.LogoBox > .LogoBox__line-1 {
+  position: absolute;
+  top: 13px;
+  height: var(--logo1-size);
+  width: 100%;
+  background: #fff;
+  /* background: var(--gradient-gold); */
+
+  font-family: "Trajan Pro 3";
+  font-size: var(--logo1-size);
+  line-height: var(--logo1-size);
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-align: center;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.LogoBox > .LogoBox__deco-hr {
+  visibility: hidden;
+  position: absolute;
+  top: 29px;
+  height: 1px;
+  width: 72%;
+  margin: 0 14%;
+  background: #ededed;
+}
+
+/*
+█ ❖ LINE Ⅱ.
+▓ "🙠 Platinum 🙢"                                                                */
+.LogoBox > .LogoBox__line-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 33px;
+  width: 100%;
+  background: var(--gradient-silver);
+
+  font-family: "Trajan Pro 3";
+  font-size: var(--logo2-size);
+  line-height: var(--logo2-size);
+  letter-spacing: 2px;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* ❖ "Platinum"                                                                  */
+.LogoBox .LogoBox__platinum {
+  padding: 0 4px;
+}
+.LogoBox .LogoBox__platinum::before {
+  content: "PLATINUM";
+}
+/* ❖ "🙠 🙢"                                                                       */
+.LogoBox > .LogoBox__line-2 span {
+  height: 4px;
+  font-size: 22px;
+  line-height: 0;
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█    🙢  TYPEFACE STYLES  🙠     █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                */
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ TRAJAN ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.LogoBox.-ts-Trajan > .LogoBox__line-1 {
+  --logo1-size: 16px;
+  font-weight: 500;
+}
+.LogoBox.-ts-Trajan .LogoBox__line-2 {
+  --logo2-size: 25px;
+  padding: 0 3px;
+  font-family: "Trajan Pro 3";
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.ts-Trajan h1 {
+  font-family: "Trajan Pro 3";
+  font-size: 72px;
+  letter-spacing: 9px;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ MYNARUSE ROYALE ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.LogoBox.-ts-MynaruseRoyale > .LogoBox__line-1 {
+  --logo1-size: 22px;
+  top: 11px;
+  font-family: "Mynaruse Royale";
+  font-weight: 500;
+  font-feature-settings: "swsh";
+  text-transform: capitalize;
+}
+.LogoBox.-ts-MynaruseRoyale > .LogoBox__line-2 {
+  --logo2-size: 34px;
+  top: 27px;
+  font-family: "Garda Titling One";
+  font-weight: 500;
+  letter-spacing: 0.25px;
+}
+.ts-MynaruseRoyale h1 {
+  font-family: "Mynaruse Royale";
+  font-size: 92px;
+  text-transform: capitalize;
+}
+.ts-MynaruseRoyale h2 {
+  font-family: "Mynaruse Royale";
+  font-size: 72px;
+  text-transform: capitalize;
+}
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ CENTRA NO.1 ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.LogoBox.-ts-Centra > .LogoBox__line-1 {
+  --logo1-size: 18.5px;
+  top: 10px;
+  font-family: "Centra No.1";
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.LogoBox.-ts-Centra > .LogoBox__line-2 {
+  --logo2-size: 34px;
+  top: 26px;
+  font-family: "Centra No.1";
+  font-weight: 900;
+  letter-spacing: 3.5px;
+}
+.LogoBox.-ts-Centra .LogoBox__platinum::before {
+  content: "PLATINUM";
+}
+.LogoBox.-ts-Centra > .LogoBox__line-2 span {
+  visibility: hidden;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ CHEVALIER ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.LogoBox.-ts-Chevalier > .LogoBox__line-1 {
+  --logo1-size: 16px;
+  top: 13px;
+  font-family: "21 Cent";
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.LogoBox.-ts-Chevalier > .LogoBox__line-2 {
+  --logo2-size: 28px;
+  top: 30px;
+  font-family: "Chevalier";
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+.LogoBox.-ts-Chevalier .LogoBox__platinum::before {
+  content: "PlatinuM";
+}
+.LogoBox.-ts-Chevalier > .LogoBox__line-2 span {
+  visibility: hidden;
+}
+
+.ts-Chevalier {
+  font-family: "Caslon Book";
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ MYNARUSE FLARE ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+/*
+█ ❖ MYNARUSE FLARE
+▓ Mynaruse Flare                                                                   */
+.LogoBox.-ts-MynaruseFlare > .LogoBox__line-1 {
+  --logo1-size: 15px;
+  top: 13px;
+  font-family: "Mynaruse Flare";
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.LogoBox.-ts-MynaruseFlare > .LogoBox__line-2 {
+  --logo2-size: 26px;
+  top: 32px;
+  font-family: "Mynaruse Flare";
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+.LogoBox.-ts-MynaruseFlare > .LogoBox__line-2 span {
+  visibility: hidden;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ STARLIT DRIVE ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.LogoBox.-ts-StarlitDrive > .LogoBox__line-1 {
+  --logo1-size: 15px;
+  top: 14px;
+  font-family: "Gotham";
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+.LogoBox.-ts-StarlitDrive > .LogoBox__line-2 {
+  --logo2-size: 72px;
+  top: 17px;
+  font-family: "Starlit Drive";
+  font-weight: 300;
+  letter-spacing: 0;
+}
+.LogoBox.-ts-StarlitDrive .LogoBox__platinum::before {
+  content: "Platinum";
+}
+.LogoBox.-ts-StarlitDrive > .LogoBox__line-2 span {
+  visibility: hidden;
+}
+
+/*
+█ ❖ ASTON SCRIPT                                                                  */
+.LogoBox.-ts-AstonScript > .LogoBox__line-1 {
+  letter-spacing: 0.5px;
+}
+.LogoBox.-ts-AstonScript > .LogoBox__line-2 {
+  --logo2-size: 22px;
+  font-family: "Aston Script";
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.LogoBox.-ts-AstonScript .LogoBox__platinum::before {
+  content: "Platinum";
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ SILVER SOUTH ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.LogoBox.-ts-SilverSouth > .LogoBox__line-1 {
+  font-family: "Futura";
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+.LogoBox.-ts-SilverSouth > .LogoBox__line-2 {
+  --logo2-size: 42px;
+  top: 20px;
+  font-family: "Silver South";
+  letter-spacing: 0;
+  -webkit-text-fill-color: #fff;
+}
+.LogoBox.-ts-SilverSouth .LogoBox__platinum::before {
+  content: "Platinum";
+}
+.LogoBox.-ts-SilverSouth > .LogoBox__line-2 span {
+  visibility: hidden;
+}
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█   ❌❌❌MENU ITEMS❌❌❌    █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                */
+
+/*
+█ ❖ 🚧TOOLTIP🚧                                                                  */
+/* .MM-item[data-tooltip] {
+  position: relative;
+}
+.MM-item[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: -100%;
+  padding: 5px;
+  background: red;
+} */
+
+/*
+█ ❖ SUBMENU                                                                       */
+/* .MM-submenu {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  z-index: -1;
+  width: 180px;
+
+  padding: 5px 0;
+  border-radius: 2px;
+
+  background-color: var(--iup-color-bg);
+  color: var(--iup-color-fg);
+  opacity: 0.56;
+  transition: left var(--iup-trans-dbl) ease-out,
+    opacity var(--iup-trans-dbl) ease-out;
+} */
+/* .MM-item.active:not(.item-disabled) .MM-submenu {
+  left: -179px;
+  opacity: 1;
+  z-index: 1;
+} */
+
+/*
+█ ❖ Dropmenu Toggle Button                                                                   */
+/* .MM-item .btn-toggle {
+  visibility: hidden;
+}
+.MM-item:hover:not(.item-disabled) .btn-toggle {
+  visibility: visible;
+} */
+
+/*
+█ ❖ Close Menu button (at bottom of menu)                                       */
+
+/* .MM-item {
+  position: relative;
+  height: 28px;
+  border: 1px rgba(0, 0, 0, 0) solid;
+  border-width: 1px 0;
+  outline-width: 0;
+  outline-color: rgba(var(--iup-color-t), 0);
+  outline-style: solid;
+
+  background: rgba(var(--iup-color-t), 0);
+  user-select: none;
+  transition: background var(--iup-trans-dbl) ease-out,
+    outline-width var(--iup-trans-dbl) ease-out,
+    outline-color var(--iup-trans-dbl) ease-out;
+}
+.MM-item svg {
+  transition: transform var(--iup-trans-dbl) ease-out;
+}
+.MM-item .item-dropmenu {
+  transform: translate(90%, 2px);
+  fill: transparent;
+}
+.MM-item rect.item-dropmenu {
+  fill: transparent !important;
+}
+
+.item-icon {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  text-anchor: middle;
+}
+
+.MM-item > svg > .item-icon,
+.MM-item > svg > .item-title {
+  fill: #000;
+} */
+
+/*
+█ ❖ MENU ITEM STATES
+▓ Hover, Active, Disabled, Warning, Hidden, Marked                                                                  */
+/* .MM-item:hover:not(.item-disabled) {
+  border-color: var(--iup-color-theme);
+  outline-width: 5px;
+  outline-color: rgba(var(--iup-color-t), 1);
+
+  background: rgba(var(--iup-color-t), 1);
+  cursor: pointer;
+}
+.MM-item:hover:not(.item-disabled) > svg {
+  transform: translateX(-3px);
+}
+.MM-item:hover:not(.item-disabled) > svg > .item-title {
+  font-weight: 400;
+}
+.MM-item:hover:not(.item-disabled) > svg > * {
+  fill: url(#gold-gradient);
+} */

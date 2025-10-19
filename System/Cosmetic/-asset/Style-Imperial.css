@@ -1,0 +1,401 @@
+/*
+
+▓═───────══───────═🙦   GLOBAL   🙤═───────══───────═❖                                    */
+:root, :host {
+  --bg-gradient: linear-gradient(105deg, #0b153a, #040817);
+  --IUP-Color-BG: rgba(255, 255, 255, 1);
+  --IUP-Color-FG: rgba(0, 0, 0, 1);
+  --IUP-Color-FG2: var(--IUP-Color-FG);
+  --IUP-Color-Primary: #001b38;
+  --divider: rgba(220, 220, 220, 1);
+  --shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.28);
+}
+html {
+
+  margin: 0;
+  background: var(--IUP-Color-Primary);
+  background-attachment: fixed;
+  font-family: "Avenir Next LT Pro";
+}
+
+p {
+  font-size: 14px;
+  text-align: justify;
+  margin: 0 0 10px;
+}
+p:last-child {
+  margin: 0;
+}
+
+.window-outer {
+  width: 1200px;
+  margin: 15px auto;
+  min-height: 96vh;
+  box-sizing: border-box;
+}
+
+/*
+▓═───────═🙦  Header                                                           */
+.window-header {
+  background: var(--IUP-Color-BG);
+  box-shadow: var(--shadow);
+  padding: 6px 16px 16px;
+  font-family: "Centra No2";
+}
+.header-version {
+  font-size: 10px;
+}
+.header-logo {
+  margin: 16px 0 8px;
+}
+.header-logo span {
+  font-family: "Centra No2";
+  font-size: 26px;
+}
+
+.header-button a {
+  margin-top: 5px;
+}
+
+/*
+▓═───────═🙦  Utilities Bar                                                          */
+.Menu-Utility {
+  height: 26px;
+  margin: 4px auto 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+.Menu-Utility div {
+  padding: 13px 7px 16px;
+  border-radius: 1px;
+}
+.Menu-Utility div:hover {
+  background: #0b153a;
+  color: var(--IUP-Color-BG);
+  text-decoration: underline;
+}
+
+.Menu-Utility .selected {
+  text-decoration: underline;
+}
+
+/*
+▓═───────═🙦  Breadbar                                                          */
+.Layout-Breadbar {
+  padding: 0 16px 6px;
+  margin-bottom: 5px;
+  box-shadow: var(--shadow);
+  text-align: left;
+  line-height: 150%;
+}
+.Layout-Breadbar:before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 0 0 4px;
+  background: var(--IUP-Color-FG2);
+}
+.Layout-Breadbar span::before {
+  content: "➤";
+  padding: 0 6px;
+}
+.Layout-Breadbar:hover a:hover {
+  text-decoration: underline;
+}
+
+/*
+
+▓═───────══───────═🙦   WINDOW BODY   🙤═───────══───────═❖                                    */
+.window-body {
+  background: var(--IUP-Color-BG);
+  padding: 56px 148px 84px;
+  margin-bottom: 32px;
+  line-height: 28px;
+}
+
+.window-body h1,
+.window-body h2 {
+  margin: 0 0 10px;
+  background: var(--bg-gradient);
+  font-family: "Vito Extended";
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+}
+.window-body h3 {
+  font-size: 16px;
+  margin-bottom: 26px;
+}
+.window-body h4 {
+  padding: 0;
+}
+
+.page-icon {
+  top: 36px;
+  left: 32px;
+}
+
+
+
+/*
+▓═───────═🙦  Intro Page                                                          */
+.page-intro {
+  border: 1px var(--IUP-Color-FG2) solid;
+  padding: 64px 96px;
+}
+.page-intro h1 {
+  margin: 0 0 40px;
+  font-weight: 500;
+  font-size: 26px;
+}
+.page-intro p {
+  font-size: 16px;
+  line-height: 190%;
+}
+.page-intro b {
+  font-weight: 600;
+}
+
+/*
+
+
+▓═───────══───────═🙦   MODULE PAGE   🙤═───────══───────═❖                     */
+.page-module {
+  display: block;
+}
+.page-module h2 {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.page-module h3 {
+  /* margin: 0; */
+  font-family: "Vito";
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+}
+
+.page-module h4 {
+  position: relative;
+  right: 2px;
+  font-family: "Vito Extended";
+  font-size: 17px;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.page-module p {
+  font-size: 15px;
+  text-align: left;
+}
+.page-icon {
+  font-size: 2em;
+}
+
+/*
+
+
+▓═───────══───────═🙦   LAYOUT: UTILITY   🙤═───────══───────═❖                     */
+.Layout-Utility {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-height: 60px;
+  margin: 21px 0;
+  /* padding: 1px; */
+  /* border: 1px var(--IUP-Color-FG2) solid; */
+  background: var(--IUP-Color-FG2);
+  border-bottom: 1px var(--IUP-Color-FG) solid;
+}
+.Layout-Utility > div {
+  background: var(--IUP-Color-BG);
+}
+.system-item {
+  position: relative;
+  background: var(--IUP-Color-BG);
+  font-size: 14px;
+  border: 1px var(--IUP-Color-FG2) solid;
+  border-width: 0 1px;
+}
+.system-item h4 {
+  cursor: pointer;
+  margin-left: -1px;
+}
+
+.system-main {
+  padding: 36px 0 28px 48px;
+}
+
+/*
+▓═───────═🙦  System Tabs                                                       */
+.system-tabs {
+  gap: 8px;
+  padding: 36px 28px 24px 96px;
+  height: 100%;
+  text-transform: capitalize;
+  text-align: right;
+  align-items: end;
+}
+.system-tabs > span {
+  padding: 0 8px;
+  border: 1px transparent solid;
+}
+.system-tabs > span:hover:not(.-is-Selected) {
+  border: 1px var(--IUP-Color-FG) solid;
+  pointer-events: none;
+  /* font-weight: 600; */
+}
+.system-tabs > .-is-Selected {
+  border-bottom: 1px var(--IUP-Color-FG) solid;
+  font-weight: 600;
+
+  /* background-color: var(--IUP-Color-FG);
+  color: var(--IUP-Color-BG); */
+}
+.system-content.tab-Cover {
+  /* line-height: 200%; */
+  /* margin-top: 9px; */
+  border-left: 3px #000 solid;
+  padding-left: 8px;
+  margin-left: 2px;
+}
+.system-tabs > .tab-Status {
+  padding-top: 0;
+}
+/* .system-tabs > .is-selected {
+  padding: 5px 6px;
+  background-color: var(--fg-color);
+  color: var(--IUP-Color-BG);
+} */
+/* .system-tabs > span:last-child {
+  margin-bottom: 12px;
+} */
+/* .system-Cover {
+  font-size: 16px;
+  margin-top: 12px;
+} */
+
+.system-item ul {
+  margin: 0;
+  padding: 0 32px;
+  list-style-type: square;
+  line-height: 150%;
+}
+.system-item li {
+  margin: 3px 0;
+}
+.system-item li span {
+  font-weight: 600;
+}
+/* .system-item.-is-Disabled .system-tabs > .-is-Selected,
+.system-item.-is-Offline .system-tabs > .-is-Selected {
+  background-color: var(--IUP-Color-Disabled);
+} */
+
+/*
+▓═───────═🙦  System Status                                                       */
+.tab-Status {
+  float: right;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: italic;
+}
+.tab-Status::before {
+  content: "(";
+}
+.tab-Status::after {
+  content: ")";
+}
+/* .system-item.is-online .tab-Status {
+  font-weight: 700;
+} */
+.system-item.is-disabled {
+  user-select: none;
+  color: var(--Color-disabled);
+  border-color: var(--Color-disabled);
+}
+.system-item.is-disabled > * {
+  filter: blur(0.75px);
+  opacity: 30%;
+}
+/* .system-item.is-offline .tab-Status {
+  font-weight: 500;
+} */
+
+/*
+
+
+▓═───────══───────═🙦   LAYOUT: SYSTEM   🙤═───────══───────═❖                                    */
+/* .module-system {
+  display: flex;
+  flex-direction: column;
+  border: 1px var(--fg-color) solid;
+} */
+.Layout-System > div {
+  padding: 24px;
+  border: 1px var(--IUP-Color-FG) solid;
+  border-width: 1px 1px 0 1px;
+  min-width: 900px;
+}
+
+.Layout-System > div:last-child {
+  border-bottom-width: 1px;
+}
+
+/*
+
+▓═───────══───────═🙦   LAYOUT: CONFIG   🙤═───────══───────═❖                                    */
+
+.Part-Slider {
+  --Part-Slider_diamond: calc(var(--Part-Slider_height) * 1.48);
+  --Part-Slider_width: 152px;
+}
+
+.Part-Slider::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  width: var(--Part-Slider_diamond);
+  height: var(--Part-Slider_diamond);
+  border: 1px var(--IUP-Color-FG) solid;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.Part-Slider__text {
+  border: 0;
+}
+
+/* ❖ THUMB                                                                        */
+.Part-Slider__range::-webkit-slider-thumb, .Part-Slider__range::-moz-range-thumb {
+  width: 8px;
+  height: 8px;
+  /* height: var(--Part-Slider_height); */
+  border-radius: 100%;
+  margin-top: -4px;
+  /* margin-top: calc(calc(var(--Part-Slider_height) / -2) + 1px); */
+
+  background: var(--IUP-Color-FG);
+  cursor: pointer;
+}
+
+/*
+
+
+▓═───────══───────═🙦   CONTEXT MENU   🙤═───────══───────═❖                                    */
+.iuCM__container.-shadow {
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(1.5px) saturate(0) brightness(0.68);
+  background: rgba(var(--iup-color-t), 0.76);
+
+}

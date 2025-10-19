@@ -1,0 +1,248 @@
+/*
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█        🙢  UI MODAL  🙠        █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                    */
+.iuM .wrap-bg > * {
+  flex-grow: 1;
+}
+.iuM .wrap-bg {
+  position: fixed !important; /* !important = fix for jQuery UI draggable */
+  top: 6vh;
+  left: 15vh;
+  z-index: 100;
+
+  padding: 2px;
+  box-sizing: border-box;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(var(--iup-color-t), 0.66) 0%,
+    rgba(var(--iup-color-t), 0.88) 100%
+  );
+
+  transform: scale(1.06) translateY(-4%);
+  opacity: 0;
+}
+
+.iuM.-is-active .wrap-bg {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.iuM #tabs {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1px 6px;
+  user-select: none;
+}
+.iuM #tabs div {
+  height: 24px;
+  padding: 2px 4.5px 0;
+
+  color: var(--iup-color-bg);
+  font: var(--iup-font-cond);
+  font-size: 15.5px;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
+  line-height: 145%;
+  text-align: center;
+  white-space: nowrap;
+
+  cursor: pointer;
+}
+.iuM #tabs div.gap {
+  width: 100%;
+  cursor: initial;
+}
+
+.iuM #tabs div img {
+  width: 20px;
+  height: 20px;
+}
+
+.iuM #close {
+  cursor: pointer;
+  position: absolute;
+  top: 2px;
+  right: 2.5px;
+  width: 22px;
+}
+/*
+
+█
+▓⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ MAIN WRAPPER ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.iuM .wrap-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+
+  background-color: var(--iup-color-bg);
+  border-radius: 2px;
+  /* box-shadow: 0 0 96px 0 rgba(0, 0, 0, 0.04); */
+}
+
+.-size-lg .wrap-box {
+  width: 680px;
+  min-height: 388px;
+  padding: 68px 14px 24px;
+}
+.-size-md .wrap-box {
+  width: 480px;
+  min-height: 320px;
+  padding: 24px 16px;
+}
+.-size-sm .wrap-box {
+  width: 300px;
+  min-height: 160px;
+  padding: 54px 16px 24px;
+}
+
+/*
+
+█
+▓⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ TITLE ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+#title {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96%;
+  height: 20px;
+  padding: 0 2%;
+
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  user-select: none;
+  white-space: nowrap;
+
+  cursor: move;
+}
+.-size-lg #title {
+  top: 26px;
+  margin: 0 0 36px;
+}
+.-size-md #title {
+  margin: 0 0 24px;
+  font-size: 18px;
+}
+.-size-sm #title {
+  margin: 0 0 16px;
+  font-size: 17px;
+}
+
+/*
+█
+▓═─────══─────═🙦   TITLE 〜 DASHES   🙤═─────══─────═❖                                                                           */
+#title::before,
+#title::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background: var(--iup-color-fg);
+}
+.-size-lg #title::before {
+  margin: 7px 24px 7px 0;
+}
+.-size-lg #title::after {
+  margin: 7px 0 7px 24px;
+}
+
+.-size-md #title::before,
+.-size-md #title::after {
+  margin: 6px 9px;
+}
+
+.-size-sm #title::before,
+.-size-sm #title::after {
+  display: none;
+}
+
+/*
+█
+▓═─────══─────═🙦   CLOSE BUTTON [✕]   🙤═─────══─────═❖                                                                           */
+@keyframes platinum {
+  0% {
+    transform: translate(-20);
+  }
+  100% {
+    transform: translate(20);
+  }
+}
+
+#close-btn {
+  position: absolute;
+  cursor: pointer;
+  width: 20px;
+}
+#close-btn #platinum {
+  display: none;
+}
+#close-btn:hover #platinum {
+  animation: platinum 1s 1;
+}
+#close-btn:hover {
+  border: red 1px solid;
+}
+#close-btn:active {
+  background-color: var(--iup-color-highlight);
+  border-color: var(--iup-color-highlight);
+  color: white;
+}
+.-size-lg #close-btn {
+  right: 10px;
+  top: 10px;
+
+  font-size: 14px;
+  line-height: 20px;
+}
+.-size-md #close-btn {
+  right: 10px;
+  top: 10px;
+
+  font-size: 14px;
+  line-height: 20px;
+}
+.-size-sm #close-btn {
+  right: 9px;
+  top: 9px;
+
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/*
+
+█
+▓⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ BODY ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+
+#content {
+  flex-grow: 1;
+}
+
+#content.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  margin-bottom: 78px;
+  font-size: 14px;
+}
+
+#footer {
+  margin-top: 20px;
+}
+
+/* Move Modal Cursor */
+.ui-draggable-handle {
+  cursor: move;
+}

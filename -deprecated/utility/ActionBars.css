@@ -1,0 +1,119 @@
+/*
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█      🙢  COMMAND BARS  🙠      █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                    */
+
+/* ❖═────────────═🙦   WRAPPER   🙤═────────────═❖ */
+.iuAB {
+  position: fixed;
+  z-index: 2147483625;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+}
+
+.iuAB .wrap-box {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.iuAB.-skin-default .wrap-box {
+  border-radius: 2px;
+  padding: 1px;
+  filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+  box-shadow: none;
+  background: #fff;
+  color: #000;
+  opacity: 0;
+  transform: perspective(600px) rotateX(45deg) scale(1.2) translateY(-150%);
+}
+
+.iuAB.-skin-default.-is-shown:hover .wrap-box {
+  transform: perspective(600px) rotateX(0) scale(1) translateY(-10%);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.68));
+  opacity: 1;
+}
+.iuAB.-skin-default.-is-shown {
+  opacity: 1;
+}
+
+.iuAB.-skin-default.-is-shown .wrap-box {
+  transition: opacity var(--iup-trans-fast), transform var(--iup-trans-fast),
+    filter var(--iup-trans-fast);
+}
+
+/*🚧🚧🚧🚧🚧🚧🚧*/
+.iuAB.-skin-corner .wrap-box {
+  border-radius: 2px;
+  padding: 4px;
+
+  filter: drop-shadow(0 36px 15px rgba(0, 0, 0, 0));
+  transform: perspective(600px) rotateX(45deg) scale(1.2) translateY(-150%);
+  opacity: 0;
+}
+.iuAB.-skin-corner.-is-shown:hover .wrap-box {
+  opacity: 0.8;
+}
+.iuAB.-skin-corner.-is-shown {
+  opacity: 0.8;
+}
+.iuAB.-skin-corner.-is-shown .wrap-box {
+}
+/*🚧🚧🚧🚧🚧🚧🚧*/
+
+/* ❖═────────────═🙦   BUTTONS   🙤═────────────═❖ */
+.menu-wrap {
+  --svg-width-min: var(--ab-btnSize) !important;
+  --svg-width-max: var(--ab-btnSize) !important;
+}
+
+.iuAB.-skin-default .wrap-box div:not(.divider) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--ab-btnSize);
+  height: var(--ab-btnSize);
+  margin: 8px;
+  text-align: center;
+  font-size: var(--ab-iconSize);
+  line-height: var(--ab-btnSize);
+  border-radius: 1px;
+}
+/*
+█ ❖ Hover                                                                   */
+.iuAB.-skin-default .wrap-box div:not(.divider):not(.-is-disabled):hover {
+  background: var(--iup-color-theme);
+  color: #fff;
+  cursor: pointer;
+}
+/* enlarge buttons                                                                   */
+.iuAB.-skin-default .wrap-box div i {
+  transform: scale(1);
+  font-weight: 300;
+}
+.iuAB.-skin-default .wrap-box div:not(.-is-disabled):hover i {
+  transform: scale(1.12);
+  font-weight: 900;
+}
+/*
+
+█ ❖ Disabled                                                                   */
+.iuAB.-skin-default .wrap-box div.-is-disabled {
+  color: var(--iup-color-disabled);
+}
+
+/*
+█ ❖ Divider                                                                   */
+.iuAB.-skin-default .divider {
+  width: 1px;
+  height: calc(var(--ab-btnSize) * (9 / 10));
+  margin: 0 auto;
+  background: var(--iup-color-disabled);
+}
+.iuAB.-skin-default .wrap-box .divider:last-child {
+  display: none;
+}

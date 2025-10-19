@@ -1,0 +1,63 @@
+.iup-Table {
+  display: grid;
+  grid-gap: 2px 0;
+  /* width: max-content; */
+  border: 1px var(--iup-color-theme) solid;
+  background: var(--iup-color-theme);
+}
+/*
+
+█ ❖ HEADER ROW                                                                   */
+.iuT__rowHead {
+  grid-row: 1;
+  height: 22px;
+  box-sizing: border-box;
+}
+.iuT__colHead {
+  grid-column: 1;
+}
+
+.iuT__rowHead,
+.iuT__colHead {
+  justify-content: center !important;
+  background: var(--iup-color-fg);
+  color: #e8e8e8;
+  font: var(--iup-font-cond);
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.25px;
+  /* text-transform: uppercase; */
+  white-space: nowrap;
+  user-select: none;
+  padding: 5px 8px;
+}
+.iuT__space {
+  padding: 0;
+}
+
+.iup-Table > div {
+  display: flex;
+  align-items: center;
+  padding: 10px 8px;
+}
+.iup-Table > div:not(.iuT__rowHead) {
+  background: var(--iup-color-bg);
+  justify-content: left;
+}
+
+/*
+█ ❖ Checkboxes                                                                     */
+.iup-Table input[type="checkbox"] {
+  margin: 0 auto;
+}
+
+/*
+█ ❖ First & Last Cell                                                           */
+.iup-Table.layout-horizontal > div[class*="col-1-"] {
+  border-radius: 2px 0 0 2px;
+  padding-left: 22px;
+}
+.iup-Table.layout-horizontal > .iuT__lastCell {
+  border-radius: 0 2px 2px 0;
+  padding-right: 22px;
+}

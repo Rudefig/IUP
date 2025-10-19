@@ -1,0 +1,410 @@
+/*ⸯ                     ༿─────────═🙦 🇵🇷🇪🇻🇮🇪🇼 🙤═─────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█      🙢  TYPEFACE LAB  🙠      █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                Interface for testing out new Typeface Fonts.
+▓
+▓ ❖ INDEX ❖
+▓   ◇ Outer Wrappers
+▓   ◇ Main Menu Demo
+▓   ◇ Param Table
+▓   ◇ Asset Slot
+▓   ◇ Gradient Table
+▓
+▓═──────────────══─────────────══🙦⟅ ∽ 🎕 ∼ ⟆🙤══─────────────══──────────────═█
+▓                                                                                */
+
+/*
+██⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ OUTER WRAPPERS ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+body {
+  margin-right: var(--iup-width);
+}
+
+#title {
+  /* height: 90px; */
+}
+#desc {
+  margin-top: 0;
+}
+#wrap-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 100px 48px;
+  border-radius: 2px;
+  background: var(--iup-color-bg);
+}
+.Tables {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.SectionButtons {
+  text-align: center;
+  margin: 12px 18px 0;
+  order: 3;
+}
+
+.SectionButtons button svg {
+  width: 16px;
+}
+
+.iup-Table > div:not(.Table__rowHead) {
+  justify-content: center !important;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ MAIN MENU DEMO ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.MM__boxWrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  box-shadow: -5px 0 125px;
+  transition: filter 100ms, opacity 100ms;
+}
+.MM__boxWrap .MM-item:hover:not(:active) {
+  cursor: default;
+}
+.MM__boxWrap:active {
+  /* filter: blur(3px);
+  opacity: 0.88; */
+  cursor: not-allowed !important;
+}
+.MM__boxWrap .MM-item:active {
+  cursor: not-allowed !important;
+}
+
+.MM__boxWrap .MM-sect-title {
+  pointer-events: none !important;
+}
+#sect-title-favorites,
+#sect-title-uncategorized,
+#sect-title-favorites + div,
+#sect-title-uncategorized + div {
+  display: none;
+}
+.MenuItems {
+  max-height: calc(100vh - 75px);
+  padding-left: 18px;
+  margin-left: -18px;
+}
+
+.MenuItems .MM-submenu {
+  visibility: hidden;
+}
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ ASSET TABLE ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+
+.SectionAssets {
+  width: -webkit-fill-available;
+  border-top: 0;
+  order: 1;
+}
+.SectionAssets .row-1 {
+  padding: 32px 8px;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ PARAM TABLE ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+
+.SectionParams {
+  width: min-content;
+  border-bottom: 0;
+  order: 2;
+}
+
+.SectionParams > div {
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*
+█ ❖ TABLE COLUMNS                                                                   */
+.SectionParams > div.col-1-title {
+  height: 56px;
+  padding: 8px 20px;
+  font: var(--iup-font-cond);
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  user-select: none;
+}
+.SectionParams > div.col-1-title span {
+  display: block;
+  margin-top: 4px;
+  font-size: 11.5px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.SectionParams .col-2-fontFile {
+  padding: 6px 8px 6px 0;
+  flex-direction: row;
+  align-items: stretch;
+}
+.SectionParams .col-10-gradient {
+  width: 106px;
+}
+.SectionParams .col-10-gradient input {
+  width: 84px;
+  border: 1px var(--iup-color-fg) solid;
+  padding: 2px 7px;
+  box-sizing: border-box;
+}
+
+/*
+█ ❖ INPUT FIELDS                                                                   */
+.SectionParams input {
+  display: block;
+  width: 56px;
+  height: 34px;
+  text-align: center;
+  border: 1px #000 solid;
+}
+.SectionParams input[type="checkbox"] {
+  height: 16px;
+  margin: 9px 0;
+}
+.SectionParams select {
+  width: 94px;
+}
+.SectionParams select.item-disabled {
+  pointer-events: none;
+}
+
+.SectionParams .row-1-h1.col-1-title:hover,
+.SectionParams .row-1-h2.col-1-title:hover {
+  cursor: pointer;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ ASSET SLOT ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+
+/* .vertical-arrows {
+  height: 60px;
+  width: 16px;
+}
+.vertical-arrows .topBox:hover,
+.vertical-arrows .bottomBox:hover {
+  cursor: pointer;
+}
+
+.vertical-arrows .topBox:hover + rect + g .up,
+.vertical-arrows .up:hover,
+.vertical-arrows .bottomBox:hover + g .down,
+.vertical-arrows .down:hover {
+  fill: var(--gradient-gold);
+}
+.vertical-arrows .up,
+.vertical-arrows .down {
+  fill: rgba(0, 0, 0, 0.16);
+  filter: blur(18px);
+  pointer-events: none;
+}
+.vertical-arrows .topBox,
+.vertical-arrows .bottomBox {
+  fill: rgba(0, 0, 0, 0);
+}
+
+.vertical-arrows .dot {
+  fill: #000;
+  pointer-events: none;
+} */
+
+.AssetSlot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 80px;
+  height: 64px;
+  border: 2px var(--iup-color-fg) solid;
+  border-style: dashed;
+  padding: 4px 8px;
+  box-sizing: border-box;
+}
+.AssetSlot.-dropped {
+  cursor: pointer;
+  border-style: solid;
+  border-width: 3px;
+}
+
+.AssetSlot.-dropping * {
+  pointer-events: none;
+}
+.AssetSlot.-dropping .AssetSlot__slot {
+  background-color: var(--iup-color-theme);
+  color: var(--iup-color-bg);
+  border-color: var(--iup-color-bg);
+  font-style: normal !important;
+  pointer-events: none;
+}
+
+/*
+█ ❖ TEXT LABEL                                                                   */
+.AssetSlot__label {
+  pointer-events: none;
+}
+.AssetSlot:not(.-dropped) .AssetSlot__label::after,
+.AssetSlot.-dropping .AssetSlot__label::after {
+  content: "";
+  font-family: initial !important;
+  font-size: 11px;
+  font-style: italic;
+  user-select: none;
+}
+.AssetSlot:not(.-dropped):hover .AssetSlot__label::after,
+.AssetSlot.-dropping:hover .AssetSlot__label::after {
+  content: "(drop file)";
+}
+.AssetSlot.-dropping .AssetSlot__label::after {
+  font-weight: 300;
+}
+.AssetSlot.-dropped:not(.-dropping) .AssetSlot__label::after {
+  content: "Aa";
+  font-size: 42px;
+}
+.AssetSlot::before,
+.AssetSlot.-dropped .AssetSlot__slot::after {
+  content: "";
+  position: absolute;
+  width: max-content;
+  font-size: 11px;
+  opacity: 0;
+}
+.AssetSlot.AssetSlot:hover::before {
+  content: attr(data-iup-history);
+  top: 2px;
+  right: 4px;
+  opacity: 1;
+  transition: opacity var(--iup-trans-dbl), top var(--iup-trans-dbl);
+}
+.AssetSlot.-dropped .AssetSlot__slot::after {
+  bottom: -2px;
+  transform: scale(0.85);
+  box-shadow: rgba(0, 0, 0, 0.28) 0 1.5px 4px 1px;
+}
+.AssetSlot.-dropped:hover .AssetSlot__slot::after {
+  content: attr(data-iup-filename);
+  bottom: -12px;
+  border-radius: 2px;
+  padding: 2px 6px;
+  background: var(--iup-color-bg);
+
+  color: var(--iup-color-fg);
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity var(--iup-trans-dbl), transform var(--iup-trans-dbl),
+    bottom var(--iup-trans-dbl);
+}
+
+.SectionParams .col-2-fontFile:not(.-dropping) .AssetSlot.select-active {
+  display: none;
+}
+
+/*
+█ ❖ FONT CHOICE                                                                   */
+.SectionParams .fontChoice select {
+  min-width: 76px;
+  width: 76px;
+}
+.AssetSlot:not(.select-active) + .fontChoice,
+.AssetSlot.-dropped .AssetSlot__slot:not(.select-active) .fontChoice,
+.AssetSlot.-dropping .fontChoice {
+  display: none;
+}
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ GRADIENT TABLE ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+
+.SectionGradients {
+  width: -webkit-fill-available;
+  border-top: 0;
+  order: 3;
+}
+.SectionGradients > div {
+  padding: 8px 6px;
+}
+.SectionGradients .row-1 {
+  position: relative;
+  height: 100px;
+}
+.SectionGradients > div:first-child,
+.SectionGradients > div:first-child + div {
+  border-radius: 2px 0 0 2px;
+  padding: 0;
+  height: 100%;
+}
+.SectionGradients div:nth-last-child(2),
+.SectionGradients div:last-child {
+  border-radius: 0 2px 2px 0;
+  padding: 0;
+  height: 100%;
+}
+.SectionGradients textarea {
+  --iup-trans-dbl: 3s;
+  z-index: 1;
+
+  display: block;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  border: 1px var(--iup-color-fg) solid;
+  outline: 0 var(--iup-color-theme) solid;
+  padding: 3px 5px;
+
+  font-size: 6.5px;
+  color: rgba(var(--iup-color-f), 0.56);
+  font-style: italic;
+  resize: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.SectionGradients textarea:focus {
+  position: absolute;
+  z-index: 5;
+  top: -8px;
+  left: -25%;
+  width: 206px;
+  height: 180px;
+  border-radius: 6px;
+  border-width: 2px;
+  padding: 5px 10px;
+  outline-width: 4px;
+  box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.26);
+
+  color: var(--iup-color-fg);
+  font-size: 10.5px;
+  font-style: normal;
+  overflow-y: auto;
+}
+
+textarea::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  background-color: var(--iup-color-theme);
+}
+textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+textarea::-webkit-scrollbar-thumb {
+  background-color: var(--iup-color-bg);
+  cursor: pointer;
+  border-radius: 0;
+  border: 0 var(--iup-color-theme) solid;
+  border-left-width: 1px;
+}

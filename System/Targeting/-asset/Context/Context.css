@@ -1,0 +1,161 @@
+/*
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█      🙢  CONTEXT MENU  🙠      █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                    */
+#Body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--iup-page-height);
+  /* overflow: hidden; */
+  pointer-events: none;
+}
+
+/*
+█
+▓═─────══─────═🙦   MENU WRAPPER   🙤═─────══─────═❖
+▓                                                                               */
+.iuCM__container.-shadow {
+  position: absolute;
+  z-index: 2147483630;
+  /* min-width: 200px; */
+  /* max-width: 320px; */
+  user-select: none;
+  padding: 0;
+}
+.iuCM__items.menu-wrap {
+  /* transform: scaleY(1);
+  transform-origin: top; */
+  box-shadow: none;
+  transition: transform var(--iup-trans-fast) var(--iup-trans-type);
+}
+
+.iuCM__container:not(.-is-shown) {
+  opacity: 0;
+  display: none;
+}
+
+.-is-shown {
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+}
+
+.-is-collapsed .iuCM__items {
+  transform: scaleY(0);
+}
+
+/*
+█
+▓═─────══─────═🙦   SELECTOR BOX   🙤═─────══─────═❖
+▓                                                                            */
+.iuCM__targ {
+  height: 16px;
+  padding: 4px 9px;
+  border-bottom: 1px var(--IUP-Color-FG) solid;
+  background: var(--IUP-Color-BG);
+  color: var(--IUP-Color-FG);
+  font-size: 11px;
+  cursor: pointer;
+}
+/* DEFAULT */
+.iuCM__targ,
+.iuCM__targ-name {
+  display: flex;
+  align-items: center;
+}
+/* .iuCM__targ-options,
+.iuCM__targ-name {
+  position: relative;
+} */
+.iuCM__targ-options {
+  position: absolute;
+  width: max-content;
+  display: none;
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 300;
+}
+.iuCM__targ-icon {
+  width: 17px;
+  height: 17px;
+  padding-right: 7px;
+}
+
+/* HOVER */
+.iuCM__targ:hover > .iuCM__targ-name {
+  display: none;
+}
+.iuCM__targ:hover > .iuCM__targ-options {
+  display: flex;
+}
+
+.iuCM__searchIcon {
+}
+
+/*
+█
+▓═─────══─────═🙦   MENU ITEM   🙤═─────══─────═❖
+▓                                                                                */
+
+/* mark item with asterisk */
+.item-marked::after {
+  content: "\f069";
+  display: inline-block;
+  width: 1.8em;
+  font-size: 7px;
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  text-align: right;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+/*
+█ ❖ Divider                                                                  */
+.divider {
+  width: 92%;
+  height: 1px;
+  background: var(--iup-color-disabled);
+  margin: 7px auto;
+}
+.UI-XS .divider {
+  margin: 3px auto;
+}
+.UI-SM .divider {
+  margin: 4px auto;
+}
+.UI-MD .divider {
+  margin: 4px auto;
+}
+.UI-LG .divider {
+  margin: 8px auto;
+}
+.iuCM__items > div:last-child {
+  display: none;
+}
+
+/*
+█
+▓═─────══─────═🙦   SUBMENU   🙤═─────══─────═❖
+▓                                                                            */
+/* if menu on right side of page, open submenu on left side of menu */
+.iuCM__container.-overflow-x .submenu {
+  left: unset;
+  right: 100%;
+}
+/* show on hover */
+.iuCM__items div:hover .submenu {
+  display: inline-block;
+}
+/* submenu indicator icon, ">" */
+.submenu-arrow {
+  float: right;
+  padding-top: 3px;
+}
+/* default submenu bullet icon */
+.fa-bullet::before {
+  content: "\25FE";
+  font-family: initial;
+}

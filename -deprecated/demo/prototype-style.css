@@ -1,0 +1,207 @@
+/*
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█      🙢  PREVIEW STYLE  🙠     █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓ ❖ DESCRIPTION ❖
+▓   ◇ Base style for the preview page.
+▓
+▓ ❖ NOTE ❖
+▓   ◇ See <prop-style.css> for the prop shadow DOM style.
+▓
+▓                                                                               */
+
+:root {
+  --settings-transition: ease-in-out;
+  --iup-pattern: url(chrome-extension://dhjjmmfapkjfopioofglbeikhggcecle/assets/wallpaper/blueprints-light.png) !important;
+}
+body,
+html {
+  height: 100vh;
+  margin: 0;
+  color: var(--iup-color-fg);
+}
+
+body {
+  height: auto;
+  background-color: var(--iup-color-theme);
+  background-image: var(--iup-pattern);
+  background-size: var(--iup-pattern-size);
+  background-blend-mode: var(--iup-pattern-blend);
+  background-position: var(--iup-pattern-position);
+}
+/* body::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+} */
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ SCROLLBAR ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+  background-color: var(--iup-color-theme);
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--iup-color-bg);
+  cursor: pointer;
+  border-radius: 0;
+  border: var(--iup-color-theme) solid;
+  border-width: 0 1px;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ HEADERS ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+#title,
+div#desc {
+  margin: auto;
+  text-align: center;
+  color: #fff;
+  user-select: none;
+}
+
+/*
+█ ❖ UTILITY NAME                                                                   */
+#title {
+  position: sticky;
+  top: 16px;
+  margin-top: 25vh;
+  letter-spacing: 2px;
+}
+
+/*
+█ ❖ UTILITY DESCRIPTION                                                                   */
+div#desc {
+  position: sticky;
+  top: 80px;
+  margin-top: 18px;
+  padding: 8px 20px;
+  font: var(--iup-font-capt);
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  background: var(--iup-color-theme);
+}
+
+/*
+█ ❖ WRAPPERS                                                                   */
+#wrap-place {
+  display: flex;
+  place-items: start center;
+  justify-content: center;
+  flex-direction: column;
+}
+#wrap-box-outer {
+  position: relative;
+  width: -webkit-fill-available;
+  /* padding: 24px 64px 240px; */
+  /* padding: 8px; */
+  margin: 36px auto 0;
+  border-radius: 0;
+
+  background: var(--iup-color-theme);
+}
+
+#wrap-box {
+  margin: auto;
+}
+
+/*
+█ ❖ "LAB" PAGE STYLE                                                                   */
+body.lab {
+  --iup-pattern: url("chrome-extension://__MSG_@@extension_id__/assets/wallpaper/blueprints-light.png");
+  --iup-pattern-size: 180px;
+}
+body.lab #title {
+  margin-top: 12vh;
+}
+body.lab div#activate {
+  display: none;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ ACTIVATE TOGGLE ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+#activate {
+  --iup-color-fg: #fff;
+  position: sticky;
+  top: 120px;
+  display: flex;
+  margin: 200px auto 0;
+  border-radius: var(--act-border-radius);
+  padding: 8px;
+  background: var(--iup-color-theme);
+  transform: translateX(-100%);
+
+  color: #fff;
+  border-color: #fff;
+  /* background-color: #fff; */
+}
+
+#activate .InputCheck.-switch {
+  --InputCheck-switch-width: 80px;
+  --InputCheck-switch-height: 30px;
+}
+#activate .InputCheck__button {
+  border-color: #fff;
+}
+#activate .InputCheck__button:before {
+  border-color: #fff;
+  background-color: #fff;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ TARGET OVERLAY ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓     Target part of the demo area, making the rest of it semi-transparent.
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+
+#targ-overlay {
+  display: none !important;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: grid;
+  grid-template:
+    var(--o-top) var(--o-height) auto /
+    var(--o-left) var(--o-width) auto;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 1px var(--iup-color-theme) solid;
+  pointer-events: none;
+  filter: blur(0.75px);
+  outline: 3px var(--iup-color-theme) solid;
+}
+
+#targ-overlay div:not(.mid) {
+  background: var(--iup-color-theme);
+  opacity: 0.78;
+  padding: 12px 22px;
+}
+#targ-overlay .mid span {
+  width: 100%;
+  height: 100%;
+  background: #f00;
+}

@@ -1,0 +1,390 @@
+/*
+
+
+▓═───────══───────═🙦   GLOBAL   🙤═───────══───────═❖                                    */
+html {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(#00061c, #00030f);
+  background-attachment: fixed;
+}
+
+body {
+  --Color-bg-white: rgba(248, 255, 248, 0.46);
+  --Color-fg: rgba(1, 158, 179, 92%);
+  --Color-fg2: rgba(1, 157, 178, 10%);
+  --Color-bg: rgba(1, 158, 179, 3%);
+  --Color-bg2: rgba(0, 10, 27, 1);
+  --glow: 0 0 12px rgba(5, 160, 180, 24%), 0 0 24px rgba(5, 160, 180, 6%);
+  color: var(--Color-fg);
+  font-family: "RBNo3.1";
+  font-size: 13.5px;
+  margin: 0;
+  text-shadow: var(--glow);
+}
+
+p {
+  margin: 0 0 18px;
+  font-size: 14px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  cursor: default;
+}
+
+.window-outer {
+  width: fit-content;
+  margin: 0vh auto 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0px 0px 50px;
+  background: none;
+  color: var(--Color-fg);
+  border-top: 0px;
+  border-bottom: 0px;
+}
+
+/*
+▓═───────═🙦  Header                                                             */
+.window-header {
+  padding: 0 2px 2px;
+  margin: 40px 0 40px;
+  /* line-height: 0;
+  text-align: center; */
+}
+/* .header-title {
+} */
+
+/*
+
+
+▓═───────══───────═🙦   UTILITIES BAR   🙤═───────══───────═❖                    */
+
+.header-utilities {
+  display: flex;
+  justify-content: center;
+  border: 1px var(--Color-fg) solid;
+  border-radius: 7px;
+  border-width: 0 3px;
+  margin: 3px auto;
+  background: var(--Color-bg);
+  font-size: 12px;
+  font-family: "Prime";
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  /* font-weight: 300; */
+}
+.header-utilities a {
+  display: block;
+  padding: 16px 12px;
+  cursor: pointer;
+  border-left: 1px var(--Color-fg) solid;
+}
+.header-utilities a:first-child {
+  border-left-width: 0;
+}
+.header-utilities a:hover {
+  background-color: var(--Color-fg2);
+  text-decoration: underline;
+}
+
+.header-utilities .selected {
+  padding: 0;
+  border-left-width: 0;
+}
+.header-utilities .selected + a {
+  border-left-width: 0;
+}
+.header-utilities .selected div {
+  padding: 15px 12px;
+  margin: 1px 0;
+  background-color: var(--Color-fg);
+  color: var(--Color-bg2);
+  border-radius: 3px;
+  /* text-decoration: underline; */
+  box-shadow: var(--glow);
+  letter-spacing: 0.5px;
+}
+
+/*
+
+
+▓═───────══───────═🙦   BREADBAR   🙤═───────══───────═❖                                    */
+
+.Layout-Breadbar {
+  width: 978px;
+  margin: 0 auto;
+  padding: 2px;
+  box-sizing: border-box;
+  background: var(--Color-bg);
+  color: var(--Color-fg);
+  font-size: 12.5px;
+  line-height: 100%;
+  cursor: default;
+  user-select: none;
+  border: 1.5px var(--Color-fg) solid;
+  border-width: 0 1.5px;
+  border-radius: 3px;
+}
+.Layout-Breadbar span {
+  display: block;
+  /* border: 1px var(--Color-fg) solid; */
+  padding: 6px 9px;
+  border-radius: 12px;
+}
+.Layout-Breadbar a::before {
+  content: ">";
+  text-decoration: none !important;
+  margin-right: 3px;
+}
+.Layout-Breadbar a {
+  cursor: pointer;
+  margin: 0 4px;
+}
+.Layout-Breadbar a:last-child {
+  /* text-decoration: underline; */
+  /* font-weight: bolder; */
+  cursor: default;
+}
+/* .Layout-Breadbar:hover a:last-child {
+  text-decoration: none !important;
+} */
+.Layout-Breadbar:hover a:hover {
+  text-decoration: underline;
+  /* font-weight: bolder; */
+}
+
+/*
+
+
+▓═───────══───────═🙦   WINDOW BODY   🙤═───────══───────═❖                                    */
+.window-body {
+  box-sizing: border-box;
+  width: 980px;
+  min-height: 460px;
+  margin: 3px auto 0;
+  padding: 0 84px 60px;
+  border: 1px var(--Color-fg) solid;
+  border-radius: 12px;
+  line-height: 28px;
+  background: var(--Color-bg);
+}
+
+/*
+▓═───────═🙦  Intro Page                                                          */
+.page-intro {
+  margin: 0 6px;
+  line-height: 30px;
+}
+.page-intro h1 {
+  margin: 58px 0 22px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.page-intro p {
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 200%;
+  /* font-family: "Gotham"; */
+}
+.page-intro p b {
+  font-weight: 600;
+  /* font-family: "RBNo3.1"; */
+}
+
+/*
+
+▓═───────══───────═🙦   MODULE PAGE   🙤═───────══───────═❖                                    */
+.page-module {
+  display: block;
+}
+.page-module h2 {
+  width: fit-content;
+  margin: 0 auto 11px;
+  padding: 10px 26px;
+  background: var(--Color-fg);
+  color: rgb(0, 19, 33);
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 100%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 0 0 8px 8px;
+  box-shadow: var(--glow);
+}
+
+.page-module h3 {
+  text-align: center;
+  font-family: "Gotham";
+  font-size: 14.5px;
+  font-weight: 400;
+}
+
+.page-module h4 {
+  position: relative;
+  top: -1px;
+  left: -2px;
+  width: max-content;
+  padding: 5px 3px 5px 11px;
+  border-radius: 6px 0 0 0;
+  background-color: var(--Color-fg);
+  text-align: left;
+  color: rgb(0, 14, 27);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.page-module h4::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: -30px;
+  top: 0;
+  border-style: solid;
+  border-width: 25px 30px 0 0;
+  border-color: var(--Color-fg) transparent transparent transparent;
+}
+.page-module h4 i {
+  /* font-family: "Font Awesome 5 Pro"; */
+  /* font-style: normal; */
+  margin-right: 6px;
+}
+
+/*
+
+
+▓═───────══───────═🙦   MODULE: UTILITY   🙤═───────══───────═❖                     */
+.Layout-Utility {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.system-list p {
+  font-family: "Gotham";
+}
+.system-list ul {
+  margin: 0 8px 0 0;
+  padding-left: 36px;
+  list-style-type: square;
+  line-height: 160%;
+  font-family: "Gotham";
+}
+.system-list li {
+  margin-bottom: 6px;
+}
+
+.system-item {
+  border: 1px transparent solid;
+  border-left: 2.5px var(--Color-fg) solid !important;
+  border-radius: 9px;
+  padding: 0 0 16px 0;
+  margin: 11px 0;
+  background: rgba(1, 158, 179, 7%);
+}
+
+/*
+▓═───────═🙦  System Tabs                                                       */
+.system-tabs {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  height: 100%;
+  font-weight: bold;
+  text-transform: capitalize;
+  text-align: right;
+  align-items: end;
+}
+.system-tabs > span {
+  padding: 6px;
+  cursor: pointer;
+}
+.system-tabs > .is-selected {
+  padding: 5px 6px;
+  background-color: var(--Color-fg);
+  color: var(--Color-bg);
+}
+.system-tabs > span:last-child {
+  margin-bottom: 12px;
+}
+.system-cover {
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+/*
+▓═───────═🙦  System Status                                                       */
+.tab-Status {
+  order: 2;
+  cursor: initial;
+  margin: 9px 12px;
+  padding: 2px 5px 2px;
+  line-height: 110%;
+  float: right;
+  text-transform: uppercase;
+  font-size: 11px;
+  border-radius: 2px;
+}
+.system-item.is-online .tab-Status {
+  color: rgb(1, 178, 37);
+}
+.system-item.is-standby .tab-Status {
+  color: rgb(0, 19, 33);
+  box-shadow: 0 0 6px rgba(180, 5, 21, 0.44), 0 0 16px rgba(180, 5, 21, 0.09);
+  background-color: rgb(178, 1, 26);
+}
+.system-item:hover:not(.system-disabled) {
+  border: 1px var(--Color-fg) solid;
+}
+
+.system-item.is-disabled {
+  opacity: 12%;
+}
+/* .system-item.is-disabled span {
+  text-decoration: line-through !important;
+} */
+
+.system-item p {
+  line-height: 20px;
+  font-size: 14.5px;
+  text-align: left;
+  margin: 10px;
+}
+
+/*
+
+
+▓═───────══───────═🙦   MODULE: SYSTEM   🙤═───────══───────═❖                                    */
+.module-system {
+  display: flex;
+  width: fit-content;
+  margin: auto;
+  /* flex-direction: column; */
+  border: 1px var(--Color-fg) solid;
+  /* border-right: 0; */
+}
+.module-system > div {
+  padding: 24px;
+  border-right: 1px var(--Color-fg) solid;
+}
+.module-system > div:last-child {
+  border-right: 0;
+}

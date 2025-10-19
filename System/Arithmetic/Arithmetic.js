@@ -1,0 +1,22 @@
+export const Metadata = {
+  Keyname: "Arithmetic",
+  Title: "Arithmetic System",
+  Desc: "Performs basic number calculations.",
+  Note: "Alt name: Calculation, Numeric, Numerical",
+  Icon: "calculator",
+  Utility: ["Mathematic"],
+  Status: "Offline",
+};
+//   Module: {
+//     "N-Numeral Typing": "Represents number data.",
+//     Calculator: "All-purpose calculator and converter app.",
+//     Integer: "An integer number.",
+//     Float: "A float number with decimals.",
+//     Range: "A range between 2+ numbers.",
+//     Min: "A minimum number value.",
+//     Max: "A maximum number value.",
+//     Percent: "A percentage number.",
+//     "Number Field": "Enter a number into the field.",
+//     Slider: "Drag the slider to change a number.",
+//     Dial: "Turn the dial to change a number. Supports angles.",
+//   },

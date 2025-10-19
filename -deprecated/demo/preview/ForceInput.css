@@ -1,0 +1,79 @@
+.box-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4px;
+  margin: auto;
+}
+
+.box-grid > div {
+  position: relative;
+  width: 440px;
+  height: 300px;
+  padding: 0 32px 32px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.place-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+h5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 32px 0;
+  padding: 0;
+
+  color: var(--iup-color-theme);
+  font-family: var(--iup-font-h2);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+  user-select: none !important;
+}
+
+#ContextMenu {
+  text-align: center;
+}
+
+#ContextMenu .flex {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+}
+
+#ContextMenu img {
+  width: 300px;
+  margin-bottom: -3px;
+}
+#ContextMenu .flex div {
+  border: 1px #888 solid;
+  border-top: 0;
+}
+#ContextMenu .flex div:last-child {
+  padding: 10px;
+}
+
+#SelectingText {
+  font-size: 14px;
+  line-height: 22px;
+  user-select: none;
+}
+
+#CopyingPasting #grid {
+  display: grid;
+  grid-template: auto auto / auto auto;
+  grid-gap: 6px;
+  align-items: center;
+  margin-top: 12%;
+}
+
+#CopyingPasting #grid label {
+  justify-self: right;
+}

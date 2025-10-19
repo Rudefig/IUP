@@ -1,0 +1,175 @@
+/*
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█       🙢  UI DROPMENU  🙠      █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                    */
+
+.btn-toggle {
+  cursor: pointer;
+}
+
+#body.-relative {
+  position: relative;
+}
+#body.-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ MENU WRAPPER ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.iuDM .wrap-box {
+  position: absolute;
+  top: -24px;
+  z-index: 2147483630;
+  width: min-content;
+  min-width: 160px;
+  max-width: 240px;
+  border-radius: 2px;
+
+  font-weight: 300;
+  user-select: none;
+  pointer-events: none;
+
+  background: var(--iup-color-bg);
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--iup-trans-dbl) var(--iup-trans-type),
+    opacity var(--iup-trans-dbl) var(--iup-trans-type),
+    top var(--iup-trans-dbl) var(--iup-trans-type);
+}
+
+.iuDM .wrap-box,
+.iuDM .submenu {
+  color: #000;
+  text-align: left;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.28);
+}
+.iuDM .submenu,
+.iuDM .wrap-box {
+  padding: 8px 0;
+  background: #fff;
+}
+.iuDM .wrap-box.-is-shown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scaleY(1);
+  top: 0;
+}
+.iuDM .wrap-box:not(.-left-side) {
+  left: 20px;
+}
+.iuDM .wrap-box.-left-side {
+  left: unset;
+  right: 38px;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ MENU ITEM ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.iuDM .item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  height: 28px;
+  padding: var(--iup-item-size);
+  white-space: nowrap;
+  box-sizing: border-box;
+  /* background: var(--iup-color-bg); */
+  color: var(--iup-color-fg);
+  user-select: none;
+}
+
+.iuDM .item-disabled {
+  color: var(--iup-color-disabled);
+  cursor: default;
+}
+
+.iuDM .item:hover:not(.item-disabled) {
+  outline: 4px var(--iup-color-theme) solid;
+  background: var(--iup-color-theme);
+  color: var(--iup-color-bg);
+  cursor: pointer;
+  /* font-weight: 500; */
+}
+.iuDM .item:not(:hover) {
+  font-weight: 300;
+}
+.iuDM .item:hover:not(.item-disabled) > span,
+.iuDM .item:hover:not(.item-disabled) > i {
+  height: 13px;
+  line-height: 13px;
+
+  background: var(--gradient-gold);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text !important;
+}
+
+/* mark item with asterisk */
+.iuDM .item-marked::after {
+  content: "\f069";
+  display: inline-block;
+  padding-left: 7px;
+  font-family: "Font Awesome 5 Free";
+  font-size: 8px;
+  font-weight: 900;
+  text-align: right;
+  line-height: 0;
+}
+.iuDM .item-hidden {
+  display: none;
+}
+
+/*
+█ ❖ Divider                                                                  */
+.iuDM .divider {
+  width: 90%;
+  height: 1px;
+  background: var(--iup-color-disabled);
+  margin: 6px auto;
+}
+.iuDM .wrap-box .divider:last-child {
+  display: none;
+}
+
+/*
+█
+▓█═─────══─────═🙦   SUBMENU   🙤═─────══─────═❖
+▓                                                                           */
+.iuDM .submenu {
+  position: absolute;
+  top: -10px;
+  left: 100%;
+  width: fit-content;
+  display: none;
+  min-width: 140px;
+  max-width: 240px;
+}
+/* if menu on right side of page, open submenu on left side of menu */
+.iuDM .wrap-box.overflow-x .submenu {
+  left: unset;
+  right: 100%;
+}
+/* show on hover */
+.iuDM .wrap-box div:hover .submenu {
+  display: inline-block;
+}
+/* submenu indicator icon ">" */
+.iuDM .submenu-arrow {
+  padding-top: 3px;
+  position: absolute;
+  right: 6px;
+}
+/* default submenu bullet point icon */
+.fa-bullet::before {
+  content: "\25FE";
+  font-family: initial;
+}

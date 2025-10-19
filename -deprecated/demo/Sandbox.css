@@ -1,0 +1,363 @@
+@import url("chrome-extension://__MSG_@@extension_id__/webtool/UILib_Dropmenu.css");
+
+.header {
+  display: none;
+}
+
+.-drag-handle {
+  cursor: move;
+}
+/*
+
+█ ❖ WINDOW ❖
+▓ A Window contains a Viewport with bars on the top and bottom and sidebars to the left and right.
+▓ 3x4                                                                            */
+.Window {
+  /* position: absolute; */
+  position: relative;
+  width: 1200px;
+  height: 800px;
+  margin: 48px;
+  display: grid;
+  grid-template-rows: [bar-title] auto [bar-menu] auto [viewport] 1fr [bar-status] auto;
+  grid-template-columns: [bar-start sidebar-left] auto [viewport] 1fr [sidebar-right] auto [bar-end];
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.28);
+  /* resize: both;
+  overflow: hidden; */
+}
+
+/*
+
+█ WINDOW - Bar Area
+▓ Bars span down one row and across all columns.                                                          */
+.Window__bar {
+  grid-column-start: bar-start;
+  grid-column-end: bar-end;
+  height: 24px;
+  padding: 3px 6px;
+  background: var(--iup-color-theme);
+  color: #fff;
+}
+/* Window Bar buttons float to the left or right. */
+.Window__bar.-button {
+  display: inline-block;
+  grid-row: bar-title;
+  position: absolute;
+  top: 4px;
+  right: 3px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+}
+/* Title bars go at the top. */
+.Window__bar.-title {
+  grid-row: bar-title;
+  border-bottom: 1px #fff solid;
+  padding: 5px 8px;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 150%;
+  user-select: none;
+  cursor: move;
+}
+/* Menu bars go below the title bar. */
+.Window__bar.-menu {
+  height: auto;
+  padding: 0 4px;
+  grid-row: bar-menu;
+  font-size: 12.5px;
+  text-align: left;
+  display: flex;
+  user-select: none;
+}
+.Window__bar.-menu span {
+  padding: 5px 8px;
+  line-height: 150%;
+}
+.Window__bar.-menu span:hover {
+  background: #fff;
+  color: var(--iup-color-theme);
+  cursor: pointer;
+}
+/* Status bars go at the bottom. */
+.Window__bar.-status {
+  grid-row: bar-status;
+}
+
+/*
+
+█ WINDOW - Sidebar Area
+▓ Window Sidebars span across one column to the left or right of CONTENT.                                                          */
+.Window__sidebar {
+  grid-row: viewport;
+  background: #fff;
+  border: var(--iup-color-theme) solid;
+  border-width: 0 2px;
+  width: 224px;
+}
+/* Left Sidebar is the first column. */
+.Window__sidebar.-left {
+  grid-column: sidebar-left;
+}
+/* Right Sidebar is the last column. */
+.Window__sidebar.-right {
+  grid-column: sidebar-right;
+}
+
+/*
+
+█ WINDOW - Viewport Area
+▓ The Window's Viewport sits in the center of other areas.                                                          */
+.Window__viewport {
+  grid-row: viewport;
+  grid-column: viewport;
+}
+
+/*
+
+
+█ ❖ VIEWPORT ❖
+▓ A Viewport contains contents with margins and horizontal/vertical rulers.
+▓ 5x5                                                          */
+.Viewport {
+  display: grid;
+  grid-template-rows: [ruler-vertical-start] auto [margin-vertical-start] auto [main-content] 1fr [margin-vertical-end] auto [ruler-vertical-end] auto;
+  grid-template-columns: [ruler-horizontal-start] auto [margin-horizontal-start] auto [main-content] 1fr [margin-horizontal-end] auto [ruler-horizontal-end] auto;
+  overflow: hidden;
+  background: #efefef;
+}
+
+/*
+
+█ VIEWPORT - Ruler
+▓ Horizontal and Vertical Rulers are used to adjust margins and measure size.                                                          */
+.Viewport__ruler {
+  --Viewport__ruler-size: 14px;
+  background: #e8e8e8;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 0 #000 solid;
+  font-size: 11px;
+}
+
+/* Horizontal Rulers ~ Spans all columns, rows 1 or 5. */
+.Viewport__ruler.-horizontal {
+  grid-column-start: margin-horizontal-start;
+  grid-column-end: margin-horizontal-end;
+  height: var(--Viewport__ruler-size);
+}
+
+/* Vertical Rulers ~ Spans all rows, columns 1 or 5. */
+.Viewport__ruler.-vertical {
+  grid-row-start: margin-vertical-start;
+  grid-row-end: margin-vertical-end;
+  width: var(--Viewport__ruler-size);
+}
+
+/* Ruler Positions */
+.Viewport__ruler.-top {
+  grid-row: 1;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+.Viewport__ruler.-bottom {
+  grid-row: 5;
+  border-top-width: 1px;
+}
+.Viewport__ruler.-left {
+  grid-column: 1;
+  border-top-width: 1px;
+  border-right-width: 1px;
+}
+.Viewport__ruler.-right {
+  grid-column: 5;
+  border-left-width: 1px;
+}
+
+.Ruler {
+  display: flex;
+}
+.Ruler.-vertical .Ruler {
+  flex-direction: column;
+  height: fit-content;
+}
+.-horizontal .Ruler__segment {
+  width: var(--Ruler__segment);
+  border-right: 1px #000 solid;
+  padding: 0 2px;
+  box-sizing: border-box;
+}
+.-vertical .Ruler__segment {
+  height: var(--Ruler__segment);
+  border-bottom: 1px #000 solid;
+  padding: 2px 0;
+  box-sizing: border-box;
+}
+
+/*
+
+█ VIEWPORT - Margin
+▓ Top, Bottom, Left, and Right Margins are in between the Rulers and Contents.                                                           */
+.Viewport__margin {
+  background: #833c0c;
+}
+
+/* Horizontal Margins ~ Columns 2 to 4, rows 2 and 4. */
+.Viewport__margin.-horizontal {
+  grid-column-start: margin-horizontal-start;
+  grid-column-end: margin-horizontal-end;
+  background: #bf8f00;
+}
+.Viewport__margin.-top {
+  grid-row: 2;
+}
+.Viewport__margin.-bottom {
+  grid-row: 4;
+}
+
+/* Vertical Margins ~ Rows 2 to 4, columns 2 and 4. */
+.Viewport__margin.-vertical {
+  grid-row-start: margin-vertical-start;
+  grid-row-end: margin-vertical-end;
+  background: #bf8f00;
+}
+.Viewport__margin.-left {
+  grid-column: 2;
+}
+.Viewport__margin.-right {
+  grid-column: 4;
+}
+
+/*
+
+█ VIEWPORT - Contents
+▓ Contents are in the middle of the viewport.                                                          */
+.Viewport__contents {
+  grid-row: main-content;
+  grid-column: main-content;
+  background: #fff;
+}
+
+/*
+
+
+█ ❖ RULER ❖
+▓ A horizontal or vertical ruler with segments.
+▓                                                          */
+.Ruler {
+  user-select: none;
+  --Ruler__divider-width: 1px;
+  --Ruler__half-length: 42%;
+  --Ruler__fourth-length: 26%;
+}
+
+.Ruler__segment {
+  position: relative;
+}
+
+.-horizontal .Ruler__segment {
+  width: var(--Ruler__segment);
+}
+
+.-vertical .Ruler__segment {
+  height: var(--Ruler__segment);
+  writing-mode: vertical-rl;
+}
+
+.Ruler__divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 0 #000 solid;
+}
+
+.-horizontal .Ruler__divider.-half {
+  width: var(--Ruler__divider-width);
+  height: var(--Ruler__half-length);
+  left: 50%;
+  background-color: #000;
+}
+
+.-horizontal .Ruler__divider.-fourth {
+  width: 50%;
+  height: var(--Ruler__fourth-length);
+  left: 25%;
+  border-width: 0 var(--Ruler__divider-width);
+}
+
+.-vertical .Ruler__divider.-half {
+  width: var(--Ruler__half-length);
+  height: var(--Ruler__divider-width);
+  top: 50%;
+  left: 0;
+  background-color: #000;
+}
+
+.-vertical .Ruler__divider.-fourth {
+  width: var(--Ruler__fourth-length);
+  height: 50%;
+  top: 25%;
+  left: 0;
+  border-width: var(--Ruler__divider-width) 0;
+}
+
+/*
+
+
+█ ❖ CARD ❖
+▓ A small fixed-size card.
+▓                                                          */
+.Card {
+  background-image: linear-gradient(150deg, #fff, #f3f3f3);
+}
+
+.Card__title {
+  position: relative;
+  padding: 5px 10px;
+  font-size: 12px;
+  user-select: none;
+  text-align: center;
+  font-weight: bold;
+  font-family: Avenir Next Cond;
+  font-size: 13px;
+  font-weight: 600;
+}
+.Card__title.-collapsed {
+  border-bottom: 1px var(--iup-color-theme) solid;
+}
+.Card__title.-collapsed + .Card__content {
+  display: none;
+}
+.Card__dropdown {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  line-height: 0 !important;
+  cursor: pointer;
+}
+.Card__content {
+  padding: 0 12px 12px;
+  border-bottom: 1px var(--iup-color-theme) solid;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.Card__content b {
+  font-size: 11.5px;
+}
+
+/*
+
+
+█ ❖ PLAYER ❖
+▓ Temporary prototype of Player.
+▓                                                          */
+.Player {
+  width: 640px;
+  height: 360px;
+  margin: 60px auto 0;
+}
+.Player__content {
+  background: #000;
+}

@@ -1,0 +1,390 @@
+/*
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█     🙢  SETTINGS STYLE  🙠     █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓ ❖ DESC ❖
+▓   ◇ The user settings page CSS.
+▓
+▓ ❖ INDEX ❖
+▓   ◇ Global
+▓   ◇ Body Animations
+▓   ◇ Content
+▓
+▓                                                                               */
+
+/*
+
+
+█
+▓⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ GLOBAL ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+:root {
+  --iup-dbl: var(--iup-trans-dbl) var(--iup-trans-type);
+  --iup-trans-half: calc(var(--iup-trans-speed) * 2);
+}
+
+html {
+  height: var(--page-height);
+}
+body {
+  color: var(--iup-color-fg);
+  background-color: var(--iup-color-theme);
+  background-image: var(--iup-pattern);
+  background-size: var(--iup-pattern-size);
+  background-blend-mode: var(--iup-pattern-blend);
+  background-position: var(--iup-pattern-position);
+  overflow-x: hidden;
+}
+
+/*
+█ ❖ SCROLLBAR                                                                   */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+  background-color: var(--iup-color-theme);
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--iup-color-bg);
+  cursor: pointer;
+  border-radius: 2px;
+  border: 2px var(--iup-color-theme) solid;
+}
+
+/*
+█ ❖ HEADERS                                                                   */
+h2 {
+  margin-top: 14vh;
+}
+h2::after {
+  content: attr(data-text);
+  -webkit-text-stroke: 12px var(--iup-color-theme);
+}
+
+h4 {
+  text-transform: uppercase;
+}
+
+/*
+█ ❖ WRAPPERS                                                                   */
+#bg-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* right: 0; */
+  width: 100%;
+  height: var(--page-height);
+  overflow: hidden;
+}
+
+.wrap-outer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+}
+
+.wrap-inner {
+  position: relative;
+  min-width: 800px;
+  max-width: 1400px;
+  border-radius: 2px;
+  margin: 6px 18px 18px;
+  outline: 8px var(--iup-color-theme) solid;
+  padding: 24px 48px;
+  background: var(--iup-color-bg);
+  overflow: hidden;
+}
+
+.wrap-columns {
+  columns: 2 600px;
+  column-gap: 50px;
+}
+
+.footer {
+  text-align: right;
+}
+
+/*
+
+
+█
+▓⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ BODY ANIMATION ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+▓  ◇ Swap Color
+▓  ◇ Swap Pattern
+▓  ◇ Swap Content
+▓                                                                               */
+
+/*
+
+█ ❖ ANIMATE: Swap Color                                                                  */
+html #bg-color {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+
+  width: 100%;
+  height: var(--page-height);
+
+  background-color: var(--iup-color-theme);
+  background-image: var(--iup-pattern);
+  background-size: var(--iup-pattern-size);
+  background-blend-mode: var(--iup-pattern-blend);
+  background-position: var(--iup-pattern-position);
+
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1) translateY(0);
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 1) 60%
+  );
+  -webkit-mask-position: -100%;
+  -webkit-mask-size: 0;
+  -webkit-mask-repeat: no-repeat;
+}
+
+html.swap-color #bg-color {
+  background-color: var(--iup-color-theme-temp) !important;
+  -webkit-mask-size: 200%;
+  -webkit-mask-position: 200%;
+  transition: transform 5s, -webkit-mask-position 5s;
+}
+html.swap-color .wrap-inner {
+  outline-color: var(--iup-color-theme-temp) !important;
+  transition: outline-color 5s;
+}
+
+html.swap-color h2::after {
+  -webkit-text-stroke-color: var(--iup-color-theme-temp) !important;
+  transition: -webkit-text-stroke-color 5s;
+}
+
+/*
+
+█ ❖ ANIMATE: Swap Pattern
+▓ #bg-pattern
+▓ .swap-pattern
+▓ .swap-pattern-2
+▓                                                                  */
+html #bg-pattern {
+  position: absolute;
+  z-index: 2;
+  top: -1000px;
+  left: -1000px;
+
+  width: 3000px;
+  height: 3000px;
+
+  background-color: var(--iup-color-theme);
+  background-image: var(--iup-pattern);
+  background-size: var(--iup-pattern-size);
+  background-blend-mode: var(--iup-pattern-blend);
+  background-position: var(--iup-pattern-position);
+
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1) translateY(0) rotateX(0);
+  transition: transform var(--iup-trans-slow), filter var(--iup-trans-slow),
+    opacity var(--iup-trans-slow);
+  -webkit-mask-image: linear-gradient(
+    0,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-position: center;
+}
+
+html.swap-pattern-2 body {
+  background-image: none;
+}
+html.swap-pattern #bg-pattern {
+  visibility: visible;
+  background-color: var(--iup-color-theme);
+  opacity: 0;
+  filter: blur(8px);
+  /* transform: scale(0.9) translateY(-2%) rotate3d(1, 0, 0, 45deg); */
+  transform: scale(2) rotate3d(3, 1, 5, 10deg);
+  transform-origin: center;
+}
+
+/*
+█ ❖ ANIMATE: Swap Content
+▓ .swap-content-1: Gradient wipes down inner wrap, making the content blank.
+▓ .swap-content-2:                                                                   */
+.wrap-inner::after {
+  content: "";
+  position: absolute;
+  top: -66%;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 200%;
+  visibility: hidden;
+
+  opacity: 1;
+  --iup-color-a: 255, 0, 0;
+  background: linear-gradient(
+    to top,
+    rgba(var(--iup-color-b), 0) 0,
+    rgba(var(--iup-color-b), 0) 33%,
+    rgba(var(--iup-color-b), 1) 66%,
+    rgba(var(--iup-color-b), 1) 100%
+  );
+  transition: top var(--iup-trans), opacity var(--iup-trans-speed);
+  pointer-events: none;
+}
+.wrap-inner.no-animate::after {
+  transition: initial;
+}
+
+body.swap-content-1 .wrap-inner::after {
+  top: 0;
+  visibility: visible;
+}
+body.swap-content-2 .wrap-inner::after {
+  opacity: 0;
+}
+
+/*ⸯ                     ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█      🙢  SETTINGS.CSS  🙠      █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓ ❖ DESC ❖
+▓  ⮚ Style for the Settings page & webtool settings.
+▓
+▓ ❖ LAYOUT ❖
+▓   ◇ Header Row: Header for a section.
+▓   ◇ Gap Row:    Gap between sections.
+▓   ◇ Item Row:   Settings item.
+▓     ⬥ Label:     Setting name
+▓     ⬥ Content:   Form element
+▓
+▓══─────────────══─────────────══🙦⟅ ∽ 🎕 ∼ ⟆🙤══─────────────══─────────────══▓  */
+.Layout-Config {
+  --s-padding-x: 60px;
+  --s-padding-y: 18px;
+  --s-divider-edge: 20px;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: fit-content;
+  margin: 18px;
+}
+
+.Layout-Config > div:first-child {
+  /* margin-top: 86px; */
+  padding-top: 34px;
+}
+
+.Layout-Config > div:nth-child(odd) {
+  border-right: 1px var(--iup-color-fg) solid;
+  justify-self: end;
+}
+
+/*
+█ ❖ HEADER ROW                                                                   */
+.Layout-Config > .s-header {
+  line-height: var(--s-divider-edge);
+  padding: 48px var(--s-padding-x) var(--s-divider-edge) 0;
+}
+.Layout-Config > .s-header:first-child {
+  padding-top: 0;
+}
+.Layout-Config > .s-header + div {
+  padding: 0;
+}
+.Layout-Config > div > h4 {
+  white-space: nowrap;
+  user-select: none;
+  /* text-align: right; */
+}
+
+/*
+█ ❖ GAP ROW                                                                   */
+.Layout-Config > .s-gap:first-child {
+  height: 0;
+}
+.s-gap {
+  height: var(--s-divider-edge);
+  padding: 0;
+}
+
+/*
+█ ❖ ITEM ROW - LABEL                                                                   */
+.s-label {
+  display: flex;
+  /* align-items: center; */
+  min-height: 56px;
+  padding-top: var(--s-padding-y);
+  padding-right: var(--s-padding-x);
+  grid-column-start: 1;
+
+  white-space: nowrap;
+  user-select: none;
+}
+.s-label > span {
+  padding-top: var(--s-padding-y);
+  line-height: 0;
+}
+.s-label.disabled > *,
+.s-label.disabled + .s-field > * {
+  opacity: 0.18;
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+/*
+█ ❖ ITEM ROW - CONTENT                                                                   */
+.Layout-Config > .s-field {
+  display: flex;
+  align-items: center;
+  padding: var(--s-padding-y) var(--s-padding-x);
+}
+
+.s-suffix {
+  user-select: none;
+  align-self: center;
+  margin-left: 3px;
+}
+
+.Layout-Config .s-checkmark {
+  display: inline-block;
+  transform: translate(12px, 3px);
+}
+
+/*❌❌❌❌❌❌❌❌❌❌❌❌*/
+.path {
+  stroke-dashoffset: 50;
+  stroke-dasharray: 50;
+  animation: draw 2s linear;
+}
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 50;
+  }
+  25% {
+    stroke-dashoffset: 0;
+  }
+  75% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -50;
+  }
+}
+/*❌❌❌❌❌❌❌❌❌❌❌❌*/

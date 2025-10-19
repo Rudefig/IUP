@@ -1,0 +1,325 @@
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█        🙢  MAIN MENU  🙠       █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                */
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ FRAME WRAPPER ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+#iuMM-Frame {
+  position: absolute !important;
+  z-index: 5;
+  border: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+#iuMM-Frame,
+#iuMM-Background div:first-child {
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 150vh;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ MENU WRAPPER ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.MM {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: calc(100% + 500px);
+  overflow: hidden;
+}
+
+/*
+█ ❖ INNER WRAPPER ⬥ (Title + Items)                                                                */
+.MM__boxWrap {
+  position: absolute;
+  top: -240px;
+  width: var(--iup-width);
+  height: 150vh;
+  background-color: rgba(var(--iup-color-t), 0.88);
+  transition: transform var(--iup-trans), top var(--iup-trans),
+    right var(--iup-trans);
+  padding: 0 1px;
+}
+
+.MM.-is-active .MM__boxWrap,
+#iuMM-Background.-is-active {
+  top: 0;
+  right: 0;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ BACKGROUND SHADOW ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+#iuMM-Background {
+  position: absolute !important;
+  right: 0;
+  z-index: 1;
+  width: 24%;
+  margin-right: var(--iup-width);
+
+  background: linear-gradient(
+    to right,
+    rgba(var(--iup-color-f), 0) 0%,
+    rgba(var(--iup-color-f), 0.82) 100%
+  );
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  /* transition: opacity var(--iup-trans), width var(--iup-trans),
+    top var(--iup-trans), right var(--iup-trans), margin var(--iup-trans),
+    transform var(--iup-trans); */
+}
+#iuMM-Background.-is-active {
+  width: 18%;
+  opacity: 1;
+}
+
+.MM__spaceBuffer {
+  flex-grow: 1;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ MENU ITEMS WRAPPER ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.LogoBox {
+  height: 68px;
+  color: #fff;
+  user-select: none;
+}
+
+.MenuItems {
+  display: flex;
+  flex-direction: column;
+  width: var(--iup-width);
+  max-height: calc(66.66vh - 105px);
+  padding-left: 184px;
+  margin-left: -184px;
+  border-left-color: #fff;
+  border-top-color: #fff;
+  overflow: visible scroll; /* SHOWING SCROLLBAR CUTS OFF DROPDOWN MENUS - https://stackoverflow.com/questions/10903084/overflow-x-visible-doesnt-work-with-overflow-y-auto-any-workaround */
+}
+
+/*
+█ ❖ TOP/BOTTOM BORDER                                                                   */
+.MM__itemsBefore {
+  background: var(--iup-color-bg);
+  height: 20px;
+  border-radius: 2px 2px 0 0;
+}
+.MM__itemsAfter {
+  background: var(--iup-color-bg);
+  height: 16px;
+  border-radius: 0 0 2px 2px;
+}
+
+/*
+█ ❖ SCROLLBAR                                                                   */
+.MenuItems::-webkit-scrollbar {
+  width: 1px;
+  height: 0;
+  background-color: var(--iup-color-theme);
+}
+.MenuItems::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.MenuItems::-webkit-scrollbar-thumb {
+  background-color: var(--iup-color-bg);
+  cursor: pointer;
+}
+
+.MenuItems__buffer {
+  height: 6px;
+  background: var(--iup-color-bg);
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ SECTION TITLE ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓               ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.MenuItems__sectTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8px 16px;
+
+  color: var(--iup-color-fg);
+  font: var(--iup-font-cond);
+  font-size: 15.5px;
+  white-space: nowrap;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+
+  user-select: none;
+  cursor: pointer;
+
+  transform: scale(1) translateY(var(--hide-move-high));
+  transform-origin: center;
+  transition: padding var(--iup-trans-fast) ease-out,
+    opacity var(--iup-trans-fast) ease-out,
+    filter var(--iup-trans-fast) ease-out,
+    transform var(--iup-trans-fast) ease-out;
+}
+
+/*
+█ ❖ SECT TITLE LINES
+▓ Add horizontal lines to each side of section name. */
+.MenuItems__sectTitle > div {
+  display: inline;
+}
+.MenuItems__sectTitle::before,
+.MenuItems__sectTitle::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  margin: 3px 18px;
+  border-radius: 100%;
+  background-color: var(--iup-color-fg);
+  transform-origin: center;
+  transition: width var(--iup-trans-dbl) ease-out,
+    height calc(var(--iup-trans-dbl)) ease-out,
+    margin var(--iup-trans-dbl) ease-out, opacity var(--iup-trans-fast) ease-out,
+    filter var(--iup-trans-fast) ease-out,
+    transform var(--iup-trans-fast) ease-out;
+}
+
+/*
+█ ❖ SECT TITLE COLLAPSED                                                                   */
+.MenuItems__sectTitle.-is-collapsed:hover {
+  opacity: var(--hide-opacity-mid);
+  filter: blur(var(--hide-blur-mid));
+  transform: scale(var(--hide-scale-mid));
+}
+.MenuItems__sectTitle.-is-collapsed {
+  opacity: var(--hide-opacity-low);
+  filter: blur(var(--hide-blur-low));
+  transform: scale(var(--hide-scale-low));
+}
+
+/*
+█ ❖ SECT TITLE LINES COLLAPSED                                                         */
+.MenuItems__sectTitle.-is-collapsed::before,
+.MenuItems__sectTitle.-is-collapsed::after {
+  width: 3px;
+  height: 3px;
+  margin: 3px 12px;
+  opacity: var(--hide-opacity-low);
+  filter: blur(var(--hide-blur-low));
+  pointer-events: none;
+}
+.MenuItems__sectTitle.-is-collapsed:hover::before,
+.MenuItems__sectTitle.-is-collapsed:hover::after {
+  height: 1px;
+  margin: 3px 18px;
+  opacity: var(--hide-opacity-mid);
+  filter: blur(var(--hide-blur-mid));
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ SECTION WRAPPER ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓               ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.MenuItems__sectItems {
+  /* position: relative; */
+  transition: height var(--iup-trans-fast) ease-out,
+    opacity var(--iup-trans-fast) ease-out,
+    filter var(--iup-trans-fast) ease-out,
+    transform var(--iup-trans-fast) ease-out;
+}
+.MenuItems__sectItemsWrap {
+  padding-bottom: 20px;
+}
+.MenuItems__sectOuter,
+.MenuItems__sectItemsWrap {
+  background-color: var(--iup-color-bg);
+  pointer-events: all;
+}
+
+/*
+█ ❖ SECTION ANIMATION                                                              */
+.MenuItems__sectItems.-is-collapsed {
+  height: 0 !important;
+  opacity: 0;
+  filter: blur(var(--hide-blur-low));
+  transform: scale(0.5) rotate3d(1, 0, 0, 70deg) translateY(-60px);
+  transform-origin: top;
+  pointer-events: none;
+}
+.MenuItems__sectItems.-is-collapsed::after {
+  height: 16px;
+}
+
+.MenuItems__sectItemsWrap.animating {
+  perspective: 440px;
+}
+.MenuItems__sectItemsWrap.animating .submenu-wrap {
+  visibility: hidden;
+}
+/* gradient wipe transition */
+.MenuItems__sectItems::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  transition: height 64ms ease-out;
+}
+
+.MenuItems__sectItems > .menu-item > .submenu-wrap {
+  --svg-width: 180px !important;
+  max-width: 180px;
+}
+
+/*
+█ ❖ CLOSE MENU BUTTON                                                                     */
+.MenuItems__closeMenu {
+  padding: 32px 0 32px;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 0 0 2px 2px;
+}
+
+/*🚧🚧🚧🚧🚧🚧*/
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█     🙢  MISCELLANEOUS  🙠      █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                */
+.ui-dialog {
+  border-radius: 0;
+}
+
+.setFooter {
+  padding: 24px 0;
+  text-align: right;
+}

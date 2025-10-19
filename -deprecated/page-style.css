@@ -1,0 +1,92 @@
+/*                        _‗______🙖⟆∽🎕∼⟅🙐________‗_
+ⸯ‗‗‗‗‗༼╯̿ ̿ ̿ ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾⏜⏝⏜⏝⏜⏝⏜⏝⏜⏝⏜⏝⏜‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾̿ ╰༽‗‗‗‗‗‗
+▓⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ Iɴᴛᴇʀɴᴇᴛ Uᴛɪʟɪᴛɪᴇꜱ Pʟᴀᴛɪɴᴜᴍ ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇▓
+▓⸾░          ̿ ̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿ ̿ ⸯ            ⸯ▓
+▓⸾░
+▓⸾░                         ❖  PAGE LAYER STYLE  ❖
+▓⸾░          Stylesheet for the web page while the Main Menu is open.
+▓⸾░
+▓██⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓⸾░﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓⸾░                             ❖ SELECTORS ❖
+▓⸾░  ◇ .IUP-MenuActive = Prep page for scaling & set page background.
+▓⸾░  ◇ .iuMM-is-scaled = Scale page out & apply filters.
+▓⸾░  ◇ #iuMM-DOM        = Outer wrapper for the Main Menu iframe.
+▓⸾░  ◇ #iuMM-Anchor      = Workaround for positioning bug with 1st element in body. If margin-top is set or position:fixed it pushes down the iframe.
+▓⸾░
+▓══─────────────══─────────────══🙦⟅ ∽ 🎕 ∼ ⟆🙤══─────────────══─────────────══▓
+ ﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊⏜⏝⏜⏝⏜⏝⏜﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊
+/*
+█ ❖ GLOBAL CSS                                                                  */
+body {
+  transition: transform var(--iup-trans), filter var(--iup-trans);
+}
+
+/*
+█ ❖ ANIMATE <html> & <body>                                                     */
+html.iuMM-is-active,
+#iuMM-DOM {
+  margin: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overscroll-behavior: none !important;
+}
+
+html.iuMM-is-active,
+html.iuMM-is-active body,
+#iuMM-DOM {
+  overflow: visible !important;
+}
+/* ❖ <html>                                                                      */
+html.iuMM-is-active {
+  background-color: var(--iup-color-theme) !important;
+  background-image: var(--iup-pattern) !important;
+  background-size: var(--iup-pattern-size) !important;
+  background-blend-mode: var(--iup-pattern-blend) !important;
+  background-position: var(--iup-pattern-position) !important;
+  background-attachment: initial !important;
+  background-repeat: repeat !important;
+}
+
+/* ❖ <body>                                                                      */
+html.iuMM-is-active body {
+  margin: 18px !important;
+  outline: 8px var(--iup-color-theme) solid !important;
+  border-radius: 4px !important;
+  /* box-shadow: 0px 12px 48px 0 rgba(0, 0, 0, 0.57) !important; */
+  background-position: var(--iup-pattern-position) !important;
+  transform-origin: center var(--iup-origin) !important;
+}
+html.iuMM-is-scaled body {
+  transform: scale(calc(var(--iup-scale) / 100));
+  filter: blur(0.75px) sepia(50%);
+}
+
+/*
+█ ❖ MENU WRAPPER                                                                */
+#iuMM-DOM {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 2147483640 !important;
+  min-height: fit-content !important;
+
+  /* padding-right: var(--iup-scroll-width) !important; */
+  box-sizing: border-box !important;
+
+  transform: scale(2);
+  transition: transform var(--iup-trans);
+}
+
+html.iuMM-is-scaled #iuMM-DOM {
+  transform: scale(1);
+}
+
+/*
+█ ❖ MENU ANCHOR                                                                 */
+#iuMM-Anchor {
+  opacity: 0 !important;
+  border-top: 1px transparent solid !important;
+  /* margin-top: -2px !important; */
+}

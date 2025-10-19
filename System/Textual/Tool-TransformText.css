@@ -1,0 +1,76 @@
+.tt-textWrap {
+  display: flex;
+}
+
+/* textarea wrapper */
+.tt-textWrap div {
+  flex-grow: 2;
+  position: relative;
+}
+
+/* the 2 textareas */
+.tt-textWrap textarea {
+  width: -webkit-fill-available;
+  height: 120px;
+  border: 1px #000 solid;
+  resize: none;
+  font-size: 15px;
+  font-family: "Helvetica";
+}
+
+/* textarea divider */
+.tt-divider {
+  align-self: center;
+  text-align: center;
+  font-size: 28px;
+  flex-grow: 1;
+  transform: translateY(-18px);
+}
+
+/* button section label */
+.tt-typeSect {
+  font: var(--iup-font-cond);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: 0 0 5px 5px;
+}
+.tt-typeSect::after {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 1px;
+  background-color: #000;
+  margin: 3px 10px;
+}
+
+.tt-optionsRow {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tt-optionsRow .btn {
+  width: 64px;
+}
+
+.tt-buttons h4 {
+  margin: 16px 2px 4px;
+}
+
+.tt-buttons > div > label {
+  margin: 0 0 3px;
+  letter-spacing: 0;
+  /*border-radius: 0;
+  border-right-width: 0;*/
+}
+
+/*.tt-buttons > div > label:last-child {
+  border-right-width: 1px;
+}*/
+
+#btn-revert,
+#btn-saveClose {
+  display: none;
+}

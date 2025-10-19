@@ -1,0 +1,862 @@
+/*                         _‗______🙖⟆∽🎕∼⟅🙐________‗_
+‗‗‗‗‗‗༼╯̿ ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾⏜⏝⏜⏝⏜⏝⏜⏝⏜⏝⏜⏝⏜‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾̿ ╰༽‗‗‗‗‗‗
+▓⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ Iɴᴛᴇʀɴᴇᴛ Uᴛɪʟɪᴛɪᴇꜱ Pʟᴀᴛɪɴᴜᴍ ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇▓
+▓⸾░          ̿ ̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿ ̿ ⸯ            ⸯ▓
+▓⸾░
+▓⸾░                           ❖  INPUT STYLE  ❖
+▓⸾░  ❖ Align Type
+▓⸾░    ◇ Aligner Part
+▓⸾░  ❖ Bind Type
+▓⸾░    ◇ Binder Part
+▓⸾░  ❖ Bool Type
+▓⸾░    ◇ Checkbox Part
+▓⸾░    ◇ Switch Part
+▓⸾░    ◇ Toggler Part
+▓⸾░  ❖ Text Type
+▓⸾░    ◇ Field Part
+▓⸾░  ❖ Number Type
+▓⸾░    ◇ Slider Part
+▓⸾░    ◇ Dial Part
+▓⸾░    ◇ Spinner Part
+▓⸾░  ❖ List Type
+▓⸾░    ◇ Dropdown Part
+▓⸾░    ◇ Radio Part
+▓⸾░    ◇ Radio Button Part
+▓⸾░  ❖ ❌ Button
+▓⸾░
+▓██⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓⸾░﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓⸾░                               ❖ INDEX ❖
+▓⸾░  ◇ TODO
+▓⸾░
+▓══─────────────══─────────────══🙦⟅ ∽ 🎕 ∼ ⟆🙤══─────────────══─────────────══▓
+ ﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊⏜⏝⏜⏝⏜⏝⏜﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊
+*/
+label {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█       🙢  ALIGN TYPE  🙠       █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓  ❖ Aligner (.Part-Aligner)
+▓    ◇ __input  (.Part-Aligner__input)
+▓    ◇ __label  (.Part-Aligner__label)
+▓    ◇ __button (.Part-Aligner__button)
+▓                                                                                */
+.Part-Aligner {
+  --Part-Aligner-size: 28px;
+  padding: 0;
+}
+.Part-Aligner__buttons.-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1px;
+}
+.Part-Aligner__buttons.-bar {
+  display: flex;
+}
+
+.Part-Aligner__cell,
+.Part-Aligner__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Part-Aligner__cell {
+  width: var(--Part-Aligner-size);
+  height: var(--Part-Aligner-size);
+  border: 1px #000 solid;
+}
+.Part-Aligner__label {
+  width: 50%;
+  height: 50%;
+  border: 0px #000 solid;
+  margin: 2px;
+}
+
+/* -arrows */
+.Part-Aligner__cell .Part-Aligner__label.-arrows {
+  font-family: var(--iup-font-fa);
+  font-size: calc(var(--Part-Aligner-size) / 2);
+  font-weight: 400;
+  text-align: center;
+}
+
+.Part-Aligner__cell .Part-Aligner__label.-arrows:after {
+  content: "";
+}
+.Part-Aligner__cell.-center.-middle .Part-Aligner__label.-arrows:after {
+  content: "";
+}
+.Part-Aligner__cell.-left .Part-Aligner__label.-arrows {
+  transform: rotate(0);
+}
+.Part-Aligner__cell.-left.-top .Part-Aligner__label.-arrows {
+  transform: rotate(45deg);
+}
+.Part-Aligner__cell.-top .Part-Aligner__label.-arrows {
+  transform: rotate(90deg);
+}
+.Part-Aligner__cell.-top.-right .Part-Aligner__label.-arrows {
+  transform: rotate(135deg);
+}
+.Part-Aligner__cell.-right .Part-Aligner__label.-arrows {
+  transform: rotate(180deg);
+}
+.Part-Aligner__cell.-bottom.-right .Part-Aligner__label.-arrows {
+  transform: rotate(225deg);
+}
+.Part-Aligner__cell.-bottom .Part-Aligner__label.-arrows {
+  transform: rotate(270deg);
+}
+.Part-Aligner__cell.-bottom.-left .Part-Aligner__label.-arrows {
+  transform: rotate(315deg);
+}
+
+/* -sides */
+.Part-Aligner__cell.-top .Part-Aligner__label.-sides {
+  border-top-width: 1px;
+}
+.Part-Aligner__cell.-right .Part-Aligner__label.-sides {
+  border-right-width: 1px;
+}
+.Part-Aligner__cell.-bottom .Part-Aligner__label.-sides {
+  border-bottom-width: 1px;
+}
+.Part-Aligner__cell.-left .Part-Aligner__label.-sides {
+  border-left-width: 1px;
+}
+.Part-Aligner__cell.-center.-middle .Part-Aligner__label.-sides {
+  width: 16%;
+  height: 16%;
+  border-width: 1px;
+  border-radius: var(--Part-Aligner-size);
+}
+
+.Part-Aligner__radio:checked + .Part-Aligner__cell {
+  border-color: var(--iup-color-theme);
+  background-color: var(--iup-color-theme);
+  color: #fff;
+}
+.Part-Aligner__radio:checked + .Part-Aligner__cell > .Part-Aligner__label {
+  border-color: #fff;
+}
+
+.Part-Aligner__radio {
+  display: none;
+}
+
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█       🙢  BIND TYPE  🙠        █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓  ❖ Binder Part
+▓    ◇ __ctrl  ⮚ Ctrl Mod (Toggler)
+▓    ◇ __shift ⮚ Shift Mod (Toggler)
+▓    ◇ __alt   ⮚ Alt Mod (Toggler)
+▓    ◇ __text  ⮚ Key (Field)
+▓                                                                               */
+.Part-Binder,
+.Part-Binder__mods {
+  display: flex;
+  /* --Part-Binder-h */
+}
+/**/
+.Part-Binder__mods .Part-Toggler .Part-Toggler__button {
+  align-items: flex-end;
+  justify-content: left;
+  width: 39px;
+  height: 34px;
+  margin-right: 1px;
+  padding: 2px 4px;
+  box-sizing: border-box;
+  font-size: 11px;
+}
+.Part-Binder__mods > div:first-child .Part-Toggler__button {
+  border-left-width: 1px;
+}
+
+.Part-Field.Part-Binder__text {
+  --Part-Field_width: 34px;
+  --Part-Field_height: 21px;
+}
+
+.Part-Binder__text .Part-Field__text {
+  margin: 0;
+  margin-left: 2px;
+  border: 1px var(--IUP-Color-FG) solid;
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: 900;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█       🙢  BOOL TYPE  🙠        █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓  ❖ COMPONENTS
+▓    ◇ Checkbox (.Part-Checkbox)
+▓      ⬥ __label
+▓    ◇ Toggler (.Part-Toggler)
+▓      ⬥ __button
+▓      ⬥ __input
+▓    ◇ Switch (.Part-Switch)
+▓      ⬥ __input
+▓      ⬥ __label
+▓      ⬥ __button
+▓                                                                                */
+.Part-Checkbox {
+  padding: 0;
+}
+.Part-Checkbox .Part-Checkbox__label {
+  border: 0;
+  padding: 6px 15px 6px 25px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ TOGGLE BUTTON ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+.Part-Toggler .Part-Toggler__input {
+  display: none;
+}
+
+.Part-Toggler .Part-Toggler__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px var(--IUP-Color-FG) solid;
+  padding: 0 8px;
+  background-color: var(--IUP-Color-BG);
+  user-select: none;
+}
+.Part-Toggler .Part-Toggler__input:checked + .Part-Toggler__button {
+  color: var(--IUP-Color-BG);
+  background-color: var(--IUP-Color-FG);
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ SWITCH ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+/* ❖ WRAPPER                                                                      */
+.Part-Switch {
+  --Part-Switch_width: 40px;
+  --Part-Switch_height: 15px;
+  position: relative;
+  display: inline-block;
+  width: var(--Part-Switch_width);
+  height: calc(var(--Part-Switch_height) + 6px);
+}
+.Part-Switch.-sm {
+  --Part-Switch_width: 32px;
+  --Part-Switch_height: 12px;
+}
+.Part-Switch.-lg {
+  --Part-Switch_width: 80px;
+  --Part-Switch_height: 30px;
+}
+.Part-Switch .Part-Switch__input {
+  display: none;
+}
+
+.Part-Switch .Part-Switch__label {
+  position: relative;
+  left: calc(var(--Part-Switch_width) * 1.18);
+  display: inline-block;
+  width: 120px;
+  user-select: none;
+  font-size: var(--Part-Switch_height);
+}
+
+/* ❖ BACKGROUND                                                                 */
+.Part-Switch .Part-Switch__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  border: 1px var(--IUP-Color-FG) solid;
+  border-radius: var(--Part-Switch_height);
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+
+/* ❖ BUTTON                                                                      */
+.Part-Switch .Part-Switch__button::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+
+  width: var(--Part-Switch_height);
+  height: var(--Part-Switch_height);
+  border: 1px var(--IUP-Color-FG) solid;
+  border-radius: var(--Part-Switch_height);
+  box-sizing: border-box;
+
+  background: var(--IUP-Color-FG);
+  transition: 0.4s;
+}
+
+/* ❖ ANIMATION                                                                    */
+.Part-Switch .Part-Switch__input:checked + .Part-Switch__button::before {
+  transform: translateX(
+    calc(
+      calc(var(--Part-Switch_width) - 6px) - var(--Part-Switch_height)
+    )
+  );
+}
+.Part-Switch
+  .Part-Switch__input:not(:checked)
+  + .Part-Switch__button
+  + .Part-Switch__label {
+  /* color: var(--iup-color-disabled); */
+  opacity: 0.6;
+}
+.Part-Switch
+  .Part-Switch__input:not(:checked)
+  + .Part-Switch__button::before {
+  /* background: var(--iup-color-disabled);
+  border: 1px var(--iup-color-disabled) solid; */
+  opacity: 0.6;
+}
+.Part-Switch .Part-Switch__input:not(:checked) + .Part-Switch__button {
+  /* border: 1px var(--iup-color-disabled) solid; */
+  opacity: 0.6;
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█       🙢  LIST TYPE  🙠        █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓  ❖ COMPONENTS
+▓    ◇ Dropdown Part
+▓    ◇ Radio Part
+▓    ◇ Radio Tiles Part
+▓
+▓  ❖ InputList    ⮚ <div class="InputList">
+▓    ◇ __select   ⮚ <select class="InputList__select">
+▓      ⬥ __option ⮚ <option class="InputList__option">
+▓    ◇ __label    ⮚ <label class="InputList__label">
+▓      ⬥ __radio  ⮚ <input class="Part-Radio__radio" type="radio">
+▓                                                                                */
+/* .Part-Dropdown {
+  
+} */
+.Part-Dropdown__select {
+  appearance: none;
+  position: relative;
+  min-width: 96px;
+  height: 32px;
+
+  padding: 0 24px 0 10px; /* replace native select (has rounded edges on mac) */
+  border: 1px var(--IUP-Color-FG) solid;
+  border-color: var(--IUP-Color-FG);
+  border-radius: 0;
+  margin: 2px;
+
+  color: var(--IUP-Color-FG);
+  background-color: var(--IUP-Color-BG);
+  background-image: var(--select-arrow-white);
+  background-position: calc(100% - 8px) 50%;
+  background-repeat: no-repeat;
+  background-size: 5px 11px;
+}
+
+.Part-Dropdown__select:focus {
+  outline: 0;
+  font-weight: 900;
+}
+
+.Part-Radio {
+  --radio-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  gap: 5px;
+  /* padding: 6px 24px 16px 16px;
+  border: 1px var(--IUP-Color-FG) solid; */
+}
+
+/* BASE ELEMENT */
+.Part-Radio__radio {
+  appearance: none;
+  position: relative;
+  top: 10px;
+  width: var(--radio-size);
+  height: var(--radio-size);
+  margin: 3px 3px 8px 8px;
+  background-color: var(--IUP-Color-BG);
+  cursor: pointer;
+}
+.Part-Radio__radio:focus {
+  outline: none;
+}
+/* CIRCLE BACKGROUND */
+.Part-Radio__radio::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: var(--radio-size);
+  height: var(--radio-size);
+  background-color: var(--IUP-Color-FG);
+  border-radius: 8px;
+  transform: scale(0.94);
+}
+/* SELECTED CIRCLE */
+.Part-Radio__radio::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: var(--radio-size);
+  height: var(--radio-size);
+
+  border: 1px var(--IUP-Color-FG) solid;
+  border-radius: 100%;
+  box-sizing: border-box;
+  background-color: var(--IUP-Color-BG);
+
+  transform: scale(0); /* starts invisible */
+  transform-origin: center;
+  transition: transform var(--iup-trans-dbl) var(--iup-trans-type);
+}
+/* SELECTED - HOVER */
+.Part-Radio__radio:hover::after {
+  transform: scale(0.75);
+}
+/* SELECTED - CHECKED */
+.Part-Radio__radio:checked::after {
+  transform: scale(1);
+}
+
+/*
+█ ❖ TILE
+▓ Implements a box tile instead of a radio button.                                                                  */
+.Part-RadioTiles {
+  --Part-RadioTiles-checked-color: #fff;
+}
+.Part-RadioTiles__label {
+  /* padding: 0.5px; */
+  display: inline-block;
+}
+.Part-RadioTiles__radio {
+  display: none;
+}
+
+.Part-RadioTiles__radio:checked + div {
+  color: var(--Part-RadioTiles-checked-color);
+}
+
+/*
+█ ❖ COLOR TILE
+▓ Color selection using colored tiles                                                                  */
+.Part-Color_Tile {
+  display: flex; 
+
+}
+
+.Part-Color_Tile input {
+  display: none; 
+}
+
+.Part-Color_Tile input + div {  
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width: 46px;
+  height: 46px;
+  font-size: 28px; 
+  font-weight: bold;
+  /* color: transparent; */
+}
+.Part-Color_Tile input:checked + div::after {
+  content: "✓";
+  color: var(--IUP-Color-BG);
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█       🙢  NUMBER TYPE  🙠      █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓  ❖ Slider Part (.Part-Slider)
+▓    ◇ __range  (.Part-Slider__range)
+▓      ⬥ ::thumb  (::-webkit-slider-thumb) Draggable handle that controls the value.
+▓      ⬥ ::track  (::-webkit-slider-runnable-track) Horizontal line the thumb slides across.
+▓    ◇ __text  (.Part-Slider__text) Display the current number value of the slider.
+▓    ◇ __unit  (.Part-Slider__unit)
+▓  ❖ 🚧Dial Part
+▓  ❖ 🚧Spinner Part
+▓                                                                               */
+.Part-Slider {
+  --Part-Slider_height: 26px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.Part-Slider__text {
+  width: calc(var(--Part-Slider_height) * 2);
+  margin: 0;
+  margin-right: 4px;
+  color: var(--IUP-Color-FG);
+}
+
+
+/* ❖ WRAPPER                                                                     */
+.Part-Slider__range {
+  appearance: none;
+  position: relative;
+  left: 5px;
+  width: var(--Part-Slider_width);
+  height: calc(var(--Part-Slider_height));
+  margin: 0;
+  background: transparent;
+  text-align: center;
+  cursor: pointer;
+  order: 2;
+}
+.Part-Slider__range:focus {
+  outline: none;
+}
+.Part-Slider__text:focus,
+.Part-Slider__range:focus + .Part-Slider__text {
+  font-weight: 900;
+}
+
+/* ❖ THUMB                                                                        */
+.Part-Slider__range::-webkit-slider-thumb, .Part-Slider__range::-moz-range-thumb {
+  appearance: none;
+  width: 3px;
+  height: 18px;
+  /* height: var(--Part-Slider_height); */
+  border: none;
+  border-radius: 0;
+  margin-top: -4px;
+  /* margin-top: calc(calc(var(--Part-Slider_height) / -2) + 1px); */
+
+  background: var(--IUP-Color-FG);
+  cursor: pointer;
+}
+
+/* ❖ TRACK                                                                        */
+.Part-Slider__range::-webkit-slider-runnable-track, .Part-Slider__range::-moz-range-track {
+  height: 1px;
+  cursor: pointer;
+  background: var(--IUP-Color-FG);
+  border-radius: 0;
+  border: 0;
+  margin: 0;
+  transition: width 1s; /*, height var(--iup-trans-fast)*/
+}
+/* .Part-Slider__range:active::-webkit-slider-runnable-track {
+  height: 2px;
+} */
+
+/* ❖ TEXTBOX                                                                    */
+.Part-Slider__text {
+  width: var(--Part-Slider_height);
+  height: var(--Part-Slider_height);
+
+  margin: 0 4px;
+  border: 1px var(--IUP-Color-FG) solid;
+
+  outline: 0;
+
+  /* font-weight: 900; */
+  /* font-size: calc(var(--Part-Slider_height) / 1.78); */
+  background: transparent;
+  text-align: center;
+}
+.Part-Slider__unit {
+  user-select: none;
+  margin-left: 4px;
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█       🙢  TEXT TYPE  🙠        █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓  ❖ COMPONENTS
+▓    ◇ Field Part
+▓
+▓  ❖ Part-Field ⮚ <div class="Part-Field">
+▓    ◇ __text   ⮚ <input type="text" class="Part-Field__text">
+▓                                                                               */
+.Part-Field {
+  --Part-Field_width: 66px;
+  --Part-Field_height: 13px;
+}
+.Part-Field__wrap {
+    border: 1px var(--IUP-Color-FG) solid;
+    padding: 3px;
+    display: inline-block;
+}
+.Part-Field__input {
+  position: relative;
+  /* width: var(--Part-Field_width); */
+  /* height: 32px; */
+
+  margin: 2px 1px;
+  padding: 0 3px 4px;
+  border: 0px;
+  border-bottom: 1px var(--IUP-Color-FG) solid;
+  box-sizing: border-box;
+  outline: 0;
+
+  font-size: var(--Part-Field_height);
+  color: var(--IUP-Color-FG);
+  background-color: transparent;
+}
+.Part-Field__input.-line {
+  border-width: 0 0 1px;
+}
+
+.Part-Field__enter {
+  position: absolute;
+  top: 0;
+  right: -35px;
+  height: var(--Part-Field_height);
+
+  margin: 5px 0;
+  border: 1px #fff solid;
+  border-radius: 2.5px;
+  padding: 1px 2px;
+
+  color: #fff;
+  font: var(--iup-font-cond);
+  font-size: 11px;
+  /* opacity: 0.26; */
+  filter: blur(0.42px);
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█          🙢  BASE64  🙠        █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                   CSS variables for images in Base64 format.
+▓                                                                                 */
+:root {
+  --select-arrow-black: url(data:image/png;base64,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czp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTgtMDctMjdUMDc6NTY6NDctMDc6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDE4LTA3LTI3VDA3OjU5OjA4LTA3OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDE4LTA3LTI3VDA3OjU5OjA4LTA3OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9IkRpc3BsYXkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OWVmMTg3ZTUtMWVmNy00NzlhLWE1Y2QtMmVkMTE5NjQ2Y2ZmIiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6MTRmNTk5YTMtYTc1Zi05NDQxLTk3ZDQtMmY3OTNjNWQ3NTI3IiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6M2FmYmY3ZWYtNWFiOS00MTk4LWFjODUtNzY2NzE2NDk2ODM1Ij4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDozYWZiZjdlZi01YWI5LTQxOTgtYWM4NS03NjY3MTY0OTY4MzUiIHN0RXZ0OndoZW49IjIwMTgtMDctMjdUMDc6NTY6NDctMDc6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE4IChNYWNpbnRvc2gpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo5ZWYxODdlNS0xZWY3LTQ3OWEtYTVjZC0yZWQxMTk2NDZjZmYiIHN0RXZ0OndoZW49IjIwMTgtMDctMjdUMDc6NTk6MDgtMDc6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE4IChNYWNpbnRvc2gpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pr46tjAAAACBSURBVCjPY/j//z8DOgaCVVjFsSgMB2IQIxuvYiBgBuJHUMXfgVgCn+I+qEIYXoxVMRBYoymEYX9sio/hUHz79+/fCMVAUIxDIQy3Q9UxyAPxPwKKQdgEHKZAfI4IvJ8BW+DjwoNFMUkeJCnoSIoUkqOb5IREUhIlOfGTlK0IZVgAkODRpD7i30MAAAAASUVORK5CYII=);
+  --select-arrow-white: url(data:image/png;base64,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czp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTgtMDctMjdUMDc6NTY6NDctMDc6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDE5LTA0LTE3VDA5OjQwOjM1LTA3OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDE5LTA0LTE3VDA5OjQwOjM1LTA3OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9IkRpc3BsYXkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ZDEzM2I3MDMtNDRlOS1kOTRmLWFlOTEtZTI3MTE3MjkzNGI5IiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6M2IzNmUxOGItMGRiZS01NDQ2LTk0ZjItZjExMzA1ZDZhMDIzIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6M2FmYmY3ZWYtNWFiOS00MTk4LWFjODUtNzY2NzE2NDk2ODM1Ij4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDozYWZiZjdlZi01YWI5LTQxOTgtYWM4NS03NjY3MTY0OTY4MzUiIHN0RXZ0OndoZW49IjIwMTgtMDctMjdUMDc6NTY6NDctMDc6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE4IChNYWNpbnRvc2gpIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo5ZWYxODdlNS0xZWY3LTQ3OWEtYTVjZC0yZWQxMTk2NDZjZmYiIHN0RXZ0OndoZW49IjIwMTgtMDctMjdUMDc6NTk6MDgtMDc6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE4IChNYWNpbnRvc2gpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDpkMTMzYjcwMy00NGU5LWQ5NGYtYWU5MS1lMjcxMTcyOTM0YjkiIHN0RXZ0OndoZW49IjIwMTktMDQtMTdUMDk6NDA6MzUtMDc6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7Ol4E8AAAAdElEQVQoz2P4//8/Axa8Cps4NoXh/yEgm5BiZiB+BFX8HYgl8Cnu+48KFuNSbP0fO/DHpvgYDsW30RUX/8cP2mGK5YH433/CwAQWpueIwPsZcEQKA7GRMkCKSfIgSUFHUqSQHN0kJySSkijJiZ+kbIU3wwIAZ6oyePSL62QAAAAASUVORK5CYII=);
+}
+
+
+
+
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█        ❌  BUTTON  ❌         █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+
+*/
+.InputButton {
+  --InputButton-height: 13px;
+  --InputButton-hold-timer: 1.5s;
+}
+.InputButton__button {
+  background-color: #fff;
+  height: calc(var(--InputButton-height) + 20px);
+  border: 1px var(--IUP-Color-FG) solid;
+  padding: 0 20px;
+  outline: 0;
+
+  font-size: var(--InputButton-height);
+  line-height: var(--InputButton-height);
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.InputButton__button.-is-holding {
+  color: var(--iup-color-theme);
+  background-color: var(--iup-color-theme);
+  transition: background-color var(--InputButton-hold-timer) ease-out,
+    color var(--InputButton-hold-timer) ease-in;
+}
+.InputButton__button.-is-held {
+  background-color: var(--iup-color-theme);
+}
+.InputButton__button.-is-held .InputButton__label {
+  font-weight: 700;
+  background: var(--gradient-gold);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1.5px;
+}
+
+/* button, */
+input[type="button"],
+a[id^="btn-"],
+.btn,
+.toggle-btn + label {
+  --height: 13px;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(var(--height) + 20px);
+
+  box-sizing: border-box;
+  margin: 6px 6px;
+  border: 1px var(--IUP-Color-FG) solid;
+  padding: 0 20px;
+  outline: 1px var(--iup-color-theme) solid;
+  outline-offset: -1px;
+
+  background-color: var(--IUP-Color-BG);
+
+  color: var(--IUP-Color-FG);
+  font-family: var(--iup-font-capt);
+  font-weight: 300;
+  font-size: var(--height);
+  line-height: var(--height);
+
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  user-select: none;
+  transition: padding var(--iup-trans-dbl) var(--iup-trans-type),
+    margin var(--iup-trans-dbl) var(--iup-trans-type),
+    outline-offset var(--iup-trans-dbl) var(--iup-trans-type),
+    letter-spacing var(--iup-trans-dbl) var(--iup-trans-type);
+}
+button svg {
+  fill: currentColor;
+  margin-left: 2px;
+}
+.btn,
+a[id^="btn-"] {
+  min-width: 84px;
+}
+
+.btn-wide {
+  min-width: 140px;
+}
+.btn-wide:hover:not(:disabled) {
+  letter-spacing: 3px;
+}
+
+/*
+█ ❖ BUTTON HOVER                                                                   */
+.btn:hover,
+a[id^="btn-"]:hover:not(:disabled),
+input[type="button"]:hover:not(:disabled) {
+  background: var(--iup-color-theme);
+  border-color: var(--iup-color-theme);
+  border-radius: 2px;
+
+  color: var(--IUP-Color-BG);
+  fill: currentColor;
+  font-weight: 300;
+  outline-offset: 3px;
+}
+/* ❖ Label ❖ */
+.btn:hover::before,
+a[id^="btn-"]:hover::before {
+  content: attr(data-label);
+  position: absolute;
+  display: inline-block;
+  font-weight: 700;
+
+  background: var(--gradient-gold);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+/* ❖ Icon ❖ */
+/* .btn:hover .ico svg,
+a[id^="btn-"]:hover .ico svg {
+  fill: var(--gradient-gold);
+} */
+
+.btn:not(:hover)::after,
+a[id^="btn-"]:not(:hover)::after {
+  content: attr(data-label);
+  position: absolute;
+  display: inline-block;
+}
+
+/*
+█ ❖ BUTTON ACTIVE (CLICKED)                                                                   */
+/* button:active:not(:disabled),
+input[type="button"]:not(:disabled),
+a[id^="btn-"]:active:not([disabled]),
+.btn:active:not(:disabled),
+.toggle-btn:checked + label {
+  outline: 2px var(--iup-color-theme) solid;
+  outline-offset: 2px;
+  background-color: var(--IUP-Color-BG);
+  border-color: var(--IUP-Color-FG);
+  color: var(--IUP-Color-FG);
+} */
+.btn:active::before,
+a[id^="btn-"]:active::before {
+  padding-top: 2px;
+}
+
+/*
+█ ❖ BUTTON DISABLED                                                                   */
+/* button:disabled, */
+input[type="button"]:disabled,
+a[id^="btn-"][disabled],
+.btn.disabled {
+  cursor: default;
+  filter: var(--hide-blur);
+  transform: var(--hide-scale);
+  transform-origin: center;
+  opacity: var(--hide-opacity);
+  pointer-events: none;
+  text-decoration: line-through;
+}

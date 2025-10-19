@@ -1,0 +1,29 @@
+#wrap-box {
+  background: #fff;
+  padding: 64px;
+  display: flex;
+  align-content: center;
+  justify-items: center;
+}
+
+#color-square {
+  display: grid;
+  grid-template-rows: repeat(100, auto);
+  grid-template-columns: repeat(100, auto);
+  width: 255px;
+  height: 255px;
+}
+
+#color-bar {
+  width: 20px;
+  height: 255px;
+  background: #00f;
+}
+#color-bar > div {
+  height: 1px;
+}
+
+#grid-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

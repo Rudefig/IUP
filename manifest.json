@@ -1,0 +1,79 @@
+{
+  "manifest_version": 3,
+  "name": "IUP Prototype",
+  "short_name": "IUP",
+  "version": "0.0.1",
+  "description": "Browse the web in first class.",
+  "options_page": "index.html",
+
+  "icons": {
+    "16": "/-asset/icon16.png",
+    "32": "/-asset/icon32.png",
+    "48": "/-asset/icon48.png",
+    "128": "/-asset/icon128.png"
+  },
+
+  "permissions": [
+    "<all_urls>",
+    "activeTab",
+    "alarms",
+    "clipboardRead",
+    "clipboardWrite",
+    "contextMenus",
+    "downloads",
+    "notifications",
+    "tabs",
+    "storage",
+    "unlimitedStorage"
+  ],
+  "optional_permissions": ["cookies", "history"],
+
+  "background": {
+    "scripts": [
+      "/System/Programming/-asset/underscore.min.js",
+      "/System/Environment/-asset/Console.js",
+      "/System/Configuration/Config-Global.js",
+      "/System/Environment/-asset/Initialization.js",
+      "/System/Environment/-asset/Background.js"
+    ],
+    "type": "module"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "/System/Keymapping/-asset/keypress.min.js",
+        "/System/Graphical/-asset/caman.full.min.js",
+        "/System/Graphical/-asset/glfx.js",
+        "/System/Programming/-asset/jquery.min.js",
+        "/System/Programming/-asset/underscore.min.js",
+        "/System/Programming/-asset/underscore.string.min.js",
+        "/System/Notetaking/-asset/atrament.min.js",
+        "/System/Typography/-asset/opentype.min.js",
+        "/System/Windowing/-asset/favico.min.js",
+        "/System/*",
+        "/Init.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [
+        "/System/Programming/-asset/underscore.min.js",
+        "/System/Programming/-asset/underscore.string.min.js",
+        "/System/Programming/-asset/jquery.min.js",
+        "/Init.js",
+        "/System/Websurfing/Injector.js"
+      ],
+      "matches": ["file:///*", "*://*/*"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "action": {
+    "default_icon": "/-asset/icon48.png",
+    "default_title": "Open Settings"
+  }
+}

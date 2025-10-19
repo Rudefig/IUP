@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>🙠 𝐈𝐔𝐏 🎕 𝐏𝐑𝐄𝐕𝐈𝐄𝐖 🙢</title>
+    <script src="/vendor/underscore.min.js"></script>
+    <script src="/vendor/underscore.string.min.js"></script>
+    <script src="/vendor/jquery.min.js"></script>
+    <script src="/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/vendor/keypress.min.js"></script>
+    <script src="/vendor/opentype.min.js"></script>
+    <script src="/vendor/d3.min.js"></script>
+    <script src="/lib/Types.js"></script>
+    <script src="/lib/Input.js"></script>
+    <script src="/lib/Libraries.js"></script>
+    <script src="/lib/Utilities.js"></script>
+    <script src="/lib/Inject.js"></script>
+    <link rel="stylesheet" href="/lib/typeface-style.css" />
+    <link rel="stylesheet" href="prototype-style.css" />
+    <link rel="stylesheet" href="Sandbox.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h2 id="title" data-iup-text="🞘 Sandbox Lab 🞘"></h2>
+      <div id="desc"></div>
+      <div id="activate"></div>
+      <div id="wrap-box"></div>
+    </div>
+    <div id="drag"></div>
+    <div class="Window window-test" id="window-test">
+      <div class="Window__bar -title" id="title-bar">
+        Device Lab
+        <span class="Window__bar -button">
+          <i class="fal fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="Window__bar -menu">
+        <span>New</span><span>Edit</span><span>Window</span><span>Help</span>
+      </div>
+      <div class="Window__bar -status">Status bar...</div>
+      <div class="Window__sidebar -left">
+        <div class="Window__dragbar"></div>
+        <div class="Card">
+          <div class="Card__title -collapsed">
+            Node Box<i class="Card__dropdown fas fa-bars"></i>
+          </div>
+          <div class="Card__content"></div>
+        </div>
+        <div class="Card">
+          <div class="Card__title -collapsed">
+            Style Properties<i class="Card__dropdown fas fa-bars"></i>
+          </div>
+          <div class="Card__content"></div>
+        </div>
+      </div>
+      <div class="Window__sidebar -right">
+        <div class="Card">
+          <div class="Card__title -collapsed">
+            Minimap<i class="Card__dropdown fas fa-bars"></i>
+          </div>
+          <div class="Card__content"></div>
+        </div>
+        <div class="Card">
+          <div class="Card__title -collapsed">
+            Navigator<i class="Card__dropdown fas fa-bars"></i>
+          </div>
+          <div class="Card__content"></div>
+        </div>
+        <div class="Card">
+          <div class="Card__title">
+            Layout Tree<i class="Card__dropdown fas fa-bars"></i>
+          </div>
+          <div class="Card__content">
+            Player (Surface)<br />
+            - Content Wrapper<br />
+            - - Input Status<br />
+            - - Subtitles<br />
+            - - Raw Video<br />
+            - Timeline Bar (Toolbar)<br />
+            - - Play/Pause (Tool)<br />
+            - - Skip -15 (Tool)<br />
+            - - Timeline (Tool)<br />
+            - - Volume (Tool)<br />
+            - - Full Screen (Tool)<br />
+          </div>
+        </div>
+        <div class="Card">
+          <div class="Card__title">
+            Toolset<i class="Card__dropdown fas fa-bars"></i>
+          </div>
+          <div class="Card__content">
+            <i class="fas fa-caret-down"></i> <b>Playback</b><br />
+            - Play [Execute]<br />
+            - Pause [Execute]<br />
+            - Play/Pause (space) [Toggle]<br />
+            <i class="fas fa-caret-down"></i> <b>Skip</b><br />
+            - Forward <u>15 sec</u> (<=)<br />
+            - Back <u>15 sec</u> (=>)<br />
+            <i class="fas fa-caret-down"></i> <b>Cue Points</b><br />
+            - Call Cue (1-9)<br />
+            - Set Cue (Alt 1-9)<br />
+            - Next Cue<br />
+            - Prev Cue<br />
+            <i class="fas fa-caret-down"></i> <b>Full Screen</b><br />
+            - Activate Full Screen<br />
+            - Deactivate Full Screen (Esc)<br />
+            - Toggle Full Screen<br />
+          </div>
+        </div>
+        <div class="Card">
+          <div class="Card__title -collapsed">
+            Component Library<i class="Card__dropdown fas fa-bars"></i>
+          </div>
+          <div class="Card__content"></div>
+        </div>
+      </div>
+      <div class="Window__viewport Viewport">
+        <div class="Viewport__contents">
+          TODO:<br />
+          - Draggable borders<br />
+          - Tabs for cards<br />
+          - Collapse sidebar panels into dropdown buttons<br />
+          -
+          <div class="Player"><div class="Player Player__content"></div></div>
+        </div>
+        <div class="Viewport__ruler Ruler -horizontal -top"></div>
+        <div class="Viewport__ruler Ruler -vertical -left"></div>
+        <div class="Viewport__margin -horizontal -top"></div>
+        <div class="Viewport__margin -horizontal -bottom"></div>
+        <div class="Viewport__margin -vertical -left"></div>
+        <div class="Viewport__margin -vertical -right"></div>
+      </div>
+    </div>
+    <script src="/vendor/amalia.js/bower_components/raphael/raphael.js"></script>
+    <script src="/vendor/amalia.js/build/js/amalia.js.min.js"></script>
+    <link
+      href="/vendor/amalia.js/build/css/amalia.js.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Preview script goes last -->
+    <script src="Sandbox.js"></script>
+  </body>
+</html>

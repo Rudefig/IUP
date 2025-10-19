@@ -1,0 +1,62 @@
+#body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2147483600;
+  width: 100%;
+  height: var(--iup-page-height);
+  overflow: hidden;
+  pointer-events: none;
+}
+.iuTL__x,
+.iuTL__y {
+  position: absolute;
+  /* border: 1px var(--iup-color-highlight) solid; */
+  border-style: solid;
+}
+.iuTL__x {
+  left: 0;
+  width: 100%;
+  border-width: 10px 0;
+  border-image: linear-gradient(
+      to right,
+      rgba(228, 141, 5, 1) 0%,
+      rgba(229, 145, 10, 1) 4.38%,
+      rgba(234, 156, 23, 1) 9.31%,
+      rgba(240, 174, 46, 1) 14.5%,
+      rgba(250, 199, 77, 1) 19.84%,
+      rgba(255, 212, 93, 1) 22.17%,
+      rgba(255, 234, 117, 1) 39.79%,
+      rgba(255, 207, 65, 1) 51.45%,
+      rgba(254, 211, 71, 1) 57.12%,
+      rgba(253, 216, 78, 1) 60.59%,
+      rgba(253, 202, 84, 1) 74.58%,
+      rgba(242, 171, 54, 1) 100%
+    )
+    1 100%;
+  /* transition: height var(--iuTL-speed); */
+  /*transition: width var(--tl-speed), calc(var(--tl-speed) / 2);*/
+}
+
+.iuTL__y {
+  top: 0;
+  height: 100%;
+  border-width: 0 10px;
+  border-image: linear-gradient(
+      to bottom,
+      rgba(228, 141, 5, 1) 0%,
+      rgba(229, 145, 10, 1) 4.38%,
+      rgba(234, 156, 23, 1) 9.31%,
+      rgba(240, 174, 46, 1) 14.5%,
+      rgba(250, 199, 77, 1) 19.84%,
+      rgba(255, 212, 93, 1) 22.17%,
+      rgba(255, 234, 117, 1) 39.79%,
+      rgba(255, 207, 65, 1) 51.45%,
+      rgba(254, 211, 71, 1) 57.12%,
+      rgba(253, 216, 78, 1) 60.59%,
+      rgba(253, 202, 84, 1) 74.58%,
+      rgba(242, 171, 54, 1) 100%
+    )
+    1 100%;
+  /* transition: height var(--iuTL-speed), border-color calc(var(--iuTL-speed) / 2); */
+}

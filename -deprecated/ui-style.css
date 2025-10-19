@@ -1,0 +1,321 @@
+/*                        _‗______🙖⟆∽🎕∼⟅🙐________‗_
+ⸯ‗‗‗‗‗༼╯̿ ̿ ̿ ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾⏜⏝⏜⏝⏜⏝⏜⏝⏜⏝⏜⏝⏜‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾̿ ╰༽‗‗‗‗‗‗
+▓⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ Iɴᴛᴇʀɴᴇᴛ Uᴛɪʟɪᴛɪᴇꜱ Pʟᴀᴛɪɴᴜᴍ ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇▓
+▓⸾░          ̿ ̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿ ̿ ⸯ            ⸯ▓
+▓⸾░
+▓⸾░                            ❖  UI STYLE  ❖
+▓⸾░               Primary stylesheet for the IUP user interface.
+▓⸾░
+▓██⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓⸾░﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓⸾░                               ❖ INDEX ❖
+▓⸾░  ◇ Global
+▓⸾░	   ⬥ html/body
+▓⸾░	   ⬥ CSS variables
+▓⸾░	   ⬥ global font
+▓⸾░  ◇ Menu Items
+▓⸾░
+▓══─────────────══─────────────══🙦⟅ ∽ 🎕 ∼ ⟆🙤══─────────────══─────────────══▓
+ ﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊⏜⏝⏜⏝⏜⏝⏜﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊
+*/
+@import url("font-style.css");
+@import url("typeface-style.css");
+@import url("input-style.css");
+/*
+
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█         🙢  GLOBAL  🙠         █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                */
+
+.gradient-gold {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background: -webkit-linear-gradient(96deg var(--gradient-gold));
+}
+.gradient-silver {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background: var(--gradient-silver);
+}
+.gradient-platinum {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background: var(--gradient-platinum);
+}
+/*
+
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█         🙢  GLOBAL  🙠         █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overscroll-behavior: none;
+}
+
+#head {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+#body {
+  position: absolute;
+  z-index: 9999999999;
+}
+
+.-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:root,
+:host > * {
+  color: var(--iup-color-fg);
+  font: var(--iup-font-body);
+  font-size: 14px;
+
+  /*
+█ ❖ HIDDEN/DISABLED FILTER                                                                   */
+  --hide-x: 0.6; /*        ❖ MULTIPLIER ⬥ *For calculating midpoint of other props. */
+  --hide-move: 0; /*       ❖ TRANSLATE  ⬥ transform: translateY(val);               */
+  --hide-opacity: 0.68; /* ❖ OPACITY    ⬥ opacity: 1.0 - val;                       */
+  --hide-blur: 0.66px; /*  ❖ BLUR       ⬥ filter: blur(0px + val);                  */
+  --hide-scale: -0.2; /*   ❖ SCALE      ⬥ transform: scale(1.00 - val);             */
+
+  --hide-move-high: var(--hide-move);
+  --hide-move-mid: calc(var(--hide-move) * var(--hide-x));
+  --hide-move-low: 0;
+  --hide-opacity-mid: calc(1 - var(--hide-opacity) * var(--hide-x));
+  --hide-opacity-low: calc(1 - var(--hide-opacity));
+  --hide-blur-mid: calc(var(--hide-blur) * var(--hide-x));
+  --hide-blur-low: var(--hide-blur);
+  --hide-scale-mid: calc(1 - calc(var(--hide-scale) * var(--hide-x)));
+  --hide-scale-low: calc(1 - var(--hide-scale));
+
+  /*
+█ ❖ LOGO METAL GRADIENTS                                                                   */
+  --gradient-bronze: -webkit-linear-gradient(
+    96deg,
+    rgba(213, 173, 109, 1) 0%,
+    rgba(213, 173, 109, 1) 26%,
+    rgba(226, 186, 120, 1) 35%,
+    rgba(163, 126, 67, 1) 45%,
+    rgba(145, 112, 59, 1) 61%,
+    rgba(213, 173, 109, 1) 100%
+  );
+  --gradient-gold: rgba(228, 141, 5, 1) 0%, rgba(229, 145, 10, 1) 4.38%,
+    rgba(234, 156, 23, 1) 9.31%, rgba(240, 174, 46, 1) 14.5%,
+    rgba(250, 199, 77, 1) 19.84%, rgba(255, 212, 93, 1) 22.17%,
+    rgba(255, 234, 117, 1) 39.79%, rgba(255, 207, 65, 1) 51.45%,
+    rgba(254, 211, 71, 1) 57.12%, rgba(253, 216, 78, 1) 60.59%,
+    rgba(253, 202, 84, 1) 74.58%, rgba(242, 171, 54, 1) 100%;
+  --gradient-gold-2: -webkit-linear-gradient(
+    96deg,
+    rgba(181, 126, 16, 1) 0%,
+    rgba(229, 195, 92, 1) 22.22%,
+    rgba(249, 223, 123, 1) 32.8%,
+    rgba(255, 243, 166, 1) 52.4%,
+    rgba(249, 223, 123, 1) 72.98%,
+    rgba(181, 126, 16, 1) 100%
+  );
+  --gradient-silver: -webkit-linear-gradient(
+    96deg,
+    rgba(239, 239, 239, 1) 0%,
+    rgba(238, 238, 238, 1) 0.17%,
+    rgba(197, 197, 197, 1) 6.98%,
+    rgba(181, 181, 181, 1) 10.49%,
+    rgba(176, 176, 176, 1) 12.29%,
+    rgba(161, 161, 161, 1) 14.47%,
+    rgba(136, 136, 136, 1) 16.85%,
+    rgba(118, 118, 118, 1) 18.29%,
+    rgba(136, 136, 136, 1) 20.53%,
+    rgba(169, 169, 169, 1) 25.06%,
+    rgba(181, 181, 181, 1) 27.56%,
+    rgba(204, 204, 204, 1) 40.11%,
+    rgba(233, 233, 233, 1) 53.44%,
+    rgba(210, 210, 210, 1) 61.6%,
+    rgba(188, 188, 188, 1) 70.52%,
+    rgba(195, 195, 195, 1) 73.97%,
+    rgba(214, 214, 214, 1) 78.91%,
+    rgba(244, 244, 244, 1) 84.7%,
+    rgba(254, 254, 254, 1) 86.29%,
+    rgba(239, 239, 239, 1) 100%
+  );
+  --gradient-platinum: -webkit-linear-gradient(
+    276deg,
+    rgba(239, 239, 239, 1) 0%,
+    rgba(229, 229, 229, 1) 4.79%,
+    rgba(203, 203, 203, 1) 19.65%,
+    rgba(187, 187, 187, 1) 32.95%,
+    rgba(181, 181, 181, 1) 43.3%,
+    rgba(190, 190, 190, 1) 50.97%,
+    rgba(215, 215, 215, 1) 63.59%,
+    rgba(239, 239, 239, 1) 73.4%,
+    rgba(245, 245, 245, 1) 88.38%,
+    rgba(254, 254, 254, 1) 100%
+  );
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ GLOBAL FONT ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+body,
+button,
+input,
+select {
+  font: var(--iup-font-body);
+  color: var(--iup-color-fg);
+}
+
+.ico {
+  width: 1.6em;
+  text-align: center;
+}
+.ico[data$=".svg"] {
+  position: relative;
+  left: 7px;
+  width: 1.4em;
+  margin-left: auto;
+}
+
+/*
+█ ❖ Custom menu icon from image                                                 */
+.ico-custom {
+  width: 12px;
+  height: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  top: 2px;
+}
+i.emj,
+span.emj {
+  font-family: var(--iup-font-emoji) !important;
+  font-weight: normal !important;
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ HEADERS ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+/*
+
+█ ❖ <HEADER 1>                                                                   */
+h1 {
+  --h1-size: 82px;
+  margin: 80px 0 40px;
+  height: var(--h1-size);
+  font: var(--iup-font-h1);
+  font-size: var(--h1-size);
+  /* line-height: var(--h1-size); */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+h1::before {
+  height: var(--h1-size);
+  background: var(--gradient-silver);
+}
+
+/*
+
+█ ❖ <HEADER 2>                                                                   */
+h2 {
+  --h2-size: 64px;
+  margin: 50px 0;
+  height: var(--h2-size);
+  font: var(--iup-font-h2);
+  font-size: var(--h2-size);
+  line-height: var(--h2-size);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+h2::before {
+  height: var(--h2-size);
+  background: var(--gradient-silver);
+}
+
+/*
+
+█ ❖ <HEADER 1+2>                                                                   */
+h1,
+h2 {
+  --h-pad-x: 240px;
+  --h-pad-y: 120px;
+  position: relative;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+h1::after,
+h2::after {
+  content: attr(data-iup-text);
+  padding: var(--h-pad-y) var(--h-pad-x);
+  -webkit-text-stroke: 16px var(--iup-color-theme);
+}
+h1::before,
+h2::before {
+  content: attr(data-iup-text);
+  position: absolute;
+  top: calc(var(--h-pad-y) * -1);
+  padding: var(--h-pad-y) var(--h-pad-x);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/*
+
+█ ❖ <HEADER 3>                                                                   */
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 24px 0;
+
+  font: var(--iup-font-cond);
+  font-weight: 400;
+  font-size: 21px;
+  white-space: nowrap;
+  letter-spacing: 1px;
+}
+
+h3::before,
+h3::after {
+  content: "";
+  display: inline-block;
+  width: 320px;
+  height: 1px;
+  margin: 0 36px;
+  background: var(--iup-color-fg);
+  user-select: none;
+}
+
+/*
+
+█ ❖ <HEADER 4>                                                                   */
+h4 {
+  margin: 0;
+  font: var(--iup-font-cond);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0;
+}

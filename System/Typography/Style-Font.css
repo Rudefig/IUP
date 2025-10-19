@@ -1,0 +1,1005 @@
+/*                        _‗______🙖⟆∽🎕∼⟅🙐________‗_
+ⸯ‗‗‗‗‗༼╯̿ ̿ ̿ ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾⏜⏝⏜⏝⏜⏝⏜⏝⏜⏝⏜⏝⏜‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾̿ ╰༽‗‗‗‗‗‗
+▓⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ Iɴᴛᴇʀɴᴇᴛ Uᴛɪʟɪᴛɪᴇꜱ Pʟᴀᴛɪɴᴜᴍ ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇▓
+▓⸾░          ̿ ̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿̿ ̿ ̿ ⸯ            ⸯ▓
+▓⸾░
+▓⸾░                            ❖  FONT STYLE  ❖
+▓⸾░                Custom fonts used throughout the extension.
+▓⸾░
+▓██⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓⸾░﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓⸾░                               ❖ INDEX ❖
+▓⸾░  ❖ TESTING
+▓⸾░  ❖ CATEGORIES:
+▓⸾░    ◇ Logo Box Fonts  ⬥ Small display fonts
+▓⸾░    ◇ Header Fonts    ⬥ Large display fonts
+▓⸾░    ◇ Condensed Fonts ⬥ Small condensed fonts
+▓⸾░    ◇ Body Fonts      ⬥ Small text fonts
+▓⸾░  ❖ UNUSED FONTS:
+▓⸾░    ◇ Logo Box Fonts
+▓⸾░    ◇ Headers Fonts
+▓⸾░    ◇ Body Fonts
+▓⸾░    ◇ Other
+▓⸾░
+▓══─────────────══─────────────══🙦⟅ ∽ 🎕 ∼ ⟆🙤══─────────────══─────────────══▓
+ ﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊⏜⏝⏜⏝⏜⏝⏜﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊*/
+
+@font-face {
+  font-family: "Social Networking Icons Minimal";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/SocialNetworkingIcons-Minimal.otf");
+}
+
+@font-face {
+  font-family: "zwicon";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Iconography/asset/zwicon.woff?k483k8")
+    format("woff");
+}
+/* @font-face {
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 300;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Iconography/asset/fontawesome/webfonts/fa-light-300.ttf");
+}
+@font-face {
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Iconography/asset/fontawesome/webfonts/fa-regular-400.ttf");
+}
+@font-face {
+  font-family: "Font Awesome 6 Pro Brands";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Iconography/asset/fontawesome/webfonts/fa-brands-400.ttf");
+}
+@font-face {
+  font-family: "Font Awesome 6 Pro";
+  font-weight: 900;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Iconography/asset/fontawesome/webfonts/fa-solid-900.ttf");
+} */
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█         🙢  TRAJAN  🙠         █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                */
+@font-face {
+  font-family: "Trajan Pro";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TrajanPro3-300.otf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Trajan Pro";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TrajanPro3-400.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Trajan Pro";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TrajanPro3-500.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Trajan Pro";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TrajanPro3-700.otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Trajan Pro";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TrajanPro3-800.otf");
+  font-weight: 800;
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█     🙢  MYNARUSE ROYALE  🙠    █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                */
+@font-face {
+  font-family: "Mynaruse Royale";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/MynaruseRoyale-100.otf");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Mynaruse Royale";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/MynaruseRoyale-300.otf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Garda Titling One";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/GardaTitlingOne.otf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Rion";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Rion-500.otf");
+  font-weight: 500;
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█       🙢  CENTRA NO.1  🙠      █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                */
+@font-face {
+  font-family: "Centra No.1";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/CentraNo1-300.otf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Centra No.1";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/CentraNo1-700.otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Centra No.1";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/CentraNo1-900.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Termina";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Termina-500.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Vito Cond";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/VitoCond-250.otf");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Vito Cond";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/VitoCond-300.otf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Vito Cond";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/VitoCond-500.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Vito Cond";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/VitoCond-700.otf");
+  font-weight: 700;
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█        🙢  CHEVALIER  🙠       █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                */
+@font-face {
+  font-family: "Chevalier";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Chevalier-400.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "21 Cent";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/21Cent-400.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "21 Cent";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/21Cent-700.otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "21 Cent";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/21Cent-900.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Engravers Solid";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/EngraversSolid-400.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Engravers Shaded";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/EngraversShaded-400.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "21 Cent Cond";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/21CentCond-400.otf");
+  font-weight: 400;
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█      🙢  STARLIT DRIVE  🙠     █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                */
+@font-face {
+  font-family: "P22 Underground";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/P22Underground-S-250.otf");
+  font-weight: 250;
+}
+
+@font-face {
+  font-family: "Starlit Drive";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/StarlitDrive.otf");
+  font-weight: 400;
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█      🙢  LOGO/HEADERS  🙠      █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                */
+@font-face {
+  font-family: "Mynaruse Flare";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/MynaruseFlare-265.otf");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Mynaruse Flare";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/MynaruseFlare-300.otf");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Mynaruse Flare";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/MynaruseFlare-350.otf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Mynaruse Flare";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/MynaruseFlare-400.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Mynaruse Flare";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/MynaruseFlare-500.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Mynaruse Flare";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/MynaruseFlare-700.otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Mynaruse Flare";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/MynaruseFlare-900.otf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Mynaruse Flare";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/MynaruseFlare-1000.otf");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Silver South";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/SilverSouth.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Belluga";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/BellugaSolid.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Aston Script";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/AstonScript.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "TT Tsars B";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTTsarsB-900.otf");
+  font-weight: 900;
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█        🙢  CONDENSED  🙠       █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓  ❖ Avenir Next Cond
+▓  ❖ Brandon Grotesque Cond
+▓  ❖ Futura BT Cond
+▓  ❖ Gotham Cond
+▓  ❖ Millard Condensed
+▓  ❖ TT Moons
+▓                                                                                */
+@font-face {
+  font-family: "Avenir Next Cond";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/AvenirNextCond-400.otf");
+}
+@font-face {
+  font-family: "Avenir Next Cond";
+  font-weight: 600;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/AvenirNextCond-600.otf");
+}
+@font-face {
+  font-family: "Avenir Next Cond";
+  font-weight: 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/AvenirNextCond-700.otf");
+}
+@font-face {
+  font-family: "Avenir Next Cond";
+  font-weight: 900;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/AvenirNextCond-900.otf");
+}
+
+@font-face {
+  font-family: "Brandon Grotesque Cond";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/BrandonGrotesqueCond-400.otf");
+}
+
+@font-face {
+  font-family: "Futura BT Cond";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/FuturaBTCond-400.ttf");
+}
+
+@font-face {
+  font-family: "Gotham Cond";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/GothamCond-400.otf");
+}
+@font-face {
+  font-family: "Gotham Cond";
+  font-weight: 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/GothamCond-700.otf");
+}
+
+@font-face {
+  font-family: "Millard Cond";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/MillardCond-400.ttf");
+}
+
+@font-face {
+  font-family: "TT Moons";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTMoons-400.ttf");
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█          🙢  BODY  🙠          █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓  ❖ Avenir Next
+▓  ❖ Brandon Text
+▓  ❖ Brandon Grotesque
+▓  ❖ Caslon Pro❌
+▓  ❖ Caslon Book
+▓  ❖ Filson Pro
+▓  ❖ Futura PT
+▓  ❖ Gotham
+▓  ❖ Helvetica Now
+▓  ❖ Lagu Sans
+▓  ❖ NewParis Text
+▓  ❖ Roboto
+▓  ❖ Sofia Pro
+▓  ❖ TT Bells
+▓  ❖ TT Hoves
+▓                                                                                */
+/*
+█ ❖ AVENIR NEXT                                                                   */
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 300;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/AvenirNext-300.otf");
+}
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/AvenirNext-400.otf");
+}
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/AvenirNext-400-it.otf");
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 600;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/AvenirNext-600.otf");
+}
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 600;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/AvenirNext-600-it.otf");
+}
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/AvenirNext-700.otf");
+}
+/*
+
+█ ❖ BRANDON TEXT ⬥ HVD FONTS                                                                   */
+@font-face {
+  font-family: "Brandon Text";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/BrandonTextOffice-400.ttf");
+}
+@font-face {
+  font-family: "Brandon Text";
+  font-weight: 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/BrandonTextOffice-400-it.ttf");
+}
+@font-face {
+  font-family: "Brandon Text";
+  font-weight: 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/BrandonTextOffice-700.ttf");
+}
+@font-face {
+  font-family: "Brandon Text";
+  font-weight: 700;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/BrandonTextOffice-700-it.ttf");
+}
+
+/*
+
+█ ❖ BRANDON GROTESQUE                                                                   */
+@font-face {
+  font-family: "Brandon Grotesque";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/BrandonGrotesqueOffice-400.ttf");
+}
+@font-face {
+  font-family: "Brandon Grotesque";
+  font-weight: 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/BrandonGrotesqueOffice-400-it.ttf");
+}
+@font-face {
+  font-family: "Brandon Grotesque";
+  font-weight: 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/BrandonGrotesqueOffice-700.ttf");
+}
+@font-face {
+  font-family: "Brandon Grotesque";
+  font-weight: 700;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/BrandonGrotesqueOffice-700-it.ttf");
+}
+
+/*
+
+█ ❖ CASLON PRO ❌LINE HEIGHT IS BROKEN❌                                                                   */
+@font-face {
+  font-family: "Caslon Pro";
+  font-weight: 300 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/CaslonPro-400.otf");
+}
+@font-face {
+  font-family: "Caslon Pro";
+  font-weight: 300 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/CaslonPro-400-it.otf");
+}
+@font-face {
+  font-family: "Caslon Pro";
+  font-weight: 500 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/CaslonPro-600.otf");
+}
+@font-face {
+  font-family: "Caslon Pro";
+  font-weight: 500 700;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/CaslonPro-600-it.otf");
+}
+
+/*
+
+█ ❖ CASLON BOOK                                                                   */
+@font-face {
+  font-family: "Caslon Book";
+  font-weight: 300 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/CaslonBook-400.otf");
+}
+@font-face {
+  font-family: "Caslon Book";
+  font-weight: 300 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/CaslonBook-400-it.otf");
+}
+@font-face {
+  font-family: "Caslon Book";
+  font-weight: 500;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/CaslonBook-500.otf");
+}
+@font-face {
+  font-family: "Caslon Book";
+  font-weight: 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/CaslonBook-700.otf");
+}
+
+/*
+
+█ ❖ FUTURA PT                                                                   */
+@font-face {
+  font-family: "Futura PT";
+  font-weight: 300;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/FuturaPT-300.otf");
+}
+@font-face {
+  font-family: "Futura PT";
+  font-weight: 300;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/FuturaPT-300-it.otf");
+}
+@font-face {
+  font-family: "Futura PT";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/FuturaPT-450.otf");
+}
+@font-face {
+  font-family: "Futura PT";
+  font-weight: 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/FuturaPT-450-it.otf");
+}
+
+/*
+
+█ ❖ FILSON PRO                                                                   */
+@font-face {
+  font-family: "Filson Pro";
+  font-weight: 300;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/FilsonPro-300.otf");
+}
+@font-face {
+  font-family: "Filson Pro";
+  font-weight: 300;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/FilsonPro-300-it.otf");
+}
+@font-face {
+  font-family: "Filson Pro";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/FilsonPro-400.otf");
+}
+@font-face {
+  font-family: "Filson Pro";
+  font-weight: 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/FilsonPro-400-it.otf");
+}
+@font-face {
+  font-family: "Filson Pro";
+  font-weight: 500 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/FilsonPro-700.otf");
+}
+@font-face {
+  font-family: "Filson Pro";
+  font-weight: 500 700;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/FilsonPro-700-it.otf");
+}
+
+/*
+
+█ ❖ HELVETICA NOW                                                                   */
+@font-face {
+  font-family: "Helvetica Now";
+  font-weight: 300;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/HelveticaNowText-300.otf");
+}
+@font-face {
+  font-family: "Helvetica Now";
+  font-weight: 300;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/HelveticaNowText-300-it.otf");
+}
+@font-face {
+  font-family: "Helvetica Now";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/HelveticaNowText-400.otf");
+}
+@font-face {
+  font-family: "Helvetica Now";
+  font-weight: 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/HelveticaNowText-400-it.otf");
+}
+@font-face {
+  font-family: "Helvetica Now";
+  font-weight: 500;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/HelveticaNowText-500.otf");
+}
+@font-face {
+  font-family: "Helvetica Now";
+  font-weight: 500;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/HelveticaNowText-500-it.otf");
+}
+
+/*
+
+█ ❖ GOTHAM                                                                   */
+@font-face {
+  font-family: "Gotham";
+  font-weight: 300;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Gotham-300.otf");
+}
+@font-face {
+  font-family: "Gotham";
+  font-weight: 300;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Gotham-300-it.otf");
+}
+@font-face {
+  font-family: "Gotham";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Gotham-400.otf");
+}
+@font-face {
+  font-family: "Gotham";
+  font-weight: 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Gotham-400-it.otf");
+}
+@font-face {
+  font-family: "Gotham";
+  font-weight: 500;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Gotham-500.otf");
+}
+@font-face {
+  font-family: "Gotham";
+  font-weight: 600 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Gotham-700.otf");
+}
+@font-face {
+  font-family: "Gotham";
+  font-weight: 600 700;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Gotham-700-it.otf");
+}
+@font-face {
+  font-family: "Gotham";
+  font-weight: 900;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Gotham-900.otf");
+}
+
+@font-face {
+  font-family: "Gotham Narrow";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/GothamNarrow-400.otf");
+}
+@font-face {
+  font-family: "Gotham Narrow";
+  font-weight: 500;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/GothamNarrow-500.otf");
+}
+@font-face {
+  font-family: "Gotham Narrow";
+  font-weight: 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/GothamNarrow-700.otf");
+}
+
+/*
+
+█ ❖ NEWPARIS TEXT                                                                   */
+@font-face {
+  font-family: "NewParis Text";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/NewParisText-400.otf");
+}
+@font-face {
+  font-family: "NewParis Text";
+  font-weight: 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/NewParisText-400-it.otf");
+}
+@font-face {
+  font-family: "NewParis Text";
+  font-weight: 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/NewParisText-700.otf");
+}
+@font-face {
+  font-family: "NewParis Text";
+  font-weight: 700;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/NewParisText-700-it.otf");
+}
+
+/*
+
+█ ❖ LAGU SANS                                                                   */
+@font-face {
+  font-family: "Lagu Sans";
+  font-weight: 300 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/LaguSans-400.otf");
+}
+@font-face {
+  font-family: "Lagu Sans";
+  font-weight: 300 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/LaguSans-400-it.otf");
+}
+@font-face {
+  font-family: "Lagu Sans";
+  font-weight: 500;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/LaguSans-500.otf");
+}
+@font-face {
+  font-family: "Lagu Sans";
+  font-weight: 500;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/LaguSans-500-it.otf");
+}
+@font-face {
+  font-family: "Lagu Sans";
+  font-weight: 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/LaguSans-700.otf");
+}
+@font-face {
+  font-family: "Lagu Sans";
+  font-weight: 700;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/LaguSans-700-it.otf");
+}
+
+/*
+
+█ ❖ ROBOTO                                                                   */
+@font-face {
+  font-family: "Roboto";
+  font-weight: 300;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Roboto-300.ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Roboto-300-it.ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Roboto-400.ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Roboto-400-it.ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Roboto-500.ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Roboto-500-it.ttf");
+}
+
+/*
+
+█ ❖ ROBOTO                                                                   */
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 300;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/SofiaPro-300.ttf");
+}
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 300;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/SofiaPro-300-it.ttf");
+}
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/SofiaPro-400.ttf");
+}
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/SofiaPro-400-it.ttf");
+}
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 500;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/SofiaPro-500.ttf");
+}
+@font-face {
+  font-family: "Sofia Pro";
+  font-weight: 500;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/SofiaPro-500-it.ttf");
+}
+
+/*
+
+█ ❖ TT BELLS                                                                   */
+@font-face {
+  font-family: "TT Bells";
+  font-weight: 300;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTBells-300.otf");
+}
+@font-face {
+  font-family: "TT Bells";
+  font-weight: 300;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTBells-300-it.otf");
+}
+@font-face {
+  font-family: "TT Bells";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTBells-400.otf");
+}
+@font-face {
+  font-family: "TT Bells";
+  font-weight: 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTBells-400-it.otf");
+}
+@font-face {
+  font-family: "TT Bells";
+  font-weight: 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTBells-700.otf");
+}
+@font-face {
+  font-family: "TT Bells";
+  font-weight: 700;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTBells-700-it.otf");
+}
+
+/*
+
+█ ❖ TT HOVES                                                                   */
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 300;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTBells-300.otf");
+}
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 300;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTBells-300-it.otf");
+}
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTBells-400.otf");
+}
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 400;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTBells-400-it.otf");
+}
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 500;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTBells-500.otf");
+}
+@font-face {
+  font-family: "TT Hoves";
+  font-weight: 500;
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/TTBells-500-it.otf");
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█      🚧  LOGO/HEADER  🚧      █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓  ❖ Eterea
+▓  ❖ Louvre
+▓  ❖ Parfait Script Pro
+▓  ❖ Parfumerie Script ◇ Regular ⬥ Text ⬥ Curly ⬥ Decorative ⬥ OldStyle
+▓  ❖ P22 Underground
+▓  ❖ Santis
+▓                                                                                */
+
+@font-face {
+  font-family: "Eterea";
+  font-style: italic;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Eterea-OrnCaps-it.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Louvre";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Louvre.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Parfait Script Pro";
+  font-weight: 400;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/ParfaitScriptPro.otf");
+}
+
+@font-face {
+  font-family: "Parfumerie Script Curly";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/ParfumerieScriptCurly.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Parfumerie Script Decorative";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/ParfumerieScriptDecorative.otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Parfumerie Script OldStyle";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/ParfumerieScriptOldStyle.otf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Parfumerie Script Regular";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/ParfumerieScriptRegular.otf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Parfumerie Script Text";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/ParfumerieScriptText.otf");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Santis";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/Santis.otf");
+  font-weight: 250;
+}
+
+/*
+
+
+
+
+ⸯ                       ༿───────────═🙦 🎕 🙤═───────────᠎༾
+█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█         🚧  OTHER  🚧         █⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊╰────────────⏜⏝⏜⏝⏜⏝⏜────────────╯﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊﹊▓
+▓                                                                                */
+@font-face {
+  font-family: "Bodoni Sans Disp";
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/BodoniSansDisp-900.otf");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Bodoni Sans Disp";
+  font-weight: 700;
+  src: url("moz-extension://__MSG_@@extension_id__/System/Typography/asset/BodoniSansDisp-700.otf");
+}

@@ -1,0 +1,303 @@
+/*
+
+▓═───────══───────═🙦   GLOBAL   🙤═───────══───────═❖                                    */
+:root, :host, #Body {
+  --IUP-Color-BG: rgba(0, 0, 0, 1);
+  --IUP-Color-FG: var(--IUP-Color-Primary);
+  --IUP-Color-Primary: rgba(248, 255, 248, 0.92);
+  --IUP-Color-Disabled: rgba(82, 84, 82, 1);
+}
+html {
+  background: var(--IUP-Color-BG);
+  background-attachment: fixed;
+  /* font-family: "Arial"; */
+}
+
+ul {
+  margin: 4px 0 0;
+  padding-left: 28px;
+}
+/* li {
+  margin: 2px 0;
+} */
+
+a {
+  color: rgb(0, 0, 255);
+}
+
+.window-outer {
+  width: fit-content;
+  min-height: 90vh;
+  margin: 4px auto;
+  border: 2px var(--IUP-Color-FG) solid;
+  color: var(--IUP-Color-FG);
+  background: none;
+}
+
+/*
+
+▓═───────══───────═🙦   HEADER   🙤═───────══───────═❖                                    */
+.header-title {
+  margin: 12px;
+}
+
+.header-version {
+  font-family: "consolas";
+  font-size: 12px;
+}
+.header-logo {
+  text-align: center;
+  margin: 16px 0;
+}
+.header-logo span {
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+/*
+▓═───────═🙦  Utilities Bar                                                          */
+.Menu-Utility div {
+  border: 1px var(--IUP-Color-FG) solid;
+  border-right: 0px;
+  padding: 17px 12px;
+}
+
+.Menu-Utility .selected {
+  background-color: var(--IUP-Color-FG);
+  color: var(--IUP-Color-BG);
+}
+
+/*
+▓═───────═🙦  Breadbar                                                           */
+.Layout-Breadbar {
+  width: 850px;
+  margin: 32px auto 0;
+  padding: 2px;
+  box-sizing: border-box;
+  background: var(--IUP-Color-FG);
+  color: var(--IUP-Color-BG);
+  font-family: "consolas";
+  font-weight: bold;
+  cursor: default;
+  user-select: none;
+}
+.Layout-Breadbar > div {
+  display: block;
+  border: 1px var(--IUP-Color-BG) solid;
+  padding: 4px 6px;
+}
+
+.Layout-Breadbar span:first-child::before {
+  content: ">/";
+  margin-left: 0;
+}
+.Layout-Breadbar span::before {
+  content: "/";
+  margin: 0 4px;
+}
+
+/*
+
+▓═───────══───────═🙦   WINDOW BODY   🙤═───────══───────═❖                      */
+.window-body {
+  position: relative;
+  width: 850px;
+  margin: 0 auto 24px;
+  padding: 48px 36px 36px;
+  border: var(--IUP-Color-FG) solid;
+  border-width: 0 1px 1px;
+  line-height: 175%;
+}
+
+.window-body h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin: 0 0 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+}
+.window-body h3 {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.window-body h5 {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 100%;
+  margin-bottom: 6px;
+}
+
+.page-icon {
+  top: 27px;
+  left: 18px;
+}
+
+/*
+▓═───────═🙦  Intro Page                                                          */
+.page-intro {
+  margin: 16px 42px 36px;
+}
+.page-intro h1 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 28px;
+}
+.page-intro p {
+  font-size: 15px;
+  line-height: 175%;
+}
+.page-intro p:last-child {
+  margin-bottom: 0;
+}
+
+/*
+
+
+▓═───────══───────═🙦   LAYOUT: UTILITY   🙤═───────══───────═❖                     */
+.Layout-Utility {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  /* border-bottom: 1px solid; */
+}
+.system-item {
+  min-height: 124px;
+  border: 1px solid;
+}
+.system-item .Icon {
+  margin-right: 6px;
+}
+.system-item p {
+  /* margin: 0; */
+  text-align: left;
+}
+.system-main {
+  padding: 24px;
+}
+.system-item h4 {
+  position: absolute;
+  top: -6px;
+  display: inline-block;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 800;
+  margin-top: -0.5em;
+  padding: 0 6px;
+  background: var(--IUP-Color-BG);
+}
+/*
+▓═───────═🙦  System Tabs                                                       */
+.system-tabs {
+  border-left: 1px solid;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+/* .system-tabs > .-is-Disabled {
+  color: var(--IUP-Color-Disabled);
+} */
+.system-tabs > .-is-Disabled::before {
+  content: "\1F512\FE0E";
+}
+.system-tabs > span {
+  width: 75px;
+  padding: 5px 10px;
+  border-bottom: 1px solid;
+}
+
+.system-tabs > .-is-Selected {
+  background-color: var(--IUP-Color-FG);
+  color: var(--IUP-Color-BG);
+}
+
+.system-tabs > span:last-child {
+  margin-bottom: 0;
+}
+.system-Cover::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--IUP-Color-FG);
+  margin: -18px 24px 0;
+}
+
+.system-item.-is-Disabled .system-tabs > .-is-Selected {
+  background-color: var(--IUP-Color-Disabled);
+}
+
+/*
+▓═───────═🙦  System Status                                                       */
+.system-tabs .tab-Status {
+  padding: 10px 10px !important;
+  font-family: "consolas";
+  text-transform: capitalize;
+}
+.system-tabs .tab-Status::before {
+  content: "[";
+}
+.system-tabs .tab-Status::after {
+  content: "]";
+}
+.system-item.-is-Online .system-tabs .tab-Status {
+  font-weight: bold;
+}
+
+/*
+
+
+▓═───────══───────═🙦   LAYOUT: SYSTEM   🙤═───────══───────═❖                                    */
+.Layout-System {
+  /* display: flex;
+  width: fit-content;
+  margin: auto; */
+  /* flex-direction: column; */
+  /* border: 1px var(--IUP-Color-FG) solid; */
+  /* border-right: 0; */
+}
+.Layout-System > div {
+  padding: 24px;
+  border-right: 1px var(--IUP-Color-FG) solid;
+}
+.Layout-System > div:last-child {
+  /* border-right: 0; */
+}
+
+
+/*
+
+
+▓═───────══───────═🙦   CONTEXT MENU   🙤═───────══───────═❖                                    */
+.iuCM__container {
+  font-family: Arial;
+}
+.iuCM__targ {
+  font-family: Consolas;
+}
+.iuCM__container.-shadow {
+  border: 2px var(--IUP-Color-FG) solid;
+  background: var(--IUP-Color-BG);
+  padding: 1px;
+}
+
+/* .iuCM__container.-shadow::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 100%;
+  height: 100%;
+  border: 1px var(--IUP-Color-FG) solid;
+  background: var(--IUP-Color-BG);
+  pointer-events: none;
+  z-index: -1;
+} */

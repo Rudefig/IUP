@@ -1,0 +1,20 @@
+export const Metadata = {
+  Keyname: "Decoration",
+  Title: "Decoration Division",
+  Desc: "Divides the Platform into 12 aesthetic categories of UX/UI.",
+  Child: [
+    "Vanilla",
+    "Collector",
+    "Scholarly",
+    "Industrial",
+    "Business",
+    "Classical",
+    "Electronic",
+    "Cultural",
+    "Inventive",
+    "Artistic",
+    "Designer",
+    "Popular",
+  ],
+  System: ["Cosmetic"],
+};

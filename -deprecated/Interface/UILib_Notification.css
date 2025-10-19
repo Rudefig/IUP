@@ -1,0 +1,185 @@
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ WRAPPERS ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+#body.iuN {
+  position: fixed;
+  z-index: 2147483635;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.-defaultLayer {
+  bottom: 5px;
+  right: 8px;
+  /* --iuN-pos-h: flex-end;
+  --iuN-pos-v: flex-end; */
+}
+.-dialogLayer {
+  bottom: 5px;
+  right: 8px;
+  /* --iuN-pos-h: flex-end;
+  --iuN-pos-v: flex-end; */
+}
+.-taskbarLayer {
+  bottom: 5px;
+  left: 8px;
+  --iuN-pos-h: flex-start;
+  --iuN-pos-v: flex-end;
+}
+.-infoboxLayer {
+  top: 5px;
+  right: 8px;
+  --iuN-pos-h: flex-end;
+  --iuN-pos-v: flex-start;
+}
+
+.iuN__layer {
+  position: absolute;
+  /* pointer-events: none; */
+}
+
+/*
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ ITEMS ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
+
+.iuN__item.menu-item {
+  pointer-events: all;
+  padding: 0;
+  border-top: 1px var(--iup-color-theme) solid;
+  font-size: 14px;
+  opacity: 0;
+}
+
+.iuN__item .item__svg {
+  --svg-width-min: var(--iuN-width);
+  --svg-width-max: var(--iuN-width);
+}
+
+/*
+█ ❖ DEFAULT                                                                   */
+.iuN__item.-default.-sm {
+  --iuN-width: 200px;
+  --iuN-height: 32px;
+}
+
+.iuN__item.-default.-lg {
+  --iuN-width: 350px;
+  --iuN-height: 60px;
+}
+
+.iuN__item.-default {
+  --iuN-width: 350px;
+  --iuN-height: 60px;
+  width: var(--iuN-width);
+  height: var(--iuN-height);
+
+  background-color: #fff;
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.33);
+
+  transform: perspective(600px) rotateX(45deg) scale(1.2) translateY(-150%);
+  opacity: 0;
+
+  transition: opacity var(--iup-trans-fast), transform var(--iup-trans-fast),
+    filter var(--iup-trans-fast);
+}
+.iuN__item.-default.-is-shown {
+  transform: perspective(600px) rotateX(0) scale(1) translateY(-10%);
+  opacity: 1;
+}
+
+/*
+█ ❖ DIALOG                                                                   */
+.iuN__item.-dialog.-sm {
+  --iuN-width: 200px;
+  --iuN-height: 64px;
+}
+
+.iuN__item.-dialog.-lg {
+  --iuN-width: 350px;
+  --iuN-height: 120px;
+}
+
+.iuN__item.-dialog {
+  --iuN-width: 350px;
+  --iuN-height: 120px;
+  width: var(--iuN-width);
+  height: var(--iuN-height);
+
+  background-color: #fff;
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.33);
+
+  transform: perspective(600px) rotateX(45deg) scale(1.2) translateY(-150%);
+  opacity: 0;
+
+  transition: opacity var(--iup-trans-fast), transform var(--iup-trans-fast),
+    filter var(--iup-trans-fast);
+}
+.iuN__item.-dialog.-is-shown {
+  transform: perspective(600px) rotateX(0) scale(1) translateY(-10%);
+  opacity: 1;
+}
+
+/*
+█ ❖ TIMER BAR                                                                   */
+.iuN__bar,
+.iuN__bar::after {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 1px;
+  background-color: var(--iup-color-theme);
+}
+.iuN__bar {
+  visibility: hidden;
+  width: 0;
+}
+.iuN__bar::after {
+  content: "";
+  visibility: visible;
+  width: var(--iuN-width);
+}
+.iuN__item.-timerActive .iuN__bar {
+  visibility: visible;
+  width: var(--iuN-width);
+  transition: width var(--iuN-timer) linear;
+}
+.iuN__item.-timerActive .iuN__bar::after {
+  visibility: hidden;
+}
+
+/*
+
+█ ❖ INFOBOX                                                                   */
+.iuN__item.-infobox span {
+  display: inline-block;
+  padding: 3px;
+  background: radial-gradient(
+    circle at 60% 40%,
+    rgba(0, 0, 0, 0.56) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  /* pointer-events: none; */
+
+  color: #ff0; /*var(--iup-color-[highlight])*/
+  font: var(--iup-font-cond);
+  font-size: 16px;
+  line-height: 13px;
+  /* font-weight: 700; */
+}
+
+.iuN__item.-infobox {
+  visibility: hidden;
+  transform: scale(1);
+}
+
+.iuN__item.-infobox.-is-shown {
+  visibility: visible;
+  transform: scale(1);
+}
