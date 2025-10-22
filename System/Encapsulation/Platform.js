@@ -28,7 +28,16 @@ building blocks necessary.</p>
 interoperating with other Systems to implement features. Start exploring by 
 choosing a [Utility] from the top menu, and browse all the [Systems] available 
 to turn on. After finishing an introductory tutorial, you'll have platform-wide
-access to its functionality.</p>`;
+access to its functionality.</p>
+
+<p>The platform's architecture is a decentralized network of modules you
+can interact with through its native UI. It's built on web
+technology, providing efficiency and accessibility, as well as
+seamless integration with the internet. Modules are supported by
+3rd-party code libraries and API services that integrate directly
+into the platform, providing an interface and low-code programming
+access. In other words, the platform is compatible with anything
+plugged into it.</p>`;
     Item.className = "page-intro";
     Item.innerHTML = IUP.Keyname.Order.Convert.String_To_Hypertext(content);
     return Item;
