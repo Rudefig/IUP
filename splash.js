@@ -75,7 +75,7 @@ document.querySelector(".window-header").after(breadbar);
 const bodyNode = document.querySelector(".window-body");
 var bodyContent;
 
-if (selMod == "Platform") bodyContent = IUP.Platform.Sheet.Introduction();
+if (selMod == "Platform") bodyContent = IUP.Platform.Sheet.Cover();
 else if (selUtil && !selSys) bodyContent = IUP.Utility.Sheet.Utility(selUtil);
 else if (selSys && !selMod) bodyContent = IUP.System.Sheet.System(selSys);
 else if (selMod) bodyContent = IUP.Module.Sheet.Cover(selMod);

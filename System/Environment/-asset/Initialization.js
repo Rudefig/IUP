@@ -72,7 +72,7 @@ export async function Import_Module_Data() {
   }
 
   // console.trace("IUP Context Registry 2", IUP.Context.Registry);
-  IUP.Context.Registry = [];
+  // IUP.Context.Registry = [];
   for (const Mod in IUP) {
     if (IUP[Mod].Context) {
       if (Array.isArray(IUP[Mod].Context))

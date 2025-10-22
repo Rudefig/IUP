@@ -8,13 +8,13 @@ export const Metadata = {
 };
 export const Module = function(dat) {
   const _class = "Part-Toggler",
-    { ID, Label = "" } = dat,
-    Val = dat.Value ? " checked" : "",
-    html = `<label class="${_class}__wrap"><input class="${_class}__input" type="checkbox" id="${ID}"${Val}><span class="${_class}__button">${Label}</span></label>`;
+    { ID, Value, Label = "" } = dat,
+    checked = Value ? " checked" : "",
+    html = `<label class="${_class}__wrap"><input class="${_class}__input" type="checkbox" id="${ID}"${checked}><span class="${_class}__button">${Label}</span></label>`;
   console.log("dat = ", dat);
   // ❖ BUILD NODE
   const Node = document.createElement("div");
-  Node.IUP = {};
+  Node.IUP = { Value };
   Node.className = _class;
   Node.innerHTML = html;
   const Input = Node.querySelector("input");
@@ -22,6 +22,7 @@ export const Module = function(dat) {
   // ❖ EVENTS
   Input.onchange = (e) => Node.IUP.onEdit(e.target.checked, e);
   Node.IUP.onEdit = function(val, e, target = dat.target) {
+    Node.IUP.Value = val;
     if (dat.onEdit) dat.onEdit(val, e, dat.target);
     Node.dispatchEvent(IUP.Item.Trigger.Edit);
   };

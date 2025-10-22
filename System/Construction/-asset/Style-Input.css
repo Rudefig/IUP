@@ -172,29 +172,32 @@ label {
 .Part-Binder,
 .Part-Binder__mods {
   display: flex;
-  /* --Part-Binder-h */
 }
-/**/
+.Part-Binder__mods {
+  margin-right: 4px;
+}
 .Part-Binder__mods .Part-Toggler .Part-Toggler__button {
-  align-items: flex-end;
-  justify-content: left;
+  /* align-items: flex-end;
+  justify-content: left; */
   width: 39px;
-  height: 34px;
-  margin-right: 1px;
+  /* height: 34px; */
   padding: 2px 4px;
   box-sizing: border-box;
   font-size: 11px;
 }
-.Part-Binder__mods > div:first-child .Part-Toggler__button {
+.Part-Binder__mods .Part-Toggler .Part-Toggler__wrap {
+  border-left-width: 0px;
+}
+.Part-Binder__mods .Part-Toggler:first-child .Part-Toggler__wrap {
   border-left-width: 1px;
 }
 
-.Part-Field.Part-Binder__text {
-  --Part-Field_width: 34px;
-  --Part-Field_height: 21px;
+.Part-Binder .Part-Field__input {
+  width: 34px;
+  text-align: center;
 }
 
-.Part-Binder__text .Part-Field__text {
+/* .Part-Binder .Part-Field__input {
   margin: 0;
   margin-left: 2px;
   border: 1px var(--IUP-Color-FG) solid;
@@ -203,7 +206,7 @@ label {
   font-weight: 900;
   font-size: 15px;
   text-transform: uppercase;
-}
+} */
 
 /*
 
@@ -237,12 +240,17 @@ label {
 /*
 
 █
-▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ TOGGLE BUTTON ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ TOGGLER ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
 ▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
 .Part-Toggler .Part-Toggler__input {
   display: none;
 }
 
+.Part-Toggler .Part-Toggler__wrap {
+  display: inline-block;
+  border: 1px var(--IUP-Color-FG) solid;
+  padding: 2px;
+}
 .Part-Toggler .Part-Toggler__button {
   display: inline-flex;
   align-items: center;
@@ -494,9 +502,9 @@ label {
   display: flex; 
   justify-content: center; 
   align-items: center; 
-  width: 46px;
-  height: 46px;
-  font-size: 28px; 
+  width: 40px;
+  height: 40px;
+  font-size: 20px; 
   font-weight: bold;
   /* color: transparent; */
 }
@@ -642,7 +650,7 @@ label {
   box-sizing: border-box;
   outline: 0;
 
-  font-size: var(--Part-Field_height);
+  /* font-size: var(--Part-Field_height); */
   color: var(--IUP-Color-FG);
   background-color: transparent;
 }

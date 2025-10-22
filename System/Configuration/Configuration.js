@@ -1,4 +1,5 @@
 import { IUP } from "../Environment/-asset/Initialization.js";
+console.log("IUP in Configuration =", IUP);
 export const Metadata = {
   Keyname: "Configuration",
   Title: "Configuration System",

@@ -12,20 +12,29 @@ export const Module = function(dat) {
 
   // ❖ BUILD NODE
   const Node = document.createElement("div");
-  Node.IUP = {};
+  Node.IUP = { Value };
   Node.className = `${_class}`;
   Node.innerHTML = `<div class="${_class}__mods"></div>`;
-  const ModifierNode = Node.querySelector(`.${_class}__mods`),
-    InputNode = IUP.Field.Module({ Value: Value.Keystroke });
+  const ModifierNode = Node.querySelector(`.${_class}__mods`);
   console.log("Binder dat =", dat.Value);
   for (const Modifier in Value.Modifier) {
     const ModPart = IUP.Toggler.Module({
       Label: Modifier,
-      // IUP.Modifier.Index.Modifier_Table.Value.Windows[Modifier].Shorthand,
       Value: Value.Modifier[Modifier],
+      onEdit: (val) => {
+        Node.IUP.Value.Modifier[Modifier] = val;
+        console.log("Modifier changed:", Modifier, val);
+      },
     });
     ModifierNode.appendChild(ModPart);
   }
+  const InputNode = IUP.Field.Module({
+    Value: Value.Keystroke,
+    onEdit: (val) => {
+      Node.IUP.Value.Keystroke = val;
+      console.log("Keystroke changed:", val);
+    },
+  });
   Node.appendChild(InputNode);
 
   return Node;
