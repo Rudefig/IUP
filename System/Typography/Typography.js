@@ -2,7 +2,7 @@ export const Metadata = {
   Keyname: "Typography",
   Title: "Typography System",
   Desc: "Implements fonts in the Platform UI.",
-  Icon: "book-font",
+  Icon: "fa-book-font",
   Utility: ["Aesthetic", "Linguistic"],
   Status: "Standby",
 };

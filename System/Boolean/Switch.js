@@ -8,7 +8,7 @@ export const Metadata = {
 };
 export const Module = function(dat) {
   const _class = "Part-Switch",
-    { ID, Part = "Switch", label } = dat,
+    { ID, label } = dat,
     switchLabel = label ? `<span class="${_class}__label">${label}</span>` : "",
     Val = dat.Value ? " checked" : "",
     html = `<label class="${_class}__wrap"><input class="${_class}__input" type="checkbox" id="${ID}"${Val}><span class="${_class}__button"></span>${switchLabel}</label>`;

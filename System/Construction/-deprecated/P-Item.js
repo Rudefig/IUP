@@ -32,7 +32,7 @@ export var Type = function ItemType(arg) {
   this.Meta = {
     title: "Item Part",
     icon: "f09c",
-    desc: ""
+    desc: "",
   };
   this.Action = {
     /*
@@ -121,14 +121,14 @@ export var Type = function ItemType(arg) {
         id: typeof M.title == "string" ? M.title.replace(/\s|\./g, "_") : _.uniqueId(), // prettier-ignore
         type: "normal",
         holdTimer: 1.5,
-        closeOnUse: true
+        closeOnUse: true,
       });
       const idFull = (id ? id + "-" : "") + M.id;
 
       /*
 █ ❖ ITEM STATES                                                                   */
       const funcParams = ["title", "icon", "disabled", "marked", "hidden", "warning"]; // prettier-ignore
-      funcParams.forEach(param => {
+      funcParams.forEach((param) => {
         if (typeof M[param] == "function") {
           const func = M[param];
           M[param] = func(target);
@@ -181,7 +181,7 @@ export var Type = function ItemType(arg) {
           set(val) {
             __content.querySelector(".item__title").innerHTML = val;
             __mask.querySelector(".item__title").innerHTML = val;
-          }
+          },
         });
       }
 
@@ -206,7 +206,7 @@ export var Type = function ItemType(arg) {
 
         // ❖ SubNode.closeAllSubmenus()
         SubNode.IUP.closeAllSubmenus = function(exceptThis = true) {
-          const closeAll = SN => {
+          const closeAll = (SN) => {
             if (SN != SubNode) SN.IUP.closeSubmenu();
           };
           ItemNode.querySelectorAll(`.menu-item[id$=${id}]`).forEach(closeAll);
@@ -221,8 +221,8 @@ export var Type = function ItemType(arg) {
           // __B(submenuWidth + SUBMENU_WIDTH_ADJUST + "px");
           // SubNode.iuCSS("--svg-width", submenuWidth + SUBMENU_WIDTH_ADJUST + "px"); // prettier-ignore
           if (submenuWidth + right > document.documentElement.clientWidth) {
-            SubNode.classList.add("-sm-left");
-          } else SubNode.classList.remove("-sm-left");
+            SubNode.classList.add("-overflow-right");
+          } else SubNode.classList.remove("-overflow-right");
           SubNode.style.opacity = 1;
         };
 
@@ -241,8 +241,8 @@ export var Type = function ItemType(arg) {
         };
 
         // ❖ Hover In/Out Submenu
-        SubNode.onmouseenter = e => SubNode.classList.add(_hovering);
-        SubNode.onmouseleave = e => {
+        SubNode.onmouseenter = (e) => SubNode.classList.add(_hovering);
+        SubNode.onmouseleave = (e) => {
           SubNode.classList.remove(_hovering);
           SubNode.IUP.closeTimeout();
         };
@@ -287,7 +287,7 @@ export var Type = function ItemType(arg) {
           const _inputActive = "-inputActive",
             inputIcon = UILib.cmd.Build_Icon(ItemNode, {
               val: "",
-              animate: "spin"
+              animate: "spin",
             });
           classes.push("-inner");
           M.input.submit = true;
@@ -438,7 +438,7 @@ export var Type = function ItemType(arg) {
         contentLayer: true,
         maskLayer: true,
         animateContent: false,
-        animateMask: arg.animate || false
+        animateMask: arg.animate || false,
       });
       if (arg.pos < arg.minPos) arg.pos = arg.minPos;
 
@@ -505,6 +505,6 @@ export var Type = function ItemType(arg) {
       const DataObj = { val, format, pos, animate, contentLayer, maskLayer };
       ItemNode.IUP.icons[pos] = DataObj;
       return ItemNode.IUP.icons[pos];
-    }
+    },
   };
 };

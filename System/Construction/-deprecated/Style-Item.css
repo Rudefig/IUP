@@ -25,28 +25,23 @@
 █
 ▓█═─────══─────═🙦   MENU WRAPPER   🙤═─────══─────═❖
 ▓                                                                           */
-.menu-wrap,
+/* .menu-wrap,
 .submenu-wrap,
 .-shadow {
-  /* filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.78)); */
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.78));
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.28);
   padding: 12px 0;
   background: var(--IUP-Color-BG);
-}
-.menu-wrap {
-  --svg-width-min: 120px;
-  --svg-width-max: 320px;
-}
+} */
+
 .submenu-wrap {
-  --svg-width-min: 100px;
-  --svg-width-max: 240px;
   display: none;
   position: absolute;
   top: -10px;
   left: 100%;
   /* width: min-content; */
 }
-.-sm-left {
+.-overflow-right {
   left: unset;
   right: 100%;
 }
@@ -259,7 +254,7 @@
   /* transform: translate(0, 10%); */
 }
 .menu-item:not(.-is-disabled):not(.-no-hover) > .Item__SVG > .Item__Fill {
-  fill: #0F0;
+  fill: #0f0;
   /* fill: var(--IUP-Color-BG); */
   /* fill: url(#iuGR-gold); */
   opacity: 0;

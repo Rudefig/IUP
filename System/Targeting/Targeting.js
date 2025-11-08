@@ -4,7 +4,7 @@ export const Metadata = {
   Desc: "Enhances the context menu and mouse cursor.",
   Note:
     "The Platform's context menu can target data by Type and display multiple menus simultaneously.",
-  Icon: "bullseye-pointer",
+  Icon: "fa-bullseye-pointer",
   Utility: ["Interface", "Automation"],
   Status: "Offline",
 };

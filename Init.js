@@ -1,4 +1,4 @@
-const IUP = {};
+var IUP = {};
 
 function onError(msg) {
   console.trace("Async Error:", msg);
@@ -11,8 +11,7 @@ function onError(msg) {
  ▓ Retrieve module index, import module data, and load onto global IUP variable.
  ▓                                                                                   */
 async function Import_Module_Data() {
-  const IUP = {};
-  //   if (Object.keys(IUP).length > 0) return IUP;
+  IUP = {};
 
   const SystemPath = browser.runtime.getURL("/System/Encapsulation/System.js"),
     SystemIndex = await import(SystemPath).then((dat) => dat.Index.System),
@@ -71,9 +70,10 @@ async function Import_Module_Data() {
       }
     }
   }
-  // console.log("IUP Context Registry 1", IUP.Context.Registry);
+  console.log("IUP Context Registry 1", IUP.Context.Registry);
+  IUP.Context.Registry = [];
   for (const Mod in IUP) {
-    IUP[Mod].O = IUP[Mod].Order;
+    if (IUP[Mod].Action?.Engage) IUP[Mod].Action.Engage();
     if (IUP[Mod].Context) {
       if (Array.isArray(IUP[Mod].Context))
         IUP.Context.Registry.push(...IUP[Mod].Context);
@@ -137,9 +137,9 @@ async function Import_Module_Settings(IUP) {
 ▓                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ▓  ◇ 
 ▓                                                                                   */
-// (async () => {
-//   var IUP = await Import_Module_Data();
-//   IUP = await Import_Module_Settings(IUP);
-//   console.log("IUP initialized in page context", IUP);
-//   window.IUP = IUP;
-// })();
+(async () => {
+  await Import_Module_Data();
+  await Import_Module_Settings();
+  console.log("IUP initialized in page context", IUP);
+  // window.IUP = IUP;
+})();

@@ -189,7 +189,10 @@ export const Index = {
       // Part: true,
       Item: true,
       Menu: true,
+      Button: true,
       Shadow: true,
+      Modal: true,
+      Notification: true,
       Element: { Title: "Element Type", Desc: "An HTML element object." },
       Slot: { Title: "Slot Type", Desc: "An open slot that fits a [Part]." },
       Component_Lab: {
@@ -504,6 +507,7 @@ export const Index = {
         Title: "Window Manager",
         Desc: "Manage open windows and tabs.",
       },
+      Favicon: true,
       Favico_Plugin: {
         Title: "Favico.js Plugin",
         Desc: "Manage open windows and tabs.",

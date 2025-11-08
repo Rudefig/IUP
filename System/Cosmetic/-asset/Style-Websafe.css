@@ -1,7 +1,9 @@
 /*
 
 ▓═───────══───────═🙦   GLOBAL   🙤═───────══───────═❖                                    */
-:root, :host, #Body {
+:root,
+:host,
+#Body {
   --IUP-Color-BG: rgba(0, 0, 0, 1);
   --IUP-Color-FG: var(--IUP-Color-Primary);
   --IUP-Color-Primary: rgba(248, 255, 248, 0.92);
@@ -272,7 +274,6 @@ a {
   /* border-right: 0; */
 }
 
-
 /*
 
 
@@ -283,10 +284,9 @@ a {
 .iuCM__targ {
   font-family: Consolas;
 }
-.iuCM__container.-shadow {
+.-outer-box {
   border: 2px var(--IUP-Color-FG) solid;
   background: var(--IUP-Color-BG);
-  padding: 1px;
 }
 
 /* .iuCM__container.-shadow::after {

@@ -7,6 +7,11 @@
   --IUP-Color-FG: rgba(255, 255, 255, 1);
   --IUP-Color-Primary: var(--IUP-Color-FG);
   --IUP-Color-Disabled: #979797;
+
+  color: var(--IUP-Color-FG);
+  font-family: "Arial";
+  font-size: 14px;
+  line-height: 24px;
 }
 
 html {

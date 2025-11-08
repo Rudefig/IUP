@@ -17,7 +17,7 @@
 █
 ▓═─────══─────═🙦   MENU WRAPPER   🙤═─────══─────═❖
 ▓                                                                               */
-.iuCM__container.-shadow {
+.iuCM__container {
   position: absolute;
   z-index: 2147483630;
   /* min-width: 200px; */
@@ -117,7 +117,7 @@
 .divider {
   width: 92%;
   height: 1px;
-  background: var(--iup-color-disabled);
+  background: var(--IUP-Color-FG);
   margin: 7px auto;
 }
 .UI-XS .divider {

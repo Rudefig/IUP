@@ -17,6 +17,7 @@ export const Action = {
     Node.innerHTML = `<style>/*html{height:auto!important;}*/ html span#${ID}{position:absolute!important;display:contents!important;} html span#${ID}.-is-deact{visibility:hidden;} </style>`;
     Dom.innerHTML = `<span id="Head">
     <link rel="stylesheet" href="${extensionLink}System/Construction/-asset/Style-Item.css" />
+    <link rel="stylesheet" href="${extensionLink}System/Construction/-asset/Style-Input.css" />
     <link rel="stylesheet" href="${extensionLink}System/Cosmetic/-asset/Style-Global.css" />
     <link rel="stylesheet" href="${extensionLink}System/Cosmetic/-asset/Style-${Theme}.css" />
     <link rel="stylesheet" href="${extensionLink}System/Iconography/-asset/fontawesome/css/fontawesome.min.css" />

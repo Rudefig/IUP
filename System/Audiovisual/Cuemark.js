@@ -1,5 +1,4 @@
-export const Key = "Cuemark";
-export const Parent = "Tool";
+import { IUP } from "/System/Environment/-asset/Initialization.js";
 export const Metadata = {
   Title: "Cuemark Tool",
   Desc: "Mark and call cue points on HTML5 videos.",
@@ -16,10 +15,12 @@ export const Metadata = {
 ▓   ◇ Call_Cue
 ▓
 ▓═──────────────══─────────────══🙦⟅ ∽ 🎕 ∼ ⟆🙤══─────────────══──────────────═█ */
-export const Constant = {
-  totalCues: 9, // TODO Move to setting
-};
+
 export const Action = {
+  Engage: function(Video) {
+    Video.IUP.Cue = {};
+    //TODO - Initialize keybinds for active video
+  },
   /*
 
 █
@@ -29,9 +30,8 @@ export const Action = {
 ▓   {V} = video
 ▓   {action} =
 ▓    ◇ [Cue, Time]: Set cue {Cue} to time {Time}.
-▓    ◇ [Cue]:       Call cue {Cue} and change video time.
 ▓    ◇ "init":      Initialize the keybinds.
-▓    ◇ "defaults":  Initialize with default cues set.
+▓    ◇ "default":  Initialize with default cues set.
 ▓    ◇ "clear":     Clear all cues from the video.
 ▓  //TODO Add event listener if video changes source/duration to clear/recalculate cues
 ▓  //TODO Convert to {arg} system
@@ -41,32 +41,22 @@ export const Action = {
     if (Video && Video.tagName != "VIDEO")
       throw new Error("IUP:Set_Cue wasn't provided a valid video.");
     const totalCues = Constant.totalCues, // TODO Move to setting
-      playData = Video.iuData(Constant.pre) || {},
-      startTime = playData.start || 0,
-      endTime = playData.end || V.duration,
+      startTime = Video.IUP.start || 0,
+      endTime = Video.IUP.end || Video.duration,
       duration = endTime - startTime;
-    var CueData = Video.iuData("cue") || {};
-
     // ❖ Init Cues - Register cues w/ blank data
-    if (action == "init") {
-      CueData = {};
-      registerCue();
-      // ❖ Init Cues w/ Defaults - Register default cues, spaced evenly along vid time
-    } else if (action == "defaults") {
-      CueData = { usingDefault: true, 1: startTime };
+    if (action == "default") {
+      Video.IUP.Cue = { usingDefault: true, 1: startTime };
       for (var i = 2; i <= totalCues; i++) {
-        CueData[i] = duration * ((i - 1) / totalCues) + startTime;
+        Video.IUP.Cue[i] = duration * ((i - 1) / totalCues) + startTime;
       }
       registerCue();
-      // ❖ Call Cue - Set video time to cue # {action}.
-    } else if (CueData[action]) {
-      Video.currentTime = CueData[action];
       // ❖ Clear All Cues
     } else if (action == "clear") {
-      Video.removeData("cue");
-      if (Variable.keybinds) Variable.keybinds.destroy();
+      Video.IUP.Cue = null;
+      if (State.keybinds) State.keybinds.destroy();
       // ❖ Set Cue Point
-    } else if (typeof action === "object") {
+    } else if (Array.isArray(action) && action.length === 2) {
       const [num, setTime] = action;
       registerCue(num, setTime);
 
@@ -80,36 +70,29 @@ export const Action = {
     /*
 █ ❖ registerCue() - set cue {num} to time {setTime} and activate keybinds                                                                   */
     function registerCue(num = null, setTime = null) {
-      if (CueData.usingDefault) {
-        CueData.resetCuesNext = true;
-      } else if (CueData.resetCuesNext) {
-        CueData = {};
-        delete CueData.resetCuesNext;
-        delete CueData.usingDefault;
+      if (Video.IUP.Cue.usingDefault) {
+        Video.IUP.Cue.resetCuesNext = true;
+      } else if (Video.IUP.Cue.resetCuesNext) {
+        Video.IUP.Cue = {};
+        delete Video.IUP.Cue.resetCuesNext;
+        delete Video.IUP.Cue.usingDefault;
       }
-      if (typeof num == "number") CueData[num] = setTime;
+      if (typeof num == "number") Video.IUP.Cue[num] = setTime;
 
-      if (num !== "temp") V.iuData("cue", JSON.stringify(CueData));
+      if (num !== "temp") Video.iuData("cue", JSON.stringify(CueData));
     }
   },
   /*
 █
 ▓█═─────══─────═🙦   Call_Cue()   🙤═─────══─────═❖
-▓ Call cue {N} on video {Video}.                                                                          */
-  Call_Cue: function(Video, N) {
-    const CueData = Video.IUP.cue || {};
-    if (CueData[N] || CueData[N] === 0) Video.currentTime = CueData[N];
+▓ Call cue #{Num} on video {Video}.                                                                          */
+  Call_Cue: function(Video, Num) {
+    const CueData = Video.IUP.Cue || {};
+    if (CueData[Num] || CueData[Num] === 0) Video.currentTime = CueData[N];
   },
-}; /*
-
-█
-▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ VARIABLES ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
-▓                                                                                      */
-export const Variable = {
-  active_video: null, // The last video played. Currently being controlled.
-  keybinds: null,
-  notification: null,
-  apply_mod: (e, val = 1) => {
+};
+export const Process = {
+  apply_modifier: (e, val = 1) => {
     const mods = {
       alt: 0.25,
       ctrl: 4,
@@ -117,140 +100,43 @@ export const Variable = {
     };
     return e.altKey ? val * 0.25 : e.ctrlKey ? val * 4 : val;
   },
-  // prop = "start|end|cue#"
-  getTimeProp: function(V, prop) {
-    const pre = "data-iup-";
-    if (!V) return null;
-    if (["start", "end"].includes(prop)) {
-      return V.iuData(prop);
-    }
-    if (typeof prop == "number") {
-      return V.iuData("cue")[prop] || null;
-    }
-    return null;
-  },
 };
 /*
-█ ❖ SETTINGS                                                                   */
-export const Config = {
-  fadeUnderPlaybackRate: {
-    Title: "Mute Videos Under Playback Rate",
-    Desc: "Fade out the volume of videos under this playback rate.",
-    Type: "Number",
-    Default: 0.6,
-  },
-  mouseWheelControl: {
-    Title: "Mouse Wheel Control",
-    Desc:
-      "Control this property on a video when you scroll with the mouse over it.",
-    Type: "List",
-    Part: "dropdown",
-    Default: "time",
-    choices: {
-      playbackRate: { Title: "Playback Rate" },
-      time: { Title: "Time" },
-      volume: { Title: "Volume" },
-    },
-    preprocess: (val) => val.replace(/\s/g, "").toLowerCase(),
-  },
-  rightMouseControl: {
-    Title: "RMB Drag Control",
-    Desc:
-      "Control this property on a video when right-click and drag left or right.",
-    Type: "List",
-    Part: "dropdown",
-    Default: "playbackRate",
-    choices: {
-      playbackRate: { Title: "Playback Rate" },
-      time: { Title: "Time" },
-      volume: { Title: "Volume" },
-    },
-    preprocess: (val) => val.replace(/\s/g, "").toLowerCase(),
-  },
+
+█
+▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ STATES ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
+▓                                                                                      */
+export const State = {
+  active_video: null, // The last video played. Currently being controlled.
+  keybinds: null,
+  notification: null,
 };
+
+export const Constant = {
+  totalCues: 9, // TODO Move to setting
+};
+
 /*
-█ ❖ CONTEXT                                                                   */
+█ ❖ CONTEXT MENU                                                                   */
 export const Context = {
   Selector: "video",
-  parentSelector: "video",
-  items: [
+  ItemList: [
     {
-      ID: "mediaPlayback",
-      Title: "Media Playback",
-      Submenu: [
-        {
-          ID: "setStart",
-          Title: "Set start point",
-          Icon: "",
-          marked: (V) => V.iuData(Constant.pre, false).start !== 0,
-          onUse(T) {
-            IUP.Playback.Action.Set_Playback(T, "set", "start");
-          },
-        },
-        {
-          ID: "setEnd",
-          Title: "Set end point",
-          Icon: "",
-          marked: (V) => V.iuData(Constant.pre, false).end !== V.duration,
-          onUse(T) {
-            IUP.Playback.Action.Set_Playback(T, "set", "end");
-          },
-        },
-        {
-          ID: "speed",
-          Icon: "",
-          Title: "Playback Speed",
-          Part: {
-            Type: "Number",
-            val: 1,
-            //Default: V => V.iuSpeed,
-            Min: 0,
-            Max: 1,
-            Step: 0.05,
-            onEdit(val, e, V) {
-              V.iuSpeed = parseFloat(val);
-            },
-          },
-        },
-        // {
-        //   id: "loopReverse",
-        //   Icon: "",
-        //   Title: "Loop With Reverse",
-        //   disabled: true,
-        //   onUse(V) {
-        //     IUP.Playback.Action.Set_Playback(V, "set", "reverse");
-        //   }
-        // }
-      ],
+      ID: "cuemark",
+      Title: "Cue marks",
+      // Icon: "fa-flag fas",
+      Submenu: [],
     },
   ],
 };
-const cueContextItems = {
-  id: "cuePoints",
-  Title: "Cue Points",
-  submenu: [],
-};
-for (var i = 1; i <= 6; i++) {
-  cueContextItems.submenu.push({
-    id: `cue` + i,
-    Icon: `${i}`,
+
+for (var i = 1; i <= Constant.totalCues; i++) {
+  Context.ItemList[0].Submenu.push({
+    ID: `cue` + i,
     Title: "Set Cue " + i,
-    marked: (T) =>
-      T.iuData("cue") && T.iuData("cue")[i] && !T.iuData("cue").usingDefault,
-    onUse(T) {
-      Action.Set_Cue(T, [i, T.currentTime]);
+    Icon: `${i}`,
+    onUse(Target) {
+      Action.Set_Cue(Target, [i, Target.currentTime]);
     },
   });
 }
-Context.items.push(cueContextItems);
-Context.items.push({
-  id: "clearAll",
-  Title: "Clear playback mods",
-  Icon: "",
-  onUse(T) {
-    var arg = { start: false, end: false, reverse: false };
-    T.playbackRate = 1;
-    IUP.Playback.Action.Set_Playback(T, "clear");
-    Action.Set_Cue(T, "clear");
-  },
-});

@@ -28,12 +28,12 @@ export const Module = function(dat) {
   };
 
   // ❖ GET/SET VALUE
-  Object.defineProperties(Node, {
-    Value: {
-      get: () => !!Input.checked,
-      set: (val) => (Input.checked = !!val),
-    },
-  });
+  // Object.defineProperties(Node, {
+  //   Value: {
+  //     get: () => !!Input.checked,
+  //     set: (val) => (Input.checked = !!val),
+  //   },
+  // });
 
   return Node;
 };

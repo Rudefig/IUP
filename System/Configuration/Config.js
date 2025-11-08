@@ -87,50 +87,6 @@ export const Action = {
     browser.runtime.Open_Options_Page();
   },
 };
-export const Process = {
-  /*
-█
-▓█═─────══─────═🙦   Prep_Setting   🙤═─────══─────═❖
-▓  Prepare setting value                                                                        */
-  Prep_Setting: function(Setting) {
-    if (Setting.type == "header" || !Setting.default) return;
-    let Val = Setting.default;
-    if (Setting.choices) Val = Setting.choices[Val];
-    if (Setting.toStorage) Val = Setting.toStorage(Val);
-    // Val.id = Setting.default;
-    return Val;
-  },
-};
-export const Query = {
-  /*
-█
-▓█═─────══─────═🙦   Retrieve Config   🙤═─────══─────═❖
-▓  Retrieve settings from storage and return in callback.                                                                       */
-  Retrieve_Config: function(scope = null, callback) {
-    browser.storage.local.get(scope, initSettings).then(
-      (data) => {
-        //return settings?
-        callback();
-      },
-      (fail) => {
-        console.error(fail);
-        callback();
-      }
-    );
-    function initSettings(data) {
-      const SettingsData = DEFAULT_SETTINGS;
-      UserData = data.Global || {}; // ❖ Extract data
-
-      for (var Set in SettingsData) {
-        let Value = UserData[Set];
-        if (typeof Value == "undefined") Value = SettingsData[Set].Default;
-        // if (typeof Value == "object") Value.id = S;
-        SettingsData[Set].Value = Value;
-      }
-      return SettingsData;
-    }
-  },
-};
 
 export const Sheet = {
   /*
@@ -151,9 +107,9 @@ export const Card = {
 █
 ▓█═─────══─────═🙦   <Config Card>   🙤═─────══─────═❖
 ▓  Generate a layout of user preferences based on Config Type.                                                                       */
-  Config: function(Config, callback) {
+  Config_Card: function(dat) {
     const Item = document.createElement("div"),
-      { Title = "Untitled Config", Keyname, SettingList = {} } = Config;
+      { Title = "Untitled Config", Keyname, SettingList = {} } = dat;
     Item.className = "Layout-Config";
     // Item.innerHTML = `<div class="s-header"><h4>${Title}</h4></div>`;
 
@@ -168,9 +124,9 @@ export const Card = {
       dat.ID = Setting;
       dat.Value = IUP[Keyname].Setting[Setting];
 
-      // Process data
+      // Build label node
       var classList = ["Setting-label"];
-      if (Status == "Disabled") classList.push("Disabled");
+      if (Status == "Disabled") classList.push("-is-Disabled");
       // if (props.toDisplay) Setting.Value = props.toDisplay(Set.Value);
       classList = classList.join(" ");
 

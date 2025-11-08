@@ -35,12 +35,31 @@ export const Context = [
     ItemList: [
       {
         Title: "Change page title...",
-        Input: {
-          inline: true,
-          type: "text",
-          val: document.title,
-          onSubmit: (val) => (document.title = val),
+        onUse(T) {
+          IUP.Modal.Action.Spawn_Modal({
+            Title: "Change Page Title",
+            Content: "Enter a new title for this page:",
+          });
+          const ModalBodyNode = IUP.Modal.State.Node.Body.querySelector(
+              ".modal-body"
+            ),
+            FieldNode = IUP.Field.Module({ Value: document.title }),
+            ButtonNode = IUP.Button.Module({
+              Label: "Change Title",
+              onUse: () => {
+                document.title = FieldNode.Value;
+                IUP.Modal.Action.Despawn_Modal();
+              },
+            });
+          ModalBodyNode.appendChild(FieldNode);
+          ModalBodyNode.appendChild(ButtonNode);
         },
+        // Input: {
+        //   inline: true,
+        //   type: "text",
+        //   val: document.title,
+        //   onSubmit: (val) => (document.title = val),
+        // },
       },
       {
         Title: "Toggle design mode",
@@ -51,16 +70,38 @@ export const Context = [
           else document.designMode = "off";
         },
       },
+      {
+        Title: "Test Notification",
+        Desc: "",
+        onUse(T) {
+          IUP.Notification.Action.Spawn_Notification({
+            Title: "Test Notification",
+            Content: "This is a test notification.",
+          });
+        },
+      },
     ],
   },
   {
     Selector: "selection",
     ItemList: [
       {
-        Title: "Test Menu Item",
+        Title: "Define selection",
         Submenu: [
           {
             Title: "Test Submenu Item",
+          },
+        ],
+      },
+      {
+        Title: "Text style",
+        Submenu: [
+          {
+            Title: "Bold",
+            onUse(T) {
+              console.log("<Context> Bold text command used.");
+              T.bold();
+            },
           },
         ],
       },
@@ -83,12 +124,11 @@ export const Action = {
       // TODO: Indicator or something if user clicks RMB and nothing happens
       // TODO: If user right-clicks context menu, don't close it
       const ctrlMethod = method == "ctrl" && e.ctrlKey,
-        altMethod = method == "alt" && e.altKey,
-        isOpen = State.is_context_menu_open;
+        altMethod = method == "alt" && e.altKey;
       if (ctrlMethod || altMethod) {
         e.preventDefault();
         Action.Open_Context_Menu(e);
-      } else if (isOpen) {
+      } else if (State.is_context_menu_open) {
         Action.Close_Context_Menu();
       }
     } /*
@@ -110,9 +150,10 @@ export const Action = {
     var ContextList = makeList("target"),
        target = e.target || e || "global",
       keyword = target.tagName ? target.tagName.toLowerCase() : "global"; // prettier-ignore
+    console.log("Open_Context_Menu", target, keyword);
     /*
 █ ❖ makeList()
-▓ Make a template obj for context lists & their menu items.                                                                   */
+▓ Make a template object for storing context lists & their menu items.                                                                   */
     function makeList(context) {
       return { [context]: [] };
     }
@@ -131,13 +172,9 @@ export const Action = {
 ▓ Find menus matching context. If no menus found, switch to "global" context and try again.                                                                  */
     Registry.forEach(parseContextMenus);
     var firstContext = Object.keys(ContextList)[0];
-    console.log("ContextList", ContextList, firstContext);
+    console.log("Registry", Registry);
     if (!ContextList[firstContext].length) {
-      console.log(
-        "target = global",
-        ContextList[firstContext],
-        ContextList[firstContext].length
-      );
+      console.log("No menus found for context, switching to global context");
       ContextList = makeList("global");
       target = "global";
       Registry.forEach(parseContextMenus); // call parseContextMenus() on each menu (with global context)
@@ -148,7 +185,7 @@ export const Action = {
 █ ❖ BUILD MENUS
 ▓ Attach shadow DOM, insert code, generate context menus.                                                                   */
     var extLink = browser.runtime.getURL("/System/Targeting/-asset/Context/Context.css"),
-      html = `<div class="iuCM__container wrap-box -shadow"></div><link rel="stylesheet" href="${extLink}">`; // prettier-ignore
+      html = `<div class="iuCM__container wrap-box -outer-box"></div><link rel="stylesheet" href="${extLink}">`; // prettier-ignore
     Action.Close_Context_Menu();
     State.is_context_menu_open = true;
     State.Node = IUP.Shadow.Action.Spawn_Shadow_Page({
@@ -195,12 +232,7 @@ export const Action = {
 ▓ Parse a single menu {M}'s data and check if it matches context.                                                                */
     function parseContextMenus(M) {
       if (!M || !M.Selector || !M.ItemList) return false;
-      // TODO: Generate native Chrome context menu
-      /*if (M.type == "native") {
-            // "all", "page", "frame", "selection", "link", "editable", "image", "video", "audio", "launcher", "browser_action", or "page_action"
-          }*/
       // ❖ Loop through each context and collect matching menus.
-      var matchedElements = document.querySelectorAll(M.Selector);
       for (var selector in ContextList) {
         let contextMatches = false;
         // ❖ Special keywords: "global" and "selection" that dont have element targets
@@ -208,6 +240,7 @@ export const Action = {
           const selectors = M.Selector.split(",").map((s) => s.trim());
           contextMatches = selectors.includes(selector); // check for exact match of context keyword
         } else {
+          var matchedElements = document.querySelectorAll(M.Selector);
           // ❖ Check if menu's selector matches context target directly, or if any parent element matches the menu's parentSelector
           for (let i = 0; i < matchedElements.length; i++) {
             if (matchedElements[i] == target) {
@@ -234,12 +267,10 @@ export const Action = {
 ▓ Close the context menu. Destroy it with {destroy}, or just clear it for a new context.                                                                     */
   Close_Context_Menu: function(destroy = true) {
     if (!State.Node.Host) return;
-    // State.TargetLine.eject();
     if (destroy) {
       IUP.Shadow.Action.Despawn_Shadow_Page({ ID: "IUP-Context" });
-      console.log("is_context_menu_open = false");
       State.is_context_menu_open = false;
-      State.coords = null;
+      // State.coords = null;
     } else {
       State.Node.Box.innerHTML = "";
     }
@@ -251,20 +282,8 @@ export const Generate = {
 ▓█═─────══─────═🙦   Construct_Context_Menu()   🙤═─────══─────═❖
 ▓ Build a context menu from {contextData} targeting {target} with context keyword {key}.                                                                     */
   Construct_Context_Menu: function(contextData, target, key) {
-    const { Box } = State.Node,
-      KeywordIndex = {
-        Global: ["global"],
-        Selection: ["selection"],
-        Link: ["a"],
-        Image: ["img"],
-        Video: ["video"],
-        Audio: ["audio"],
-        Input: ["input", "textarea"],
-      };
-    // console.dir(State.node.box);
-    // console.dir(box);
+    const { Box } = State.Node;
     key = _.findKey(Index.Selector, (K) => K.includes(key)) || "Global";
-    // key = "Global";
     var icon = browser.runtime.getURL(
       `/System/Targeting/-asset/Context/${key}.svg`
     );
@@ -282,6 +301,7 @@ export const Generate = {
 <div class="iuCM__items"></div>`;
     Box.insertAdjacentHTML("beforeEnd", html);
     const __items = Box.querySelector(".iuCM__items");
+
     // Click selector box to switch to global context
     Box.querySelector(".iuCM__targ").onclick = function(e) {
       Action.Close_Context_Menu(false);

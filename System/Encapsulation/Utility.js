@@ -33,6 +33,23 @@ export const Metadata = {
   ],
 };
 
+export const Index = {
+  Utility: {
+    Executive: "Establishes and manages the software architecture.",
+    Storage: "Structures and stores mixed data.",
+    Knowledge: "Analyzes and presents information.",
+    Automation: "Automates the software's operations'.",
+    Mathematic: "Number crunching and visualization.",
+    Linguistic: "Text processing and language analysis.",
+    Runtime: "Runtime environment and 3rd party integration.",
+    Browsing: "Internet and content browsing.",
+    Interface: "Design and control the user interface.",
+    Aesthetic: "Customize the interface's look and feel.",
+    Multimedia: "Consume and produce media in mixed formats.",
+    Community: "Interact and collaborate with other users.",
+  },
+};
+
 export const Sheet = {
   /*
 ▓═───────═🙦  <Utility Cover> Page for the Utility module.                                                          */
@@ -100,22 +117,5 @@ export const Part = {
       Title: "Utility Menu",
       Desc: "Displays a menu for the 12 Utilities.",
     },
-  },
-};
-
-export const Index = {
-  Utility: {
-    Executive: "Establishes and manages the architecture.",
-    Storage: "Structures and stores mixed data.",
-    Knowledge: "Analyzes and presents information.",
-    Automation: "Automates the software with or without code.",
-    Mathematic: "Number crunching and visualization.",
-    Linguistic: "Text processing and language analysis.",
-    Runtime: "Runtime environment and 3rd party integration.",
-    Browsing: "Content and internet browsing.",
-    Interface: "Designs and controls the user interface.",
-    Aesthetic: "Customizes the interface's look and feel.",
-    Multimedia: "Consuming and producing media in mixed formats.",
-    Community: "Interacting and collaborating with other users.",
   },
 };

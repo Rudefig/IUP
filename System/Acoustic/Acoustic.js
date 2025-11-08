@@ -2,7 +2,7 @@ export const Metadata = {
   Keyname: "Acoustic",
   Title: "Acoustic System",
   Desc: "Handles music, sound effects, and other types of audio.",
-  Icon: "guitar",
+  Icon: "fa-guitar",
   Utility: ["Multimedia"],
   Status: "Offline",
   Module: {

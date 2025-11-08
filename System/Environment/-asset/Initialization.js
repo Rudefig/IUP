@@ -1,4 +1,4 @@
-export const IUP = {};
+export var IUP = {};
 
 function onError(msg) {
   console.trace("Async Error:", msg);
@@ -11,15 +11,12 @@ function onError(msg) {
  ▓ Retrieve module index, import module data, and load onto global IUP variable.
  ▓                                                                                   */
 export async function Import_Module_Data() {
-  // console.trace("<IUP> Importing module data...", IUP, Object.keys(IUP));
-  if (Object.keys(IUP).length > 0) return IUP;
+  IUP = {};
 
-  const SystemIndex = await import("/System/Encapsulation/System.js").then(
-    (dat) => dat.Index.System
-  );
-  const ModuleIndex = await import("/System/Encapsulation/Module.js").then(
-    (dat) => dat.Index.Module
-  );
+  const SystemPath = browser.runtime.getURL("/System/Encapsulation/System.js"),
+    SystemIndex = await import(SystemPath).then((dat) => dat.Index.System),
+    ModulePath = browser.runtime.getURL("/System/Encapsulation/Module.js"),
+    ModuleIndex = await import(ModulePath).then((dat) => dat.Index.Module);
 
   // ❖ Initialize Systems
   for (const Sys in SystemIndex) {
@@ -71,9 +68,10 @@ export async function Import_Module_Data() {
     }
   }
 
-  // console.trace("IUP Context Registry 2", IUP.Context.Registry);
+  console.trace("IUP Context Registry 2", IUP.Context.Registry);
   // IUP.Context.Registry = [];
   for (const Mod in IUP) {
+    if (IUP[Mod].Action?.Engage) IUP[Mod].Action.Engage();
     if (IUP[Mod].Context) {
       if (Array.isArray(IUP[Mod].Context))
         IUP.Context.Registry.push(...IUP[Mod].Context);
@@ -145,9 +143,9 @@ export async function Initialize_Platform() {
 //     })
 //   );
 // });
-(async () => {
-  await Import_Module_Data();
-  await Import_Module_Settings();
-  console.log("IUP initialized in page context", IUP);
-  // window.IUP = IUP;
-})();
+// (async () => {
+//   await Import_Module_Data();
+//   await Import_Module_Settings();
+//   console.log("IUP initialized in page context", IUP);
+//   // window.IUP = IUP;
+// })();

@@ -1,7 +1,8 @@
 /*
 
 ▓═───────══───────═🙦   GLOBAL   🙤═───────══───────═❖                                    */
-:root, :host {
+:root,
+:host {
   --bg-gradient: linear-gradient(105deg, #0b153a, #040817);
   --IUP-Color-BG: rgba(255, 255, 255, 1);
   --IUP-Color-FG: rgba(0, 0, 0, 1);
@@ -11,7 +12,6 @@
   --shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.28);
 }
 html {
-
   margin: 0;
   background: var(--IUP-Color-Primary);
   background-attachment: fixed;
@@ -139,8 +139,6 @@ p:last-child {
   left: 32px;
 }
 
-
-
 /*
 ▓═───────═🙦  Intro Page                                                          */
 .page-intro {
@@ -255,7 +253,7 @@ p:last-child {
   /* font-weight: 600; */
 }
 .system-tabs > .-is-Selected {
-  border-bottom: 1px var(--IUP-Color-FG) solid;
+  border-bottom: 2px var(--IUP-Color-FG) solid;
   font-weight: 600;
 
   /* background-color: var(--IUP-Color-FG);
@@ -377,7 +375,8 @@ p:last-child {
 }
 
 /* ❖ THUMB                                                                        */
-.Part-Slider__range::-webkit-slider-thumb, .Part-Slider__range::-moz-range-thumb {
+.Part-Slider__range::-webkit-slider-thumb,
+.Part-Slider__range::-moz-range-thumb {
   width: 8px;
   height: 8px;
   /* height: var(--Part-Slider_height); */
@@ -393,9 +392,8 @@ p:last-child {
 
 
 ▓═───────══───────═🙦   CONTEXT MENU   🙤═───────══───────═❖                                    */
-.iuCM__container.-shadow {
+.-outer-box {
   box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.38);
   backdrop-filter: blur(1.5px) saturate(0) brightness(0.68);
   background: rgba(var(--iup-color-t), 0.76);
-
 }

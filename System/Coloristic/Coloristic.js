@@ -4,7 +4,7 @@ export const Metadata = {
   Title: "Coloristic System",
   Note: "Alt names: Chromatic, Prismatic",
   Desc: "Handling colors, gradients, and color schemes.",
-  Icon: "palette",
+  Icon: "fa-palette",
   Utility: ["Aesthetic"],
   Status: "Standby",
 };

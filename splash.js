@@ -1,5 +1,4 @@
 // LEGAL NOTICE: This prototype and software design concept is the intellectual property of Ian McNeill. Any attempt to rip it off will result in legal action.
-
 /*
  
 █
@@ -12,6 +11,7 @@ import {
 } from "/System/Environment/-asset/Initialization.js";
 var IUP = await Import_Module_Data();
 IUP = await Import_Module_Settings(IUP);
+console.log("<IUP> Loaded IUP data:", IUP);
 const ModIndex = { ...IUP.Module.Index.Module },
   SysIndex = { ...IUP.System.Index.System },
   UtilIndex = { ...IUP.Utility.Index.Utility };
@@ -82,5 +82,6 @@ else if (selMod) bodyContent = IUP.Module.Sheet.Cover(selMod);
 else bodyContent = IUP.Metadata.Card.Titling();
 if (typeof bodyContent === "string") bodyNode.innerHTML = bodyContent;
 else bodyNode.appendChild(bodyContent);
+
 IUP.Context.Action.Engage_Context_Menu();
 IUP.Coloristic.Action.Initialize(IUP);

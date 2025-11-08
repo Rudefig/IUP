@@ -37,7 +37,11 @@ export const Generate = {
       parent = menuData;
       menuData = parent.ItemList;
     }
-    MenuNode.classList.add(parent.submenu ? "submenu-wrap" : "menu-wrap");
+    MenuNode.IUP = {};
+    MenuNode.classList.add(
+      parent.Submenu ? "submenu-wrap" : "menu-wrap",
+      parent.Submenu ? "-outer-box" : null
+    );
     menuData.forEach((itemData) => {
       const ItemNode = IUP.Item.Generate.Construct_Item(
         itemData,
@@ -55,30 +59,21 @@ export const Generate = {
 
 █
 ▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ Construct_Submenu() ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
-▓   Build a dropdown submenu for an item.
-▓               ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-▓
+▓                      Build a dropdown submenu for an Item.
+▓                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ▓  ❖ PARAMETERS ❖
-▓    ◇ {ItemNode}    = Parent item to insert submenu into.
-▓    ◇ {ItemNode}    = Parent item to insert submenu into.
-▓  arg = {
-▓    ◇ .val          = An image URL, SVG node, or text character.
-▓
-▓  ❖ OUTPUT ❖
-▓  DataObj = {
-▓    ◇ .val          = (str)  Icon data.
-▓
-▓  ❖ TODO ❖
-▓    ◇
-▓
+▓    ◇ {ItemNode}  = Parent item to insert submenu into.
+▓    ◇ {M}         = Menu data object.
+▓    ◇ {ID}        = Recursive ID for submenu.
+▓    ◇ {target}    = For scripts with a target variable to pass on.
 ▓                                                                               */
-  Construct_Submenu: function(ItemNode, MenuNode) {
-    const SUBMENU_WIDTH_ADJUST = 82;
-    var SubNode;
-    if (typeof M.submenu == "function") M.submenu = M.submenu([]);
-    if (M.submenu && M.submenu.length) {
-      UILib.cmd.buildIcon(ItemNode, "f105");
-      SubNode = Generate.Construct_Menu(M.submenu, M, idFull, target);
+  Construct_Submenu: function(ItemNode, M, ID, target = null) {
+    const SUBMENU_WIDTH_ADJUST = 82,
+      _hovering = "-Is-Hovering";
+    var SubNode = false;
+    if (M.Submenu && M.Submenu.length) {
+      // IUP.Icon.Construct.Icon_Button(ItemNode, "f105");
+      SubNode = IUP.Menu.Generate.Construct_Menu(M.Submenu, M, ID, target);
       ItemNode.appendChild(SubNode);
       ItemNode.IUP.hasSubmenu = true;
       ItemNode.IUP.submenuNode = SubNode;
@@ -95,21 +90,16 @@ export const Generate = {
       // ❖ SubNode.openSubmenu()
       SubNode.IUP.openSubmenu = function() {
         SubNode.IUP.submenuActive = true;
-        // const submenuWidth = _.max(SubNode.querySelectorAll(".item__title"), node => node.clientWidth).clientWidth, // prettier-ignore
-        const submenuWidth = SubNode.IUP.setSVGWidth(),
+        const submenuWidth = SubNode.clientWidth,
           right = ItemNode.getBoundingClientRect().right;
-        // __B(submenuWidth + SUBMENU_WIDTH_ADJUST + "px");
-        // SubNode.iuCSS("--svg-width", submenuWidth + SUBMENU_WIDTH_ADJUST + "px"); // prettier-ignore
         if (submenuWidth + right > document.documentElement.clientWidth) {
-          SubNode.classList.add("-sm-left");
-        } else SubNode.classList.remove("-sm-left");
-        SubNode.style.opacity = 1;
+          SubNode.classList.add("-overflow-right");
+        } else SubNode.classList.remove("-overflow-right");
       };
 
       // ❖ SubNode.closeSubmenu()
       SubNode.IUP.closeSubmenu = function() {
         SubNode.IUP.submenuActive = false;
-        SubNode.style.opacity = 0.44;
       };
 
       // ❖ Auto-close submenu on mouseout
@@ -126,8 +116,9 @@ export const Generate = {
         SubNode.classList.remove(_hovering);
         SubNode.IUP.closeTimeout();
       };
-    } else if (M.submenu && !M.submenu.length) {
+    } else if (M.Submenu && !M.Submenu.length) {
       ItemNode.classList.add(_disabled);
     }
+    return SubNode;
   },
 };

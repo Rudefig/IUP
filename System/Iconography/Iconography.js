@@ -3,7 +3,7 @@ export const Metadata = {
   Title: "Iconography System",
   Note: "Alt name: Iconology, Iconism",
   Desc: "Provides icons for the user interface.",
-  Icon: "icons",
+  Icon: "fa-icons",
   Utility: ["Aesthetic"],
   Status: "Standby",
 };

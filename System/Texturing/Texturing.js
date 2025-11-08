@@ -2,7 +2,7 @@ export const Metadata = {
   Keyname: "Texturing",
   Title: "Texturing System",
   Desc: "Providing the interface with patterns and textures.",
-  Icon: "paint-roller",
+  Icon: "fa-paint-roller",
   Utility: ["Aesthetic"],
   Status: "Online",
   Cover: () =>

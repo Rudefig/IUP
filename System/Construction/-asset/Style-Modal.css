@@ -1,0 +1,45 @@
+#Body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.Layout-Modal {
+  position: relative;
+  width: 400px;
+  min-height: 200px;
+  /* border: 2px var(--IUP-Color-FG) solid;
+  background: var(--IUP-Color-BG); */
+}
+
+.modal-head {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px var(--IUP-Color-FG) solid;
+  padding: 6px 10px;
+  font-weight: bold;
+}
+
+.modal-close {
+  position: absolute;
+  /* top: 6px; */
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--IUP-Color-FG);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}

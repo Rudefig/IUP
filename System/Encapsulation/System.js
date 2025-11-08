@@ -145,17 +145,19 @@ export const Card = {
   System: function(Sys) {
     const Item = document.createElement("div"),
       dat = IUP[Sys].Metadata,
-      Icon = IUP.Icon.Order.Generate_Icon(dat.Icon),
+      Icon = IUP.Icon.Generate.Generate_Icon(dat.Icon),
       Title = IUP.Keyname.Order.Generate.Keylink(
         Sys,
         `<h4>${Icon}${Sys} System</h4>`
       );
+    // Init System Cover
     var Cover = IUP[Sys].Cover || null;
     if (IUP[Sys].Layout && IUP[Sys].Layout.Cover)
       Cover = IUP[Sys].Layout.Cover();
+    // Init Config Card
     var Config = IUP[Sys].Config || null;
     if (Config) {
-      var ConfigCard = Config ? IUP["Config"].Card.Config(Config) : null;
+      var ConfigCard = Config ? IUP.Config.Card.Config_Card(Config) : null;
     }
     // Init System HTML
     Item.className = `system-item system-${Sys} -is-${dat.Status}`;
@@ -166,9 +168,7 @@ export const Card = {
       Status: {
         Title: dat.Status,
         Status: "Active",
-        content: `This System's status is ${
-          dat.Status
-        }.<br><input type="checkbox" id="switch"><label for="switch">Toggle</label>`,
+        content: `This System's status is ${dat.Status}.`,
       },
       Cover: {
         Status: Cover ? "Active" : "Disabled",
@@ -264,7 +264,7 @@ export const Index = {
     Algebraic: {
       Utility: ["Mathematic"],
       Desc: "Solves mathematic equations and formulas.",
-      Icon: "subscript",
+      Icon: "fa-subscript",
       Status: "Disabled",
       Module: {
         "Q-Equation Typing": "Represents mathematic equations.",
@@ -278,7 +278,7 @@ export const Index = {
     Application: {
       Utility: ["Executive", "Runtime"],
       Desc: "Create software apps by combining modules.",
-      Icon: "grid-2",
+      Icon: "fa-grid-2",
       Status: "Disabled",
       Cover:
         "Activate this [System] to start using Platform Apps.<ul><li>Apps combine a variety of modules to form a complete software application</li><li>Browse the [apps] available from the [Systems] you've activated so far</li><li>Use the [app] builder to customize apps or create your own</li><li>Activate more [Systems] to acquire new apps and unlock app features</li></ul>",
@@ -312,7 +312,7 @@ export const Index = {
       Utility: ["Linguistic"],
       Desc: "Handles text strings and Unicode characters.",
       Note: "Alt name: Symbology, Unicode",
-      Icon: "face-smile",
+      Icon: "fa-face-smile",
       Status: "Disabled",
       Module: {
         String: "A string of text characters.",
@@ -327,7 +327,7 @@ export const Index = {
     Communication: {
       Utility: ["Community"],
       Desc: "Communicates with other users through messages.",
-      Icon: "messages",
+      Icon: "fa-messages",
       Status: "Disabled",
       Cover: "",
       Module: {
@@ -342,7 +342,7 @@ export const Index = {
       Utility: ["Storage", "Runtime"],
       Desc: "Transfers data in and out of the Platform.",
       Note: "Alt name: Delivery, Transferrence",
-      Icon: "download",
+      Icon: "fa-download",
       Status: "Disabled",
       Module: {
         Transfer: "To transfer data in or out of the Platform.",
@@ -355,7 +355,7 @@ export const Index = {
       Utility: ["Runtime"],
       Desc: "Manages cut, copy, and paste functionality.",
       Note: "Alt name: Copypaste, Clipping, Copypasta",
-      Icon: "clipboard",
+      Icon: "fa-clipboard",
       Status: "Disabled",
       Cover:
         "Activate this System to enhance copy/paste functionality.<ul><li>Multiple clipboards can separately copy text, images, and more</li><li>Clipboard history keeps a record of clipboard data</li></ul>",
@@ -388,7 +388,7 @@ export const Index = {
       Desc: "Handles multiple values of data.",
       Note:
         "Alt name: Repository; Indexes can reference each other, creating a platform-wide associative database.",
-      Icon: "table",
+      Icon: "fa-table",
       Status: "Disabled",
       Module: {
         "I-Index Typing": "Represents sets of data.",
@@ -400,7 +400,7 @@ export const Index = {
     Discussion: {
       Utility: ["Community"],
       Desc: "Provides community forums where users can interact.",
-      Icon: "buildings",
+      Icon: "fa-buildings",
       Status: "Disabled",
       Module: {
         Forum: "A message board or community where users interact.",
@@ -416,7 +416,7 @@ export const Index = {
     Distribution: {
       Utility: ["Community"],
       Desc: "Provides a storefront to download and share modules.",
-      Icon: "store",
+      Icon: "fa-store",
       Status: "Disabled",
       Module: {
         Storefront:
@@ -430,7 +430,7 @@ export const Index = {
       Utility: ["Executive", "Knowledge"],
       Desc: "Review the Platform's official documentation.",
       Note: "Alt name: Knowledge",
-      Icon: "book-user",
+      Icon: "fa-book-user",
       Status: "Disabled",
       Cover:
         "Learn how the Platform works under the hood.<ul><li>Aggregates documentation data from across Platform</li><li>Auto-generates documentation for Apps and other modules</li><li>Check out <a href='?Module=Onboarding'>Onboarding System</a> for interactive tutorials</li></ul>",
@@ -443,7 +443,7 @@ export const Index = {
     Environment: {
       Utility: ["Runtime"],
       Desc: "Manages the software engine's runtime environment.",
-      Icon: "engine",
+      Icon: "fa-engine",
       Status: "Online",
       Module: {
         Status: "The current status of a module.",
@@ -458,7 +458,7 @@ export const Index = {
       Utility: ["Multimedia", "Browsing"],
       Desc: "Presents content and media for consumption.",
       Note: "Alt name: Viewing, Presentation, Rendition, Depiction",
-      Icon: "face-viewfinder",
+      Icon: "fa-face-viewfinder",
       Status: "Disabled",
       Module: {
         "Media Library": "Organizes media into galleries and playlists.",
@@ -474,7 +474,7 @@ export const Index = {
       Utility: ["Storage"],
       Desc: "Navigates files and manages file types.",
       Note: "Alt name: Filing",
-      Icon: "folder-tree",
+      Icon: "fa-folder-tree",
       Status: "Disabled",
       Module: {
         "F-File Typing": "Represents digital files in standard formats.",
@@ -494,7 +494,7 @@ export const Index = {
       Utility: ["Automation"],
       Desc: "Listens for events and triggers platform operations.",
       Note: "Alt name: Initiation, Triggering, Execution, Launch, Happening",
-      Icon: "flag-swallowtail",
+      Icon: "fa-flag-swallowtail",
       Status: "Disabled",
       Module: {
         Event: "An event that can be triggered.",
@@ -506,7 +506,7 @@ export const Index = {
     Integration: {
       Utility: ["Automation", "Runtime"],
       Desc: "Natively integrates code libraries as plugins.",
-      Icon: "plug",
+      Icon: "fa-plug",
       Status: "Disabled",
       Module: {
         "Plugin Library":
@@ -522,7 +522,7 @@ export const Index = {
       Desc: "Handles input bindings for keyboard & mouse.",
       Note:
         "Alt name: Interaction. Bind Subtypes: Keyboard Bind, Mouse Bind, Keybind = Keyboard Bind",
-      Icon: "keyboard",
+      Icon: "fa-keyboard",
       Status: "Offline",
       Cover:
         "Activate this System to unlock hotkeys and customize Platform controls.<ul><li>Set hotkeys and change the control scheme of modules.</li><li>Key combos will be added to menu items in the UI.</li><li>Handles Platform keybinds as well as the browser engine and operating system</li><li>Supports Mac/Win-specific bindings and custom modifier keys</li></ul>",
@@ -546,7 +546,7 @@ export const Index = {
       Note: "Alt name: Movement, Motion, Transit, Actuation",
       Title: "Locomotion System",
       Desc: "Animating media and the user interface.",
-      Icon: "person-running",
+      Icon: "fa-person-running",
       Utility: ["Multimedia"],
       Status: "Disabled",
       Module: {
@@ -560,7 +560,7 @@ export const Index = {
     Logical: {
       Utility: ["Automation"],
       Desc: "Implements logical rules for low-code programming.",
-      Icon: "code-branch",
+      Icon: "fa-code-branch",
       Status: "Disabled",
       Module: {
         "R-Rule Typing": "Represents programming logic for running operations.",
@@ -580,7 +580,7 @@ export const Index = {
     Maintenance: {
       Utility: ["Executive"],
       Desc: "Provides maintenance tools for a fast and bug-free platform.",
-      Icon: "wrench",
+      Icon: "fa-wrench",
       Status: "Disabled",
       Module: {
         "Diagnostic App": "Tools for diagnosing bugs and issues.",
@@ -591,7 +591,7 @@ export const Index = {
     Measurement: {
       Utility: ["Mathematic"],
       Desc: "Handles units of measurement.",
-      Icon: "ruler-combined",
+      Icon: "fa-ruler-combined",
       Status: "Disabled",
       Module: {
         "Unit Calculator":
@@ -607,7 +607,7 @@ export const Index = {
     Monetary: {
       Utility: ["Mathematic", "Knowledge"],
       Desc: "Handles money values and international currencies.",
-      Icon: "money-bill-wave",
+      Icon: "fa-money-bill-wave",
       Status: "Disabled",
       Module: {
         Currency: "An amount of money.",
@@ -620,7 +620,7 @@ export const Index = {
     Notetaking: {
       Utility: ["Knowledge", "Linguistic"],
       Desc: "Write notes and annotations for documents and other media.",
-      Icon: "Note",
+      Icon: "fa-note",
       Status: "Disabled",
       Module: {
         "Notebook App": "View your collection of notes.",
@@ -633,7 +633,7 @@ export const Index = {
     Onboarding: {
       Utility: ["Knowledge"],
       Desc: "Teaches users how the Platform works with interactive tutorials.",
-      Icon: "graduation-cap",
+      Icon: "fa-graduation-cap",
       Status: "Offline",
       Cover:
         "Learn how the Platform works with interactive tutorials!<ul><li>Caters to every skill level, no software engineering required</li><li>Tutorials are gamified with objectives and progression</li><li>Check out <a href='?Module=Documentation'>Documentation System</a> to view the Platform's official documentation</li></ul>",
@@ -651,7 +651,7 @@ export const Index = {
       Utility: ["Storage", "Browsing"],
       Desc: "Organizes sets of data with tagging and filtering.",
       Note: "Alt name: Cataloging",
-      Icon: "shelves",
+      Icon: "fa-shelves",
       Status: "Offline",
       Module: {
         Organizer: "Layout for presenting an organized set of data.",
@@ -664,10 +664,10 @@ export const Index = {
       },
     },
     Portaling: {
-      Utility: ["Storage", "Runtime"],
+      Utility: ["Browsing", "Runtime"],
       Desc: "Links to locations on the internet, computer, and Platform.",
       Note: "Alt name: Referential, Hyperlinking, Linking, Gateway",
-      Icon: "link",
+      Icon: "fa-link",
       Status: "Disabled",
       Module: {
         "H-Hyperlink Typing": "Represents a link to a virtual location.",
@@ -683,7 +683,7 @@ export const Index = {
       Utility: ["Linguistic"],
       Desc: "Write and arrange documents for publishing.",
       Note: "Alt name: Writing",
-      Icon: "typewriter",
+      Icon: "fa-typewriter",
       Status: "Disabled",
       Module: {
         Document: "A type of document.",
@@ -696,7 +696,7 @@ export const Index = {
       Utility: ["Linguistic"],
       Desc: "Presents books and documents for reading.",
       Note: "Alt name: Literary",
-      Icon: "book-open-cover",
+      Icon: "fa-book-open-cover",
       Status: "Disabled",
       Module: {
         Reader: "Reading app for books and documents.",
@@ -710,7 +710,7 @@ export const Index = {
     Resource: {
       Utility: ["Storage"],
       Desc: "Supplies the Platform with resources for content.",
-      Icon: "warehouse",
+      Icon: "fa-warehouse",
       Status: "Disabled",
       Module: {
         "A-Asset Typing": "Represents digital assets of content.",
@@ -721,7 +721,7 @@ export const Index = {
     Revision: {
       Utility: ["Runtime", "Browsing"],
       Desc: "Tracks history and returns to an earlier state.",
-      Icon: "clock-rotate-left",
+      Icon: "fa-clock-rotate-left",
       Status: "Disabled",
       Cover: "",
       Module: {
@@ -740,7 +740,7 @@ export const Index = {
     Scripting: {
       Utility: ["Automation"],
       Desc: "Edits and runs programming scripts.",
-      Icon: "code",
+      Icon: "fa-code",
       Status: "Disabled",
       Module: {
         "Script Editor": "Editor app for writing code.",
@@ -753,7 +753,7 @@ export const Index = {
       Utility: ["Interface"],
       Desc:
         "Implements the Platform's internal windowing system inside browser tabs.",
-      Icon: "window",
+      Icon: "fa-window",
       Status: "Disabled",
       Module: {
         "Sheet Editor": "Editor app for designing sheet interfaces.",
@@ -768,7 +768,7 @@ export const Index = {
       Utility: ["Storage"],
       Desc: "Provides data structures for Type data.",
       Note: "Alt name: Modeling",
-      Icon: "helmet-safety",
+      Icon: "fa-helmet-safety",
       Status: "Disabled",
       Module: {
         "S-Structure Typing": "Represents data structures.",
@@ -784,7 +784,7 @@ export const Index = {
       Utility: ["Aesthetic"],
       Desc: "Parses CSS style code and data.",
       Note: "Alt Name: Styling",
-      Icon: "vest",
+      Icon: "fa-vest",
       Status: "Disabled",
       Module: {
         Style: "A CSS style property.",
@@ -803,7 +803,7 @@ export const Index = {
     Texturing: {
       Utility: ["Aesthetic"],
       Desc: "Provides the interface with patterns and textures.",
-      Icon: "paint-roller",
+      Icon: "fa-paint-roller",
       Status: "Disabled",
       Module: {
         "Texture Vault":
@@ -818,7 +818,7 @@ export const Index = {
       Utility: ["Knowledge"],
       Desc: "Trackes the time & date with calendars and clocks.",
       Note: "Alt name: Chronology",
-      Icon: "clock-desk",
+      Icon: "fa-clock-desk",
       Status: "Disabled",
       Module: {
         "D-Date Typing": "Represents a measure or point in time.",
@@ -836,7 +836,7 @@ export const Index = {
       Utility: ["Mathematic"],
       Desc: "Plots coordinates within Euclidean space.",
       Note: "Alt name: Euclidean, Spatial, Graphing, Coordinate",
-      Icon: "chart-scatter",
+      Icon: "fa-chart-scatter",
       Status: "Disabled",
       Module: {
         "X-Coordinate Typing": "Represents positions in space.",
@@ -856,7 +856,7 @@ export const Index = {
       Desc: "Implements the Platform's data types.",
       Note:
         "Types are smart data types that automatically manage Platform data. Activate more Systems to collect new Types.",
-      Icon: "cubes",
+      Icon: "fa-cubes",
       Status: "Offline",
       Module: {
         "Type Collection":
@@ -868,7 +868,7 @@ export const Index = {
       Utility: ["Linguistic"],
       Desc: "Identifies and analyzes words and languages.",
       Note: "Alt name: Lexical, Dialectic, Vocabulary",
-      Icon: "language",
+      Icon: "fa-language",
       Status: "Disabled",
       Module: {
         Dictionary: "App that defines words and retrieves info about them.",
@@ -894,7 +894,7 @@ export const Index = {
       Utility: ["Browsing"],
       Desc: "Integrates the Platform into web pages.",
       Note: "Alt name: Injection, Augmentation, Webhook",
-      Icon: "globe",
+      Icon: "fa-globe",
       Status: "Standby",
       Module: {
         "Headsup Display":
@@ -912,7 +912,7 @@ export const Index = {
     Windowing: {
       Utility: ["Interface"],
       Desc: "Manages the browser engine's tabs and windows.",
-      Icon: "browser",
+      Icon: "fa-browser",
       Status: "Disabled",
       Module: {
         "W-Window Typing": "Represents UI windows.",
@@ -931,7 +931,7 @@ export const Index = {
       Utility: ["Runtime", "Interface"],
       Desc: "Gets the user's attention with notifications.",
       Note: "Alt name: Alerting, Notifying",
-      Icon: "square-exclamation",
+      Icon: "fa-square-exclamation",
       Status: "Disabled",
       Module: {
         Alert: "An alert popup shown to the user.",
@@ -944,7 +944,7 @@ export const Index = {
     Authorization: {
       Utility: ["Runtime"],
       Desc: "Logs into and integrates cloud accounts.",
-      Icon: "cloud",
+      Icon: "fa-cloud",
       Status: "Disabled",
       Module: {
         Cloud: "A cloud service.",
@@ -954,7 +954,7 @@ export const Index = {
     Bookmarking: {
       Utility: ["Browsing"],
       Desc: "Manages bookmarks and other saved locations.",
-      Icon: "book-bookmark",
+      Icon: "fa-book-bookmark",
       Status: "Disabled",
       Module: {
         Mark: "A bookmark or other marker inside data.",
@@ -964,7 +964,7 @@ export const Index = {
     Caching: {
       Utility: ["Browsing", "Storage"],
       Desc: "Saves browsing data to a cache.",
-      Icon: "box-taped",
+      Icon: "fa-box-taped",
       Module: {
         "Cache Manager App": "Manage the Platform's cache.",
         "Cache Registry": "Contains all cached data.",
@@ -974,7 +974,7 @@ export const Index = {
       Utility: ["Mathematic", "Knowledge"],
       Desc: "Provides statistics charts for visualizing data.",
       Note: "Alt name: Statistical",
-      Icon: "chart-pie",
+      Icon: "fa-chart-pie",
       Status: "Disabled",
       Module: {
         Chart: "Part for visualizing numbers.",
@@ -985,7 +985,7 @@ export const Index = {
     Collaboration: {
       Utility: ["Community"],
       Desc: "Connects to other Platforms for collaboration.",
-      Icon: "users",
+      Icon: "fa-users",
       Status: "Disabled",
       Module: {
         "User Type": "Represents a Platform user.",
@@ -995,7 +995,7 @@ export const Index = {
       Utility: ["Storage"],
       Desc: "Retrieves data from data storage systems.",
       Note: "Alt name: Retrieval, Warehouse",
-      Icon: "database",
+      Icon: "fa-database",
       Module: {
         "Datasource Viewer": "View and manage integrated data sources.",
         "Storage Type": "A type of data storage.",
@@ -1007,7 +1007,7 @@ export const Index = {
       Desc: "Identifies content and data on webpages.",
       Note:
         "Once the type of data is identified, the Platform can manage it using Types.",
-      Icon: "barcode-scan",
+      Icon: "fa-barcode-scan",
       Module: {
         "Content Detection Tool": "",
       },
@@ -1015,7 +1015,7 @@ export const Index = {
     Emailing: {
       Utility: ["Runtime", "Community"],
       Desc: "Sends and receives emails.",
-      Icon: "inboxes",
+      Icon: "fa-inboxes",
       Module: {
         "Email Client App": "App for checking email.",
         "Email Service": "Connects to an email server.",
@@ -1024,7 +1024,7 @@ export const Index = {
     Filtration: {
       Utility: ["Storage"],
       Desc: "Identifies and filters raw data for platform use.",
-      Icon: "tank-water",
+      Icon: "fa-tank-water",
       Module: {
         "": "",
       },
@@ -1033,7 +1033,7 @@ export const Index = {
       Utility: ["Knowledge", "Mathematic"],
       Desc: "",
       Note: "Alt name: Economic, Capitalist",
-      Icon: "money-bill-wave",
+      Icon: "fa-money-bill-wave",
       Module: {
         "Stocks App": "Check the current stock prices.",
         "Stocks Service": "Retrieve stock data from an API.",
@@ -1044,7 +1044,7 @@ export const Index = {
     Gaming: {
       Utility: ["Browsing"],
       Desc: "Implements a simple game engine for HTML5-based games.",
-      Icon: "gamepad-modern",
+      Icon: "fa-gamepad-modern",
       Module: {
         "Gaming Center App": "",
         "Game Table": "Rules and assets for games.",
@@ -1053,7 +1053,7 @@ export const Index = {
     Identification: {
       Utility: ["Storage"],
       Desc: "Searches for data within documents and media.",
-      Icon: "file-magnifying-glass",
+      Icon: "fa-file-magnifying-glass",
       Status: "Disabled",
       Module: {
         "Finding Tool": "Find and replace.",
@@ -1064,7 +1064,7 @@ export const Index = {
     Personalization: {
       Utility: ["Community"],
       Desc: "Personalizes the platform based on user-provided information.",
-      Icon: "id-card",
+      Icon: "fa-id-card",
       Status: "Disabled",
       Module: {
         "Member Profile":
@@ -1076,7 +1076,7 @@ export const Index = {
     Progression: {
       Utility: ["Executive"],
       Desc: "Gamifies the Platform with user progression.",
-      Icon: "medal",
+      Icon: "fa-medal",
       Status: "Disabled",
       Module: {
         "Access Division":
@@ -1099,7 +1099,7 @@ export const Index = {
     Security: {
       Utility: ["Runtime"],
       Desc: "Secures your Platform and personal data.",
-      Icon: "shield",
+      Icon: "fa-shield",
       Status: "Disabled",
       Module: {
         "": "",
@@ -1128,7 +1128,7 @@ export const Index = {
     Weather: {
       Utility: ["Knowledge"],
       Desc: "Provides up-to-date weather data.",
-      Icon: "sun-cloud",
+      Icon: "fa-sun-cloud",
       Status: "Disabled",
       Module: {
         "Weather App": "Check the weather.",
@@ -1167,7 +1167,7 @@ export const Index = {
     Cartography: {
       Utility: ["Knowledge"],
       Desc: "Implements political borders and regions in maps.",
-      Icon: "flag-usa",
+      Icon: "fa-flag-usa",
       Module: {
         "World Map": "Interactive map of the world.",
         Geofence: "Interactive map with political borders.",
@@ -1177,7 +1177,7 @@ export const Index = {
     Intelligence: {
       Utility: ["Automation"],
       Desc: "Integrates artificial intelligence into the Platform.",
-      Icon: "user-robot",
+      Icon: "fa-user-robot",
       Module: {
         "": "",
       },
@@ -1194,7 +1194,7 @@ export const Index = {
       Utility: ["Runtime"],
       Desc: "Integrates mobile devices into the Platform.",
       Note: "Alt Names: Mobile, Handheld",
-      Icon: "mobile",
+      Icon: "fa-mobile",
       Module: {
         "Mobile Service": "Connects to a smartphone device.",
       },

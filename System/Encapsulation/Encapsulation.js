@@ -3,7 +3,7 @@ export const Metadata = {
   Title: "Encapsulation System",
   Desc: "Defines the outer structure of the Platform.",
   Note: "Alt name: Encapsulation, Foundation, Compartment",
-  Icon: "landmark",
+  Icon: "fa-landmark",
   Utility: ["Executive"],
   Status: "Online",
 };

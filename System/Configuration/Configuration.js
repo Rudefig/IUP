@@ -1,10 +1,9 @@
 import { IUP } from "../Environment/-asset/Initialization.js";
-console.log("IUP in Configuration =", IUP);
 export const Metadata = {
   Keyname: "Configuration",
   Title: "Configuration System",
   Desc: "Implements configurable settings for modules.",
-  Icon: "gear",
+  Icon: "fa-gear",
   Utility: ["Storage"],
   Status: "Online",
   Cover:

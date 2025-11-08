@@ -3,7 +3,6 @@ import { IUP } from "../Environment/-asset/Initialization.js";
 export const Metadata = {
   Title: "Playback Tool",
   Desc: "Controls playback of playable media.",
-  // Desc: "Extracts playable media into a customizable player.",
   Keyname: "Playback",
   Parent: "Tool",
   System: "Audiovisual",
@@ -423,4 +422,110 @@ export const Action = {
     doc.querySelectorAll("video").forEach(IUP[Key].Action.Eject_Playback);
   },
   Extract_Video: function(target = "auto") {},
+};
+/*
+█ ❖ SETTINGS                                                                   */
+export const Config = {
+  fadeUnderPlaybackRate: {
+    Title: "Mute Videos Under Playback Rate",
+    Desc: "Fade out the volume of videos under this playback rate.",
+    Type: "Number",
+    Default: 0.6,
+  },
+  mouseWheelControl: {
+    Title: "Mouse Wheel Control",
+    Desc:
+      "Control this property on a video when you scroll with the mouse over it.",
+    Type: "List",
+    Part: "dropdown",
+    Default: "time",
+    choices: {
+      playbackRate: { Title: "Playback Rate" },
+      time: { Title: "Time" },
+      volume: { Title: "Volume" },
+    },
+    preprocess: (val) => val.replace(/\s/g, "").toLowerCase(),
+  },
+  rightMouseControl: {
+    Title: "RMB Drag Control",
+    Desc:
+      "Control this property on a video when right-click and drag left or right.",
+    Type: "List",
+    Part: "dropdown",
+    Default: "playbackRate",
+    choices: {
+      playbackRate: { Title: "Playback Rate" },
+      time: { Title: "Time" },
+      volume: { Title: "Volume" },
+    },
+    preprocess: (val) => val.replace(/\s/g, "").toLowerCase(),
+  },
+};
+/*
+█ ❖ CONTEXT                                                                   */
+export const Context = {
+  Selector: "video",
+  parentSelector: "video",
+  items: [
+    {
+      ID: "mediaPlayback",
+      Title: "Media Playback",
+      Submenu: [
+        {
+          ID: "setStart",
+          Title: "Set start point",
+          Icon: "",
+          marked: (V) => V.iuData(Constant.pre, false).start !== 0,
+          onUse(T) {
+            IUP.Playback.Action.Set_Playback(T, "set", "start");
+          },
+        },
+        {
+          ID: "setEnd",
+          Title: "Set end point",
+          Icon: "",
+          marked: (V) => V.iuData(Constant.pre, false).end !== V.duration,
+          onUse(T) {
+            IUP.Playback.Action.Set_Playback(T, "set", "end");
+          },
+        },
+        {
+          ID: "speed",
+          Icon: "",
+          Title: "Playback Speed",
+          Part: {
+            Type: "Number",
+            val: 1,
+            //Default: V => V.iuSpeed,
+            Min: 0,
+            Max: 1,
+            Step: 0.05,
+            onEdit(val, e, V) {
+              V.iuSpeed = parseFloat(val);
+            },
+          },
+        },
+        {
+          ID: "clearAll",
+          Title: "Clear playback mods",
+          Icon: "",
+          onUse(T) {
+            var arg = { start: false, end: false, reverse: false };
+            T.playbackRate = 1;
+            IUP.Playback.Action.Set_Playback(T, "clear");
+            Action.Set_Cue(T, "clear");
+          },
+        },
+        // {
+        //   id: "loopReverse",
+        //   Icon: "",
+        //   Title: "Loop With Reverse",
+        //   disabled: true,
+        //   onUse(V) {
+        //     IUP.Playback.Action.Set_Playback(V, "set", "reverse");
+        //   }
+        // }
+      ],
+    },
+  ],
 };

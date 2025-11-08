@@ -12,7 +12,6 @@ export const Convert = {
   HTML_To_Node: function(htmlString) {
     var div = document.createElement("div");
     div.innerHTML = htmlString.trim();
-
     // Change this to div.childNodes to support multiple top-level nodes.
     return div.firstChild;
   },
@@ -55,41 +54,6 @@ export const Generate = {
     if (dat.Part == "Color_Tile") Item = IUP.Color_Tile.Module({ ...dat });
     if (dat.Part == "Binder") Item = IUP.Binder.Module({ ...dat });
 
-    /*
-█ ❖ Classes & ID                                                                   */
-    var { tooltip, style, genStyle, dropmenu, size = "md" } = dat;
-    // classes.push(name, Item.className);
-    // Item.className = classes.join(" ");
-    // Item.ID = dat.ID;
-
-    /*
-█ ❖ Extra Features                                                                   */
-    if (dat.tooltip) Item.title = dat.tooltip;
-    // if (genStyle) style = genStyle(val, dat.ID);
-    // if (style) Item.insertAdjacentHTML("beforeEnd", `<style>${style}</style>`);
-
-    /*
-█ ❖ Dropmenu                                                                   */
-    // dropmenu = {
-    //   id: `${dat.ID}-dropmenu`,
-    //   button: Item,
-    //   btnMouse: "right",
-    //   group: "input",
-    //   openAt: "mouse",
-    //   items: [
-    //     {
-    //       title: "Reset to default",
-    //       onUse() {
-    //         Item.val = dat.default;
-    //       },
-    //     },
-    //     {
-    //       title: "Random choice",
-    //       disabled: true,
-    //     },
-    //   ],
-    // };
-    // Item.dropmenu = UILib.cmd.UI_Dropmenu(dropmenu);
     return Item;
   },
 
@@ -105,7 +69,7 @@ export const Generate = {
 ▓  ❖ ARGUMENTS ❖
 ▓    ◇ {M}  Menu item data.
 ▓    ◇ {P}  Parent item data.
-▓    ◇ {id}  Recursive ID for submenus. Each menu item ID inherits its parent ID.
+▓    ◇ {ID}  Recursive ID for submenus. Each menu item ID inherits its parent ID.
 ▓    ◇ {target}  For scripts with a target variable to pass on.
 ▓
 ▓  ❖ MENU ITEM 〜 PARAMETERS ❖
@@ -114,7 +78,6 @@ export const Generate = {
 ▓    ◇ .title*     = (str)  Print title.
 ▓    ◇ .tooltip    = (str)  Tooltip description.
 ▓    ◇ .icon       = (str)  Item icon.
-▓    ◇ .type       = 🚧("normal|checkbox|radio|separator")  Special menu item type.
 ▓    ◇ .closeOnUse = (true|false)  Close menu when onUse() is activated. (Custom 'use' event must be captured.)
 ▓
 ▓  ⯁ STATES ⯁
@@ -180,7 +143,6 @@ export const Generate = {
         typeof M.Title == "string"
           ? M.Title.replace(/\s|\./g, "_")
           : _.uniqueId(),
-      type: "normal",
       holdTimer: 1.5,
       closeOnUse: true,
     });
@@ -188,20 +150,18 @@ export const Generate = {
 
     /*
 █ ❖ ITEM STATES                                                                   */
-    const funcParams = ["title", "icon", "disabled", "marked", "hidden", "warning"]; // prettier-ignore
+    const funcParams = ["Title", "Icon", "disabled", "marked", "hidden", "warning"]; // prettier-ignore
     funcParams.forEach((param) => {
       if (typeof M[param] == "function") {
         const func = M[param];
         M[param] = func(target);
       }
     });
-    const classList = ["menu-item"],
-      _submenuActive = "-submenu-active",
+    const classList = ["Item"],
       _disabled = "-Is-Disabled",
       _hidden = "-Is-Hidden",
-      _highlighted = "-Is-Highlighted",
       _nohover = "-no-hover",
-      _hovering = "-is-hovering",
+      _hovering = "-Is-Hovering",
       _holding = "-is-holding",
       _held = "-is-held";
     if (M.Disabled) classList.push(_disabled);
@@ -210,12 +170,18 @@ export const Generate = {
 
     /*
 █ ❖ GENERATE HTML                                                                   */
-    const ItemNode = document.createElement("div");
+    const ItemNode = document.createElement("div"),
+      Icon = M.Icon ? IUP.Icon.Generate.Generate_Icon(M.Icon, 16) : "";
+    if (M.Icon) {
+      ItemNode.innerHTML +=
+        `<span class="Item__Icon -pos1">` +
+        IUP.Icon.Generate.Generate_Icon(M.Icon, 16) +
+        `</span>`;
+    }
     ItemNode.IUP = {};
     ItemNode.classList.add(...classList);
     ItemNode.ID = idFull;
-    ItemNode.innerHTML = `<span class="Item__Icon">${M.Icon ||
-      ""}</span><span class="Item__Title">${M.Title || ""}</span>`;
+    ItemNode.innerHTML += `<span class="Item__Title">${M.Title || ""}</span>`;
     /*
 █ ❖ BUILD SVG NODES                                                                   */
     // SUBMENU: &#xf105;
@@ -232,20 +198,17 @@ export const Generate = {
       });
     }
 
-    // ❖ Icon (Main)
-    // ItemNode.IUP.icons = [];
-    // var Icon = M.Icon || (P && P.Icon) || "";
-    // if (!Icon) classList.push("-no-icon");
-    // else IUP.Icon_Button.Module(ItemNode, Icon);
-
     /*
 █ ❖ SUBMENU                                                                   */
-    const SUBMENU_WIDTH_ADJUST = 82;
     var SubNode = false;
     if (typeof M.Submenu == "function") M.Submenu = M.Submenu([]);
     if (M.Submenu && M.Submenu.length) {
       // IUP.Icon.Construct.Icon_Button(ItemNode, "f105");
-      SubNode = IUP.Menu.Generate.Construct_Menu(M.Submenu, M, idFull, target);
+      ItemNode.innerHTML +=
+        `<span class="Item__Icon -pos2">` +
+        IUP.Icon.Generate.Generate_Icon("fa-chevron-right", 16) +
+        `</span>`;
+      SubNode = IUP.Menu.Generate.Construct_Menu(M.Submenu, M, ID, target);
       ItemNode.appendChild(SubNode);
       ItemNode.IUP.hasSubmenu = true;
       ItemNode.IUP.submenuNode = SubNode;
@@ -256,27 +219,23 @@ export const Generate = {
         const closeAll = (SN) => {
           if (SN != SubNode) SN.IUP.closeSubmenu();
         };
-        ItemNode.querySelectorAll(`.menu-item[id$=${id}]`).forEach(closeAll);
+        ItemNode.querySelectorAll(`.Item[id$=${ID}]`).forEach(closeAll);
       };
 
       // ❖ SubNode.openSubmenu()
       SubNode.IUP.openSubmenu = function() {
         SubNode.IUP.submenuActive = true;
-        // const submenuWidth = _.max(SubNode.querySelectorAll(".item__title"), node => node.clientWidth).clientWidth, // prettier-ignore
-        const submenuWidth = SubNode.IUP.setSVGWidth(),
+        // Open on other side if overflowing window
+        const submenuWidth = SubNode.clientWidth,
           right = ItemNode.getBoundingClientRect().right;
-        // __B(submenuWidth + SUBMENU_WIDTH_ADJUST + "px");
-        // SubNode.iuCSS("--svg-width", submenuWidth + SUBMENU_WIDTH_ADJUST + "px"); // prettier-ignore
         if (submenuWidth + right > document.documentElement.clientWidth) {
-          SubNode.classList.add("-sm-left");
-        } else SubNode.classList.remove("-sm-left");
-        SubNode.style.opacity = 1;
+          SubNode.classList.add("-overflow-right");
+        } else SubNode.classList.remove("-overflow-right");
       };
 
       // ❖ SubNode.closeSubmenu()
       SubNode.IUP.closeSubmenu = function() {
         SubNode.IUP.submenuActive = false;
-        SubNode.style.opacity = 0.44;
       };
 
       // ❖ Auto-close submenu on mouseout
@@ -298,31 +257,8 @@ export const Generate = {
     }
 
     /*
-█ ❖ DROPMENU                                                                   */
-    if (M.dropmenu) {
-      // M.dropmenu.parent =
-      if (M.dropmenu.button === true) {
-        const dropIconHTML = `<path d="M3.5,7 C3.22385763,7 3,6.77614237 3,6.5 C3,6.22385763 3.22385763,6 3.5,6 L20.5,6 C20.7761424,6 21,6.22385763 21,6.5 C21,6.77614237 20.7761424,7 20.5,7 L3.5,7 Z M3.5,12 C3.22385763,12 3,11.7761424 3,11.5 C3,11.2238576 3.22385763,11 3.5,11 L20.5,11 C20.7761424,11 21,11.2238576 21,11.5 C21,11.7761424 20.7761424,12 20.5,12 L3.5,12 Z M3.5,17 C3.22385763,17 3,16.7761424 3,16.5 C3,16.2238576 3.22385763,16 3.5,16 L20.5,16 C20.7761424,16 21,16.2238576 21,16.5 C21,16.7761424 20.7761424,17 20.5,17 L3.5,17 Z"/>`,
-          dropIcon = IUP.Icon.Generate.Construct_Icon(ItemNode, dropIconHTML);
-        M.dropmenu.button = dropIcon.contentLayer;
-      } else if (!M.dropmenu.button) {
-        M.dropmenu.btnMouse = "right";
-        M.dropmenu.button = ItemNode;
-      }
-      if (!M.dropmenu.passive) UILib.cmd.UI_Dropmenu(M.dropmenu);
-      else {
-        M.dropmenu.button.onclick = function(e) {
-          const Dropmenu = UILib.cmd.UI_Dropmenu(M.dropmenu);
-          Dropmenu.open(e);
-          e.preventDefault();
-          e.stopPropagation();
-        };
-      }
-    }
-
-    /*
 █ ❖ INPUT                                                                   */
-    // if (M.input) {
+    // if (M.Input) {
     //   M.input.size = "sm";
     //   if (target) M.input.target = target;
 
@@ -425,10 +361,6 @@ export const Generate = {
       e.stopPropagation();
     };
 
-    /*
-█ ❖ TODO                                                                   */
-    if (M.snapTo) {
-    }
     /*
 █ ❖ OUTPUT                                                                   */
     if (!M.onUse && !M.onHoverIn && !M.onHoverOut) classList.push(_nohover);

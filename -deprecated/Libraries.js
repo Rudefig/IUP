@@ -2528,7 +2528,7 @@ const UILib = new function() {
           requireInteraction: self.settings.manualClose,
           silent: null,
         };
-        chrome.runtime.sendMessage({ notification });
+        browser.runtime.sendMessage({ notification });
 
         /*
 █ ❖ TYPE "ITEM" ⬥                                                                    */

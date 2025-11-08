@@ -3,7 +3,7 @@ export const Metadata = {
   Title: "Programming System",
   Desc: "Programs and automates the platform with low code.",
   Note: "Alt name: Instruction, Operation",
-  Icon: "computer-classic",
+  Icon: "fa-computer-classic",
   Utility: ["Automation"],
   Status: "Disabled",
   Cover: () =>

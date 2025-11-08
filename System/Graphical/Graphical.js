@@ -3,7 +3,7 @@ export const Metadata = {
   Title: "Graphical System",
   Desc: "Renderes graphics in raster or vector format.",
   Note: "Alt: Rendering, Imaging",
-  Icon: "image-polaroid",
+  Icon: "fa-image-polaroid",
   Utility: ["Multimedia"],
   Status: "Offline",
   Module: {
@@ -78,7 +78,7 @@ export const Action = {
 
 export const Context = {
   Selector: "img, video",
-  Item: [
+  ItemList: [
     {
       ID: "fullSize",
       Title: "Full size",
@@ -102,7 +102,7 @@ export const Context = {
       ID: "filter",
       Title: "Filter Media",
       Icon: "",
-      Item: [
+      Submenu: [
         {
           ID: "blur",
           Title: "Blur",
@@ -168,7 +168,7 @@ export const Context = {
       ID: "transform",
       Title: "Transform Media",
       Icon: "",
-      Item: [
+      Submenu: [
         {
           Title: "Rotate",
           Icon: "",

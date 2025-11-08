@@ -3,7 +3,7 @@ export const Metadata = {
   Title: "Arithmetic System",
   Desc: "Performs basic number calculations.",
   Note: "Alt name: Calculation, Numeric, Numerical",
-  Icon: "calculator",
+  Icon: "fa-calculator",
   Utility: ["Mathematic"],
   Status: "Offline",
 };

@@ -3,7 +3,7 @@ export const Metadata = {
   Title: "Textual System",
   Desc: "Handles true or false values of data.",
   Note: "Alt name: Character",
-  Icon: "text-size",
+  Icon: "fa-text-size",
   Utility: ["Linguistic"],
   Status: "Online",
 };

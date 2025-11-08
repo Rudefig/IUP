@@ -2,7 +2,7 @@ export const Metadata = {
   Keyname: "Construction",
   Title: "Construction System",
   Desc: "Constructs UI components for building interfaces.",
-  Icon: "light-switch-on",
+  Icon: "fa-light-switch-on",
   Utility: ["Interface"],
   Status: "Standby",
   Cover:

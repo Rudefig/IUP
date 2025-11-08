@@ -17,6 +17,7 @@
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.28);
   padding: 8px 0;
   background: var(--IUP-Color-BG);
+  width: max-content;
 }
 
 .submenu-wrap {
@@ -26,12 +27,12 @@
   left: 100%;
   /* width: min-content; */
 }
-.-sm-left {
+.-overflow-right {
   left: unset;
   right: 100%;
 }
 
-.menu-item:hover .submenu-wrap {
+.Item:hover .submenu-wrap {
   display: inline-block;
 }
 
@@ -39,7 +40,7 @@
 █
 ▓█═─────══─────═🙦   MENU ITEM   🙤═─────══─────═❖
 ▓                                                                           */
-.menu-item {
+.Item {
   --item-size: 13px;
   --item-pad-title: 17px;
   --item-pad-icon: 27px;
@@ -54,7 +55,7 @@
   outline-color: rgba(var(--IUP-Color-FG), 0);
   outline-style: solid;
   padding: 0 12px;
-  
+
   color: var(--IUP-Color-FG);
   background: rgba(var(--IUP-Color-FG), 0);
   user-select: none;
@@ -66,20 +67,20 @@
     outline-width var(--iup-trans-dbl) ease-out,
     outline-color var(--iup-trans-dbl) ease-out; */
 }
-.UI-XS .menu-item {
+.UI-XS .Item {
   --item-size: 11px;
 }
-.UI-SM .menu-item {
+.UI-SM .Item {
   --item-size: 11px;
 }
-.UI-MD .menu-item {
+.UI-MD .Item {
   --item-size: 12.5px;
 }
-.UI-LG .menu-item {
+.UI-LG .Item {
   --item-size: 14px;
 }
 
-.-no-icons > .menu-item.-no-icon {
+.-no-icons > .Item.-no-icon {
   --item-pad-title: 0px;
 }
 
@@ -111,15 +112,11 @@
   width: var(--item-size);
 }
 
-.Item__Icon.-text.-pos0 {
-  --icon-x: var(--item-pad-icon);
-  text-anchor: middle;
+.Item__Icon.-pos1 {
+  margin-right: 3px;
 }
-
-.Item__Icon.-text.-pos1 {
-  --icon-x: 91%;
-  text-anchor: middle;
-  font-size: 12px;
+.Item__Icon.-pos2 {
+  margin-left: auto;
 }
 
 .Item__Icon.-animate-spin {
@@ -163,11 +160,11 @@
 ▓  ◇ Apply mask to gradient fill node.
 ▓  ◇ Show fill node & hide default nodes.
 ▓                                                                                */
-.menu-item:hover:not(.-is-disabled) {
+.Item:hover:not(.-Is-Disabled) {
   cursor: pointer;
 }
-.menu-item:hover:not(.-is-disabled):not(.-no-hover),
-.menu-item.-inputActive {
+.Item:hover:not(.-Is-Disabled):not(.-no-hover),
+.Item.-inputActive {
   /* border-color: var(--IUP-Color-FG); */
   outline-width: 3px;
   outline-color: var(--IUP-Color-FG);
@@ -181,22 +178,19 @@
   fill: transparent;
 }
 
-.menu-item:not(.-is-disabled):not(.-no-hover)
-  > .Item__SVG
-  > .Item__Icon.-iconPos1 {
+.Item:not(.-Is-Disabled):not(.-no-hover) > .Item__SVG > .Item__Icon.-iconPos1 {
   transform: translateX(0);
   transition: transform var(--iup-trans-dbl) ease-out;
 }
-.menu-item:hover:not(.-is-disabled):not(.-no-hover)
+.Item:hover:not(.-Is-Disabled):not(.-no-hover)
   > .Item__SVG
   > .Item__Icon.-iconPos1 {
   transform: translateX(9px);
 }
 
-.menu-item.-no-hover > .Item__SVG > .Item__Icon.-contentBtn {
+.Item.-no-hover > .Item__SVG > .Item__Icon.-contentBtn {
   font-weight: 400;
 }
-
 
 /*
 
@@ -206,31 +200,15 @@
 ▓█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█═⟅ ∽ ITEM STATES ∼ ⟆═█⌇𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙𝄙⌇█
 ▓                    Disabled, Hidden, 🚧Warning, Marked.🚧
 ▓                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                                   */
-.-is-disabled {
+.-Is-Disabled {
   text-decoration: line-through;
   filter: blur(var(--hide-blur-mid));
   opacity: var(--hide-opacity-mid);
   cursor: initial;
 }
-.-is-disabled .Item__DropmenuBox:hover {
-  fill: var(--iup-color-fg);
-  cursor: pointer;
-}
-.-is-disabled > .Item__SVG > .Item__Fill,
-.-is-disabled > .Item__Mask {
-  fill: transparent;
-  display: none;
-}
 
 .-is-hidden {
   display: none;
-}
-
-.menu-item.-expanded:hover:not(.-is-disabled) {
-  left: calc(var(--item-expand) * -1);
-  width: calc(100% + calc(var(--item-expand) * 2));
-  transition: left var(--iup-trans-dbl) ease-out,
-    width var(--iup-trans-dbl) ease-out;
 }
 
 /*
@@ -259,10 +237,10 @@
   overflow: hidden;
   transition: width var(--iup-trans) var(--iup-trans-type);
 }
-.menu-item.-inputActive > .Item__SVG {
+.Item.-inputActive > .Item__SVG {
   visibility: hidden;
 }
-.menu-item.-inputActive > .Item__Input.-inner {
+.Item.-inputActive > .Item__Input.-inner {
   width: 84%;
   overflow: visible;
 }
@@ -300,7 +278,7 @@
   transition: left var(--iup-trans-dbl) ease-out;
 }
 
-.menu-item:hover > .Item__Input.-outer .iuInput {
+.Item:hover > .Item__Input.-outer .iuInput {
   left: 0;
 }
 

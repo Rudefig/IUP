@@ -2,7 +2,7 @@ export const Metadata = {
   Keyname: "Cosmetic",
   Title: "Cosmetic System",
   Desc: "Decorate the user interface with cosmetic themes.",
-  Icon: "hat-cowboy-side",
+  Icon: "fa-hat-cowboy-side",
   Utility: ["Aesthetic"],
   Status: "Online",
 };

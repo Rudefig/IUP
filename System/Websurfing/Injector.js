@@ -1,4 +1,4 @@
-console.log("Injector.js loaded", Import_Module_Data);
+console.log("Injector.js loaded", IUP);
 $(document).ready(function() {
   // Import_Module_Data().then((IUP) => {
   //   console.log("<IUP> Loaded IUP data:", IUP);
@@ -14,3 +14,16 @@ $(document).ready(function() {
     });
   });
 });
+function injectInlineModule({ code, id = `inline-mod-${Date.now()}` } = {}) {
+  if (!code) throw new Error("injectInlineModule: 'code' required");
+  // Avoid duplicate
+  if (id && document.getElementById(id)) return document.getElementById(id);
+
+  const script = document.createElement("script");
+  script.type = "module";
+  script.id = id;
+  script.textContent = code;
+
+  (document.head || document.documentElement).appendChild(script);
+  return script;
+}
